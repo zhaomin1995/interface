@@ -18,6 +18,11 @@
       return false;
     }
 
+    if (!document.getElementById('id_Q2_1').checked && !document.getElementById('id_Q2_2').checked && !document.getElementById('id_Q2_3').checked && !document.getElementById('id_Q2_4').checked && !document.getElementById('id_Q2_5').checked) {
+      alert("Please choose the confidence level for Question 2!");
+      return false;
+    }
+
     if (document.getElementById('id_Q1yes').checked) {
 
       if (document.getElementById('id_max').value == "None" || document.getElementById('id_min').value == "None") {
@@ -214,11 +219,11 @@
 
         <p>2. How confident are you about your answer?</p>
         <ul>
-          <li><strong>Extremely confident</strong></li>
-          <li><strong>Very confident</strong></li>
-          <li><strong>Moderately confident</strong></li>
-          <li><strong>Slightly confident</strong></li>
-          <li><strong>Not confident at all</strong></li>
+          <li><strong>5. Extremely confident</strong></li>
+          <li><strong>4. Very confident</strong></li>
+          <li><strong>3. Moderately confident</strong></li>
+          <li><strong>2. Slightly confident</strong></li>
+          <li><strong>1. Not confident at all</strong></li>
         </ul>
 
         <table align="center" border="1" height="276" style="font-size: 1.0em; line-height: 1.6em;" width="1050">
@@ -306,24 +311,24 @@
             <tr>
               <td width="300">
 
-                <p class="option"><input id="id_Q1yes" name="Q1" type="radio" value="Yes" /><span class="option_label">Yes</span>, the author of the tweet was located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the tweet was published.</p>
+                <p class="option"><input id="id_Q1yes" name="Q1" type="radio" value="Yes" required/><span class="option_label">Yes</span>, the author of the tweet was located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the tweet was published.</p>
 
-                <p class="option"><input id="id_Q1no" name="Q1" type="radio" value="No" /><span class="option_label">No</span>, the author of the tweet was not located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the tweet was published.</p>
+                <p class="option"><input id="id_Q1no" name="Q1" type="radio" value="No" required/><span class="option_label">No</span>, the author of the tweet was not located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the tweet was published.</p>
 
-                <p class="option"><input id="id_Q1inv" name="Q1" type="radio" value="Inv" /><span class="option_label">Invalid</span>, <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> is not a location in the context of this tweet.</p>
+                <p class="option"><input id="id_Q1inv" name="Q1" type="radio" value="Inv" required/><span class="option_label">Invalid</span>, <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> is not a location in the context of this tweet.</p>
 
               </td>
               <td width="300">
 
-                <p class="option"><input id="id_Q2_1" name="Q2" type="radio" value="5" /><span class="option_label">5, Extremely confident</span></p>
+                <p class="option"><input id="id_Q2_5" name="Q2" type="radio" value="5" required/><span class="option_label">5. Extremely confident</span></p>
 
-                <p class="option"><input id="id_Q2_2" name="Q2" type="radio" value="4" /><span class="option_label">4</span></p>
+                <p class="option"><input id="id_Q2_4" name="Q2" type="radio" value="4" required/><span class="option_label">4</span></p>
 
-                <p class="option"><input id="id_Q2_3" name="Q2" type="radio" value="3" /><span class="option_label">3</span></p>
+                <p class="option"><input id="id_Q2_3" name="Q2" type="radio" value="3" required/><span class="option_label">3</span></p>
 
-                <p class="option"><input id="id_Q2_4" name="Q2" type="radio" value="2" /><span class="option_label">2</span></p>
+                <p class="option"><input id="id_Q2_2" name="Q2" type="radio" value="2" required/><span class="option_label">2</span></p>
 
-                <p class="option"><input id="id_Q2_5" name="Q2" type="radio" value="1" /><span class="option_label">1, Not confident at all</span></p>
+                <p class="option"><input id="id_Q2_1" name="Q2" type="radio" value="1" required/><span class="option_label">1. Not confident at all</span></p>
 
               </td>
             </tr>
