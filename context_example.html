@@ -5,200 +5,6 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-<script language="JavaScript">
-
-  function showValue(newValue) {
-    document.getElementById("range").innerHTML=newValue;
-  }
-
-  function validate() {
-
-    if (!document.getElementById('id_Q1yes').checked && !document.getElementById('id_Q1no').checked && !document.getElementById('id_Q1inv').checked) {
-      alert("Please choose Yes/No/Invalid for Question 1!");
-      return false;
-    }
-
-    if (!document.getElementById('id_Q2_1').checked && !document.getElementById('id_Q2_2').checked && !document.getElementById('id_Q2_3').checked && !document.getElementById('id_Q2_4').checked && !document.getElementById('id_Q2_5').checked) {
-      alert("Please choose the confidence level for Question 2!");
-      return false;
-    }
-
-    if (document.getElementById('id_Q1yes').checked) {
-
-      if (document.getElementById('id_max').value == "None" || document.getElementById('id_min').value == "None") {
-        alert("Please choose the units of maximum and minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "years" && document.getElementById('id_min').value == "inf") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "months" && document.getElementById('id_min').value == "inf") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "months" && document.getElementById('id_min').value == "years") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "weeks" && document.getElementById('id_min').value == "inf") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "weeks" && document.getElementById('id_min').value == "years") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "weeks" && document.getElementById('id_min').value == "months") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "days" && document.getElementById('id_min').value == "inf") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "days" && document.getElementById('id_min').value == "years") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "days" && document.getElementById('id_min').value == "months") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "days" && document.getElementById('id_min').value == "weeks") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "hours" && document.getElementById('id_min').value == "inf") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "hours" && document.getElementById('id_min').value == "years") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "hours" && document.getElementById('id_min').value == "months") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "hours" && document.getElementById('id_min').value == "weeks") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "hours" && document.getElementById('id_min').value == "days") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "minutes" && document.getElementById('id_min').value == "inf") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "minutes" && document.getElementById('id_min').value == "years") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "minutes" && document.getElementById('id_min').value == "months") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "minutes" && document.getElementById('id_min').value == "weeks") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "minutes" && document.getElementById('id_min').value == "days") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "minutes" && document.getElementById('id_min').value == "hours") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "seconds" && document.getElementById('id_min').value == "inf") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "seconds" && document.getElementById('id_min').value == "years") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "seconds" && document.getElementById('id_min').value == "months") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "seconds" && document.getElementById('id_min').value == "weeks") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "seconds" && document.getElementById('id_min').value == "days") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "seconds" && document.getElementById('id_min').value == "hours") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-      if (document.getElementById('id_max').value == "seconds" && document.getElementById('id_min').value == "minutes") {
-        alert("The units of maximum period is smaller than the units of minimum period!");
-        return false;
-      }
-
-    }
-
-    if (document.getElementById('id_Q1no').checked) {
-      if (!(document.getElementById('id_max').value == "None" && document.getElementById('id_min').value == "None")) {
-        alert("You have chosen the NO for Q1, but you have also chosen the units for YES option, please make consistent decision!");
-        return false;
-      }
-    }
-
-    if (document.getElementById('id_Q1inv').checked) {
-      if (!(document.getElementById('id_max').value == "None" && document.getElementById('id_min').value == "None")) {
-        alert("You have chosen the INVALID for Q1, but you have also chosen the units for YES option, please make consistent decision!");
-        return false;
-      }
-    }
-
-    if (!document.getElementById('id_Q2_1').checked && !document.getElementById('id_Q2_2').checked && !document.getElementById('id_Q2_3').checked && !document.getElementById('id_Q2_4').checked && !document.getElementById('id_Q2_5').checked) {
-      alert("You must choose the confidence level in Q2!");
-      return false;
-    }
-
-  }
-
-  window.onload = function() {
-    document.getElementById('submitButton').setAttribute('onclick', "return validate()");
-  }
-
-</script>
-
 <!-- The instruction part -->
 <section class="container" style="margin-bottom:15px; padding: 10px 10px; ">
   <div class="row col-xs-12 col-md-12">
@@ -229,63 +35,36 @@
             <tr>
               <td width="350">
                 <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/yes.png" alt="example tweet" class="example_img_center">
-                <p style="text-align: center; margin: 10px">
-                  The right label is <strong>Yes</strong> because the author of the tweet was attending a picnic in <span style="color: rgb(128, 0, 0);"><strong>Arlington</strong></span> when she posted.
-                </p>
               </td>
               <td width="350">
                 <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/no.png" alt="example tweet" class="example_img_center">
-                <p style="text-align: center; margin: 10px">
-                  The right label is <strong>No</strong> because the author of the tweet is promoting <span style="color: rgb(128, 0, 0);"><strong>San Antonio</strong></span> as a destination for Spring Break, and there is no evidence that the author is there when the tweet was posted.
-                </p>
               </td>
               <td width="350">
                 <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center">
-                <p style="text-align: center; margin: 10px">
-                  The right label is <strong>Invalid</strong> because <span style="color: rgb(128, 0, 0);"><strong>Washington</strong></span> in this tweet is part of the Twitter handle (@washingtonpost) of a newspaper, the <i>Washington Post</i>.
-                </p>
               </td>
             </tr>
 
             <tr>
               <td width="350">
                 <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/yes.png" alt="example tweet" class="example_img_center">
-                <p style="text-align: center; margin: 10px">
-                  The right label is <strong>Yes</strong> because the author of the tweet was attending a picnic in <span style="color: rgb(128, 0, 0);"><strong>Arlington</strong></span> when she posted.
-                </p>
               </td>
               <td width="350">
                 <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/no.png" alt="example tweet" class="example_img_center">
-                <p style="text-align: center; margin: 10px">
-                  The right label is <strong>No</strong> because the author of the tweet is promoting <span style="color: rgb(128, 0, 0);"><strong>San Antonio</strong></span> as a destination for Spring Break, and there is no evidence that the author is there when the tweet was posted.
-                </p>
               </td>
               <td width="350">
                 <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center">
-                <p style="text-align: center; margin: 10px">
-                  The right label is <strong>Invalid</strong> because <span style="color: rgb(128, 0, 0);"><strong>Washington</strong></span> in this tweet is part of the Twitter handle (@washingtonpost) of a newspaper, the <i>Washington Post</i>.
-                </p>
               </td>
             </tr>
 
             <tr>
               <td width="350">
                 <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/yes.png" alt="example tweet" class="example_img_center">
-                <p style="text-align: center; margin: 10px">
-                  The right label is <strong>Yes</strong> because the author of the tweet was attending a picnic in <span style="color: rgb(128, 0, 0);"><strong>Arlington</strong></span> when she posted.
-                </p>
               </td>
               <td width="350">
                 <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/no.png" alt="example tweet" class="example_img_center">
-                <p style="text-align: center; margin: 10px">
-                  The right label is <strong>No</strong> because the author of the tweet is promoting <span style="color: rgb(128, 0, 0);"><strong>San Antonio</strong></span> as a destination for Spring Break, and there is no evidence that the author is there when the tweet was posted.
-                </p>
               </td>
               <td width="350">
                 <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center">
-                <p style="text-align: center; margin: 10px">
-                  The right label is <strong>Invalid</strong> because <span style="color: rgb(128, 0, 0);"><strong>Washington</strong></span> in this tweet is part of the Twitter handle (@washingtonpost) of a newspaper, the <i>Washington Post</i>.
-                </p>
               </td>
             </tr>
 
