@@ -81,11 +81,14 @@
         <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="900">
           <tbody style="font-size: 1.0em; line-height: 1.6em;">
 
+            <!-- section title -->
             <tr>
               <td colspan="3">
                 <p class="question_title"><span><strong>Nine tweets before</strong></span></p>
               </td>
             </tr>
+
+            <!-- context tweets before -->
             <tr>
               <td width="300">
                 <img src=${context2_url} alt="context tweet1" class="context_img_center">
@@ -97,6 +100,7 @@
                 <img src=${context4_url} alt="context tweet3" class="context_img_center">
               </td>
             </tr>
+
             <tr>
               <td width="300">
                 <img src=${context5_url} alt="context tweet4" class="context_img_center">
@@ -108,17 +112,18 @@
                 <img src=${context7_url} alt="context tweet6" class="context_img_center">
               </td>
             </tr>
-            <tr>
-              <td width="300">
-                <img src=${context8_url} alt="context tweet7" class="context_img_center">
-              </td>
-              <td width="300">
-                <img src=${context9_url} alt="context tweet8" class="context_img_center">
-              </td>
-              <td width="300">
-                <img src=${context10_url} alt="context tweet9" class="context_img_center">
-              </td>
-            </tr>
+
+<!--            <tr>-->
+<!--              <td width="300">-->
+<!--                <img src=${context8_url} alt="context tweet7" class="context_img_center">-->
+<!--              </td>-->
+<!--              <td width="300">-->
+<!--                <img src=${context9_url} alt="context tweet8" class="context_img_center">-->
+<!--              </td>-->
+<!--              <td width="300">-->
+<!--                <img src=${context10_url} alt="context tweet9" class="context_img_center">-->
+<!--              </td>-->
+<!--            </tr>-->
 
           </tbody>
         </table>
@@ -150,11 +155,14 @@
         <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="900">
         <tbody style="font-size: 1.0em; line-height: 1.6em;">
 
+          <!-- section title -->
           <tr>
             <td colspan="3">
               <p class="question_title"><span><strong>Nine tweets after</strong></span></p>
             </td>
           </tr>
+
+          <!-- context tweets before -->
           <tr>
             <td width="300">
               <img src=${context11_url} alt="context tweet10" class="context_img_center">
@@ -166,6 +174,7 @@
               <img src=${context13_url} alt="context tweet12" class="context_img_center">
             </td>
           </tr>
+
           <tr>
             <td width="300">
               <img src=${context14_url} alt="context tweet13" class="context_img_center">
@@ -177,17 +186,18 @@
               <img src=${context16_url} alt="context tweet15" class="context_img_center">
             </td>
           </tr>
-          <tr>
-            <td width="300">
-              <img src=${context17_url} alt="context tweet16" class="context_img_center">
-            </td>
-            <td width="300">
-              <img src=${context18_url} alt="context tweet17" class="context_img_center">
-            </td>
-            <td width="300">
-              <img src=${context19_url} alt="context tweet18" class="context_img_center">
-            </td>
-          </tr>
+
+<!--          <tr>-->
+<!--            <td width="300">-->
+<!--              <img src=${context17_url} alt="context tweet16" class="context_img_center">-->
+<!--            </td>-->
+<!--            <td width="300">-->
+<!--              <img src=${context18_url} alt="context tweet17" class="context_img_center">-->
+<!--            </td>-->
+<!--            <td width="300">-->
+<!--              <img src=${context19_url} alt="context tweet18" class="context_img_center">-->
+<!--            </td>-->
+<!--          </tr>-->
 
         </tbody>
         </table>
@@ -205,7 +215,7 @@
             </tr>
             <tr>
               <td width="300">
-                <p class="question_describe"><span>1. Was the author of the tweet located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the tweet was published?</span></p>
+                <p class="question_describe"><span>1. Was the author of the tweet located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the tweet was posted?</span></p>
               </td>
               <td width="300">
                 <p class="question_describe"><span>2. How confident are you about your answer?</span></p>
@@ -214,11 +224,11 @@
             <tr>
               <td width="300">
 
-                <p class="option"><input id="id_Q1yes" name="Q1" type="radio" value="Yes" required/><span class="option_label">Yes</span>, the author of the tweet was located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the tweet was published.</p>
+                <p class="option"><input id="id_Q1yes" name="Q1" type="radio" value="Yes" required/><span class="option_label">Yes</span>, the author of the tweet was located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the tweet was posted.</p>
 
-                <p class="option"><input id="id_Q1no" name="Q1" type="radio" value="No" required/><span class="option_label">No</span>, the author of the tweet was not located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the tweet was published.</p>
+                <p class="option"><input id="id_Q1no" name="Q1" type="radio" value="No" required/><span class="option_label">No</span>, I cannot determine if the author of the tweet was located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the tweet was posted.</p>
 
-                <p class="option"><input id="id_Q1inv" name="Q1" type="radio" value="Inv" required/><span class="option_label">Invalid</span>, <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> is not a location in the context of this tweet.</p>
+<!--                <p class="option"><input id="id_Q1inv" name="Q1" type="radio" value="Inv" required/><span class="option_label">Invalid</span>, <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> is not a location in the context of this tweet.</p>-->
 
               </td>
               <td width="300">
