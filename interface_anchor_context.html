@@ -10,7 +10,7 @@
 
       <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
-        <p>You will see 13 tweets and your job is to determine whether the author of the tweet was located in <span style="color: rgb(128, 0, 0);"><strong>some city</strong></span> when the middle tweet was published.
+        <p>You will see 7 tweets and your job is to determine whether the author of the tweets was located in <span style="color: rgb(128, 0, 0);"><strong>some city</strong></span> when the focus tweet was published.
           The <span style="color: rgb(128, 0, 0);"><strong>city</strong></span> will always be named in the tweet. Specifically, you will answer two questions:</p>
 
         <p>1. Was the author of the tweet located in the <span style="color: rgb(128, 0, 0);"><strong>city</strong></span> when the middle tweet was published?</p>
@@ -95,18 +95,6 @@
               </td>
             </tr>
 
-            <tr>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/yes.png" alt="example tweet" class="example_img_center">
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/no.png" alt="example tweet" class="example_img_center">
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center">
-              </td>
-            </tr>
-
             <!-- anchor tweet -->
             <tr>
               <td colspan="3">
@@ -127,22 +115,9 @@
               </td>
             </tr>
 
-            <tr>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/yes.png" alt="example tweet" class="example_img_center">
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/no.png" alt="example tweet" class="example_img_center">
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center">
-              </td>
-            </tr>
-
           </tbody>
 
         </table>
-
 
       </div>
     </div>
@@ -177,18 +152,6 @@
               </td>
             </tr>
 
-            <tr>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/yes.png" alt="example tweet" class="example_img_center">
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/no.png" alt="example tweet" class="example_img_center">
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center">
-              </td>
-            </tr>
-
             <!-- anchor tweet -->
             <tr>
               <td colspan="3">
@@ -209,22 +172,9 @@
               </td>
             </tr>
 
-            <tr>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/yes.png" alt="example tweet" class="example_img_center">
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/no.png" alt="example tweet" class="example_img_center">
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center">
-              </td>
-            </tr>
-
           </tbody>
 
         </table>
-
 
       </div>
     </div>
@@ -238,6 +188,7 @@
 
       <p class="panel-heading"><span>Tweets & Questions</span></p>
 
+      <!-- context tweets before -->
       <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
         <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="900">
@@ -246,35 +197,11 @@
             <!-- section title -->
             <tr>
               <td colspan="3">
-                <p class="question_title"><span><strong>Nine tweets before</strong></span></p>
+                <p class="question_title"><span><strong>Three tweets before</strong></span></p>
               </td>
             </tr>
 
             <!-- context tweets before -->
-<!--            <tr>-->
-<!--              <td width="300">-->
-<!--                <img src=${context2_url} alt="context tweet1" class="context_img_center">-->
-<!--              </td>-->
-<!--              <td width="300">-->
-<!--                <img src=${context3_url} alt="context tweet2" class="context_img_center">-->
-<!--              </td>-->
-<!--              <td width="300">-->
-<!--                <img src=${context4_url} alt="context tweet3" class="context_img_center">-->
-<!--              </td>-->
-<!--            </tr>-->
-
-            <tr>
-              <td width="300">
-                <img src=${context5_url} alt="context tweet4" class="context_img_center">
-              </td>
-              <td width="300">
-                <img src=${context6_url} alt="context tweet5" class="context_img_center">
-              </td>
-              <td width="300">
-                <img src=${context7_url} alt="context tweet6" class="context_img_center">
-              </td>
-            </tr>
-
             <tr>
               <td width="300">
                 <img src=${context8_url} alt="context tweet7" class="context_img_center">
@@ -292,6 +219,7 @@
 
       </div>
 
+      <!-- anchor tweet -->
       <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
         <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="500">
@@ -299,11 +227,11 @@
 
             <tr>
               <td colspan="2">
-              <div>
-                <p class="question_title"><span><strong>Anchor tweet</strong></span></p>
-                <br>
-                <img src=${anchor_url} alt="anchor tweet" class="anchor_img_center" />
-              </div>
+                <div>
+                  <p class="question_title"><span><strong>Middle tweet</strong></span></p>
+                  <br>
+                  <img src=${anchor_url} alt="anchor tweet" class="anchor_img_center" />
+                </div>
               </td>
             </tr>
 
@@ -312,60 +240,38 @@
 
       </div>
 
+      <!-- context tweets after -->
       <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
         <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="900">
-        <tbody style="font-size: 1.0em; line-height: 1.6em;">
+          <tbody style="font-size: 1.0em; line-height: 1.6em;">
 
-          <!-- section title -->
-          <tr>
-            <td colspan="3">
-              <p class="question_title"><span><strong>Nine tweets after</strong></span></p>
-            </td>
-          </tr>
+            <!-- section title -->
+            <tr>
+              <td colspan="3">
+                <p class="question_title"><span><strong>Three tweets after</strong></span></p>
+              </td>
+            </tr>
 
-          <!-- context tweets before -->
-          <tr>
-            <td width="300">
-              <img src=${context11_url} alt="context tweet10" class="context_img_center">
-            </td>
-            <td width="300">
-              <img src=${context12_url} alt="context tweet11" class="context_img_center">
-            </td>
-            <td width="300">
-              <img src=${context13_url} alt="context tweet12" class="context_img_center">
-            </td>
-          </tr>
+            <!-- context tweets before -->
+            <tr>
+              <td width="300">
+                <img src=${context11_url} alt="context tweet10" class="context_img_center">
+              </td>
+              <td width="300">
+                <img src=${context12_url} alt="context tweet11" class="context_img_center">
+              </td>
+              <td width="300">
+                <img src=${context13_url} alt="context tweet12" class="context_img_center">
+              </td>
+            </tr>
 
-          <tr>
-            <td width="300">
-              <img src=${context14_url} alt="context tweet13" class="context_img_center">
-            </td>
-            <td width="300">
-              <img src=${context15_url} alt="context tweet14" class="context_img_center">
-            </td>
-            <td width="300">
-              <img src=${context16_url} alt="context tweet15" class="context_img_center">
-            </td>
-          </tr>
-
-<!--          <tr>-->
-<!--            <td width="300">-->
-<!--              <img src=${context17_url} alt="context tweet16" class="context_img_center">-->
-<!--            </td>-->
-<!--            <td width="300">-->
-<!--              <img src=${context18_url} alt="context tweet17" class="context_img_center">-->
-<!--            </td>-->
-<!--            <td width="300">-->
-<!--              <img src=${context19_url} alt="context tweet18" class="context_img_center">-->
-<!--            </td>-->
-<!--          </tr>-->
-
-        </tbody>
+          </tbody>
         </table>
 
       </div>
 
+      <!-- question part -->
       <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
         <table align="center" border="1" height="276" style="font-size: 1.0em; line-height: 1.6em;" width="900">
           <tbody style="font-size: 1.0em; line-height: 1.6em;">
@@ -377,7 +283,7 @@
             </tr>
             <tr>
               <td width="300">
-                <p class="question_describe"><span>1. Was the author of the tweet located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the tweet was posted?</span></p>
+                <p class="question_describe"><span>1. Was the author of the tweets located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the middle tweet was posted?</span></p>
               </td>
               <td width="300">
                 <p class="question_describe"><span>2. How confident are you about your answer?</span></p>
