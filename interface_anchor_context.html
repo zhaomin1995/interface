@@ -29,40 +29,6 @@
           <li><strong>1. Not confident at all</strong></li>
         </ul>
 
-        <table align="center" border="1" height="276" style="font-size: 1.0em; line-height: 1.6em;" width="1050">
-          <tbody style="font-size: 1.0em; line-height: 1.6em;">
-
-            <tr>
-              <td colspan="3">
-                <p class="question_title">Examples</p>
-              </td>
-            </tr>
-
-            <tr>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/yes.png" alt="example tweet" class="example_img_center">
-                <p style="text-align: center; margin: 10px">
-                  The right label is <strong>Yes</strong> because the author of the tweet was attending a picnic in <span style="color: rgb(128, 0, 0);"><strong>Arlington</strong></span> when she posted.
-                </p>
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/no.png" alt="example tweet" class="example_img_center">
-                <p style="text-align: center; margin: 10px">
-                  The right label is <strong>No</strong> because the author of the tweet is promoting <span style="color: rgb(128, 0, 0);"><strong>San Antonio</strong></span> as a destination for Spring Break, and there is no evidence that the author is there when the tweet was posted.
-                </p>
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center">
-                <p style="text-align: center; margin: 10px">
-                  The right label is <strong>Invalid</strong> because <span style="color: rgb(128, 0, 0);"><strong>Washington</strong></span> in this tweet is part of the Twitter handle (@washingtonpost) of a newspaper, the <i>Washington Post</i>.
-                </p>
-              </td>
-            </tr>
-
-          </tbody>
-
-        </table>
-
       </div>
     </div>
   </div>
@@ -74,52 +40,94 @@
     <div class="panel panel-primary">
       <p class="panel-heading"><span>Example of label Yes</span></p>
 
-      <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
+        <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
-        <!-- explanation -->
-        <p>The right label is <strong>Yes</strong> because lalalala</p>
+          <!-- explanation -->
+          <p>The right label is <strong>Yes</strong> because lalalala</p>
 
-        <table align="center" border="1" height="276" style="font-size: 1.0em; line-height: 1.6em;" width="1050">
-          <tbody style="font-size: 1.0em; line-height: 1.6em;">
+          <!-- context tweets before -->
+          <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
-            <!-- context tweets (before) -->
-            <tr>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/yes.png" alt="example tweet" class="example_img_center">
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/no.png" alt="example tweet" class="example_img_center">
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center">
-              </td>
-            </tr>
+            <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="900">
+              <tbody style="font-size: 1.0em; line-height: 1.6em;">
 
-            <!-- anchor tweet -->
-            <tr>
-              <td colspan="3">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center2">
-              </td>
-            </tr>
+                <!-- section title -->
+                <tr>
+                  <td colspan="3">
+                    <p class="question_title"><span><strong>Three tweets before</strong></span></p>
+                  </td>
+                </tr>
 
-            <!-- context tweets (after) -->
-            <tr>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/yes.png" alt="example tweet" class="example_img_center">
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/no.png" alt="example tweet" class="example_img_center">
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center">
-              </td>
-            </tr>
+                <!-- context tweets before -->
+                <tr>
+                  <td width="350">
+                    <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/yes.png" alt="example tweet" class="example_img_center">
+                  </td>
+                  <td width="350">
+                    <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/no.png" alt="example tweet" class="example_img_center">
+                  </td>
+                  <td width="350">
+                    <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center">
+                  </td>
+                </tr>
 
-          </tbody>
+              </tbody>
+            </table>
 
-        </table>
+          </div>
 
-      </div>
+          <!-- anchor tweet -->
+          <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
+
+            <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="500">
+              <tbody style="font-size: 1.0em; line-height: 1.6em;">
+
+                <tr>
+                  <td colspan="2">
+                    <div>
+                      <p class="question_title"><span><strong>Middle tweet</strong></span></p>
+                      <br>
+                      <img src=${anchor_url} alt="anchor tweet" class="anchor_img_center" />
+                    </div>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+          </div>
+
+          <!-- context tweets after -->
+          <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
+
+          <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="900">
+            <tbody style="font-size: 1.0em; line-height: 1.6em;">
+
+              <!-- section title -->
+              <tr>
+                <td colspan="3">
+                  <p class="question_title"><span><strong>Three tweets after</strong></span></p>
+                </td>
+              </tr>
+
+              <!-- context tweets before -->
+              <tr>
+                <td width="350">
+                  <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/yes.png" alt="example tweet" class="example_img_center">
+                </td>
+                <td width="350">
+                  <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/no.png" alt="example tweet" class="example_img_center">
+                </td>
+                <td width="350">
+                  <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center">
+                </td>
+
+            </tbody>
+          </table>
+
+        </div>
+
+        </div>
     </div>
   </div>
 </section>
@@ -135,46 +143,87 @@
         <!-- explanation -->
         <p>The right label is <strong>No</strong> because lalalala</p>
 
-        <table align="center" border="1" height="276" style="font-size: 1.0em; line-height: 1.6em;" width="1050">
+        <!-- context tweets before -->
+        <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
-          <tbody style="font-size: 1.0em; line-height: 1.6em;">
+          <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="900">
+            <tbody style="font-size: 1.0em; line-height: 1.6em;">
 
-            <!-- context tweets (before) -->
-            <tr>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/yes.png" alt="example tweet" class="example_img_center">
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/no.png" alt="example tweet" class="example_img_center">
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center">
-              </td>
-            </tr>
+              <!-- section title -->
+              <tr>
+                <td colspan="3">
+                  <p class="question_title"><span><strong>Three tweets before</strong></span></p>
+                </td>
+              </tr>
 
-            <!-- anchor tweet -->
-            <tr>
-              <td colspan="3">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center2">
-              </td>
-            </tr>
+              <!-- context tweets before -->
+              <tr>
+                <td width="350">
+                  <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/yes.png" alt="example tweet" class="example_img_center">
+                </td>
+                <td width="350">
+                  <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/no.png" alt="example tweet" class="example_img_center">
+                </td>
+                <td width="350">
+                  <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center">
+                </td>
+              </tr>
 
-            <!-- context tweets (after) -->
-            <tr>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/yes.png" alt="example tweet" class="example_img_center">
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/no.png" alt="example tweet" class="example_img_center">
-              </td>
-              <td width="350">
-                <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center">
-              </td>
-            </tr>
+            </tbody>
+          </table>
 
-          </tbody>
+        </div>
 
-        </table>
+        <!-- anchor tweet -->
+        <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
+
+          <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="500">
+            <tbody style="font-size: 1.0em; line-height: 1.6em;">
+
+              <tr>
+                <td colspan="2">
+                  <div>
+                    <p class="question_title"><span><strong>Middle tweet</strong></span></p>
+                    <br>
+                    <img src=${anchor_url} alt="anchor tweet" class="anchor_img_center" />
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+
+        <!-- context tweets after -->
+        <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
+
+          <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="900">
+            <tbody style="font-size: 1.0em; line-height: 1.6em;">
+
+              <!-- section title -->
+              <tr>
+                <td colspan="3">
+                  <p class="question_title"><span><strong>Three tweets after</strong></span></p>
+                </td>
+              </tr>
+
+              <!-- context tweets before -->
+              <tr>
+                <td width="350">
+                  <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/yes.png" alt="example tweet" class="example_img_center">
+                </td>
+                <td width="350">
+                  <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/no.png" alt="example tweet" class="example_img_center">
+                </td>
+                <td width="350">
+                  <img src="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/example/invalid.png" alt="example tweet" class="example_img_center">
+                </td>
+
+            </tbody>
+          </table>
+
+        </div>
 
       </div>
     </div>
