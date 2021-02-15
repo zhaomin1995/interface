@@ -10,14 +10,14 @@
 
       <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
-        <p>You will see 7 tweets and your job is to determine whether the author of the tweets was located in <span style="color: rgb(128, 0, 0);"><strong>some city</strong></span> when the middle tweet was posted.
+        <p>In this task, you will see 7 tweets that were posted chronologically by the same author. Your job is to determine
+          whether the author of the tweets was located in <span style="color: rgb(128, 0, 0);"><strong>some city</strong></span> when the middle tweet was posted.
           The <span style="color: rgb(128, 0, 0);"><strong>city</strong></span> will always be named in the middle tweet. Specifically, you will answer two questions:</p>
 
         <p>1. Was the author of the tweets located in the <span style="color: rgb(128, 0, 0);"><strong>city</strong></span> when the middle tweet was posted?</p>
         <ul>
           <li><strong>Yes</strong>, the author of the tweets was located in the <span style="color: rgb(128, 0, 0);"><strong>city</strong></span> when the middle tweet was posted.</li>
           <li><strong>No</strong>, I cannot determine whether or not the author of the tweets was located in the <span style="color: rgb(128, 0, 0);"><strong>city</strong></span> when the middle tweet was posted.</li>
-<!--          <li><strong>Invalid</strong>, the <span style="color: rgb(128, 0, 0);"><strong>city</strong></span> is not a location in the context of this tweet.</li>-->
         </ul>
 
         <p>2. How confident are you about your answer?</p>
@@ -246,7 +246,7 @@
             <!-- section title -->
             <tr>
               <td colspan="3">
-                <p class="question_title"><span><strong>Three tweets before</strong></span></p>
+                <p class="question_title"><span><strong>Three tweets posted before the middle tweet</strong></span></p>
               </td>
             </tr>
 
@@ -298,7 +298,7 @@
             <!-- section title -->
             <tr>
               <td colspan="3">
-                <p class="question_title"><span><strong>Three tweets after</strong></span></p>
+                <p class="question_title"><span><strong>Three tweets posted after the middle tweet</strong></span></p>
               </td>
             </tr>
 
@@ -341,11 +341,9 @@
             <tr>
               <td width="300">
 
-                <p class="option"><input id="id_Q1yes" name="Q1" type="radio" value="Yes" required/><span class="option_label">Yes</span>, the author of the tweet was located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the tweet was posted.</p>
+                <p class="option"><input id="id_Q1yes" name="Q1" type="radio" value="Yes" required/><span class="option_label">Yes</span>, the author of the tweets was located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the middle tweet was posted.</p>
 
-                <p class="option"><input id="id_Q1no" name="Q1" type="radio" value="No" required/><span class="option_label">No</span>, I cannot determine if the author of the tweet was located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the tweet was posted.</p>
-
-<!--                <p class="option"><input id="id_Q1inv" name="Q1" type="radio" value="Inv" required/><span class="option_label">Invalid</span>, <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> is not a location in the context of this tweet.</p>-->
+                <p class="option"><input id="id_Q1no" name="Q1" type="radio" value="No" required/><span class="option_label">No</span>, I cannot determine if the author of the tweets was located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the middle tweet was posted.</p>
 
               </td>
               <td width="300">
