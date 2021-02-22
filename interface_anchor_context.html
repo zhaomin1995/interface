@@ -11,7 +11,7 @@
       <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
         <p>In this task, you will see 7 tweets that were posted chronologically by the same author. Your job is to determine
-          whether the author of the tweets was located in <span style="color: rgb(128, 0, 0);"><strong>some city</strong></span> when the middle tweet was posted.
+          whether the author of the tweets was located in anchor_img_center when the middle tweet was posted.
           The <span style="color: rgb(128, 0, 0);"><strong>city</strong></span> will always be named in the middle tweet. Specifically, you will answer two questions:</p>
 
         <p>1. Was the author of the tweets located in the <span style="color: rgb(128, 0, 0);"><strong>city</strong></span> when the middle tweet was posted?</p>
@@ -43,7 +43,9 @@
         <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
           <!-- explanation -->
-          <p>The right label is <strong>Yes</strong> because lalalala</p>
+          <p>The right label is <strong>Yes</strong> because
+            the middle tweet and the first tweet of the three tweets before tell us that the author of the tweets were
+          located in the <span style="color: rgb(128, 0, 0);"><strong>Houston</strong></span> when this tweet was posted.</p>
 
           <!-- context tweets before -->
           <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
@@ -142,7 +144,10 @@
       <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
         <!-- explanation -->
-        <p>The right label is <strong>No</strong> because lalalala</p>
+        <p>The right label is <strong>No</strong> because
+        the six tweets published before and after the middle tweet indicate that the user should be an official Twitter
+        of an organization whose duty is to provide some useful information. And we cannot guarantee that this organization
+        is located in the <span style="color: rgb(128, 0, 0);"><strong>Seattle</strong></span>.</p>
 
         <!-- context tweets before -->
         <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
@@ -232,7 +237,7 @@
   </div>
 </section>
 
-<!-- The tweet part and question part -->
+<!-- The question part -->
 <section class="container" style="margin-bottom:15px; padding: 10px 10px; ">
   <div class="row col-xs-12 col-md-12">
     <div class="panel panel-primary">
