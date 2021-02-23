@@ -256,7 +256,11 @@
       <p class="panel-heading"><span>Tweets & Questions</span></p>
 
       <!-- context tweets before section-->
-      <button onclick="show('before')">Click me to show the tweets posted before the middle tweet</button>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <button onclick="show('before')" class="show_button">
+          Click me to show the tweets posted before the middle tweet
+        </button>
+      </div>
       <br />
       <div class="panel-body" id="table_before" style="font-size: 1.0em; line-height: 1.6em; display: none">
 
@@ -289,7 +293,11 @@
       </div>
 
       <!-- anchor tweet section -->
-      <button onclick="show('anchor')">Click me to show the middle tweet</button>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <button onclick="show('anchor')" class="show_button">
+          Click me to show the middle tweet
+        </button>
+      </div>
       <br />
       <div class="panel-body" id="table_anchor" style="font-size: 1.0em; line-height: 1.6em; display: none;">
 
@@ -312,7 +320,11 @@
       </div>
 
       <!-- context tweets after section -->
-      <button onclick="show('after')">Click me to show the tweets posted after the middle tweet</button>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <button onclick="show('after')" class="show_button">
+          Click me to show the tweets posted after the middle tweet
+        </button>
+      </div>
       <br />
       <div class="panel-body" id="table_after" style="font-size: 1.0em; line-height: 1.6em; display: none;">
 
