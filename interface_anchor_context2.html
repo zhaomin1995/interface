@@ -1,6 +1,17 @@
 <p><!-- Bootstrap v3.0.3 --></p>
-<!--<link href="mturk.css" rel="stylesheet" />-->
-<link href="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/mturk2.css" rel="stylesheet" />
+<link href="mturk2.css" rel="stylesheet" />
+<!--<link href="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/mturk2.css" rel="stylesheet" />-->
+
+<script language="JavaScript">
+  function show(type) {
+    var x = document.getElementById("table_"+type);
+    if (x.style.display === 'none') {
+      x.style.display = 'block';
+    } else {
+      x.style.display = 'none';
+    }
+  }
+</script>
 
 <!-- The instruction part -->
 <section class="container" style="margin-bottom:15px; padding: 10px 10px; ">
@@ -244,10 +255,12 @@
 
       <p class="panel-heading"><span>Tweets & Questions</span></p>
 
-      <!-- context tweets before -->
-      <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
+      <!-- context tweets before section-->
+      <button onclick="show('before')">Click me to show the tweets posted before the middle tweet</button>
+      <br />
+      <div class="panel-body" id="table_before" style="font-size: 1.0em; line-height: 1.6em; display: none;">
 
-        <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="900">
+        <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em; display: none; width: 900">
           <tbody style="font-size: 1.0em; line-height: 1.6em;">
 
             <!-- section title -->
@@ -275,10 +288,12 @@
 
       </div>
 
-      <!-- anchor tweet -->
-      <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
+      <!-- anchor tweet section -->
+      <button onclick="show('anchor')">Click me to show the middle tweet</button>
+      <br />
+      <div class="panel-body" id="table_anchor" style="font-size: 1.0em; line-height: 1.6em; display: none;">
 
-        <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="500">
+        <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em; display: none;" width="500">
           <tbody style="font-size: 1.0em; line-height: 1.6em;">
 
             <tr>
@@ -296,10 +311,12 @@
 
       </div>
 
-      <!-- context tweets after -->
-      <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
+      <!-- context tweets after section -->
+      <button onclick="show('after')">Click me to show the tweets posted after the middle tweet</button>
+      <br />
+      <div class="panel-body" id="table_after" style="font-size: 1.0em; line-height: 1.6em; display: none;">
 
-        <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="900">
+        <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em; display: none;" width="900">
           <tbody style="font-size: 1.0em; line-height: 1.6em;">
 
             <!-- section title -->
