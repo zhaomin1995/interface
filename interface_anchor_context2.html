@@ -4,12 +4,15 @@
 
 <script language="JavaScript">
   function show(type) {
-    var x = document.getElementById("table_"+type);
-    if (x.style.display === 'none') {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
+    var table = document.getElementById("table_"+type);
+    table.style.display = 'block';
+    var button = document.getElementById("button_"+type);
+    button.style.display = 'none';
+    // if (x.style.display === 'none') {
+    //   x.style.display = "block";
+    // } else {
+    //   x.style.display = "none";
+    // }
   }
 </script>
 
@@ -257,7 +260,7 @@
 
       <!-- context tweets before section-->
       <div style="display: flex; justify-content: center; align-items: center">
-        <button onclick="show('before')" class="show_button">
+        <button id="button_before" onclick="show('before')" class="show_button">
           Click me to show the tweets posted before the middle tweet
         </button>
       </div>
@@ -294,7 +297,7 @@
 
       <!-- anchor tweet section -->
       <div style="display: flex; justify-content: center; align-items: center">
-        <button onclick="show('anchor')" class="show_button">
+        <button id="button_anchor" onclick="show('anchor')" class="show_button">
           Click me to show the middle tweet
         </button>
       </div>
@@ -321,7 +324,7 @@
 
       <!-- context tweets after section -->
       <div style="display: flex; justify-content: center; align-items: center">
-        <button onclick="show('after')" class="show_button">
+        <button id="button_after" onclick="show('after')" class="show_button">
           Click me to show the tweets posted after the middle tweet
         </button>
       </div>
