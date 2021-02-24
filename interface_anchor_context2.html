@@ -15,7 +15,7 @@
     var anchor_state = document.getElementById("button_anchor").style.display;
     var after_state = document.getElementById("button_after").style.display;
     if (type === 'before') {
-      if (!(anchor_state === 'none' && after_state === 'none')) {
+      if (!(anchor_state === 'block' && after_state === 'block')) {
         alert("Please follow the click order!");
         return false;
       }
@@ -27,7 +27,7 @@
       }
     }
     if (type === 'after') {
-      if (!(before_state === 'block' && anchor_state === 'block')) {
+      if (!(before_state === 'none' && anchor_state === 'none')) {
         alert("Please follow the click order!");
         return false;
       }
