@@ -3,6 +3,7 @@
 <!--<link href="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/mturk2.css" rel="stylesheet" />-->
 
 <script language="JavaScript">
+
   function show(type) {
     // validate the click order
     var before_state = document.getElementById("button_before").style.display;
@@ -33,6 +34,23 @@
     var button = document.getElementById("button_"+type);
     button.style.display = 'none';
   }
+
+  function validateForm() {
+    // validate if the annotator has checked all tweets (context & anchor)
+    var before_state = document.getElementById("button_before").style.display;
+    var anchor_state = document.getElementById("button_anchor").style.display;
+    var after_state = document.getElementById("button_after").style.display;
+    if (before_state === 'none' && anchor_state === 'none' && after_state === 'none') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  window.onload = function() {
+    document.getElementById('submitButton').setAttribute('onclick', 'return validateForm()');
+  }
+
 </script>
 
 <!-- The instruction part -->
