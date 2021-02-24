@@ -4,12 +4,6 @@
 
 <script language="JavaScript">
   function show(type) {
-    // show the table and hide the button
-    var table = document.getElementById("table_"+type);
-    table.style.display = 'block';
-    var button = document.getElementById("button_"+type);
-    button.style.display = 'none';
-
     // validate the click order
     var before_state = document.getElementById("button_before").style.display;
     var anchor_state = document.getElementById("button_anchor").style.display;
@@ -32,6 +26,13 @@
         return false;
       }
     }
+
+    // show the table and hide the button
+    var table = document.getElementById("table_"+type);
+    table.style.display = 'block';
+    var button = document.getElementById("button_"+type);
+    button.style.display = 'none';
+
   }
 </script>
 
