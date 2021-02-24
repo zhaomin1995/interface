@@ -4,15 +4,34 @@
 
 <script language="JavaScript">
   function show(type) {
+    // show the table and hide the button
     var table = document.getElementById("table_"+type);
     table.style.display = 'block';
     var button = document.getElementById("button_"+type);
     button.style.display = 'none';
-    // if (x.style.display === 'none') {
-    //   x.style.display = "block";
-    // } else {
-    //   x.style.display = "none";
-    // }
+
+    // validate the click order
+    var before_state = document.getElementById("button_before").style.display;
+    var anchor_state = document.getElementById("button_anchor").style.display;
+    var after_state = document.getElementById("button_after").style.display;
+    if (type === 'before') {
+      if (!(anchor_state === 'none' && after_state === 'none')) {
+        alert("Please follow the click order!");
+        return false;
+      }
+    }
+    if (type === 'anchor') {
+      if (!(before_state === 'block' && after_state === 'none')) {
+        alert("Please follow the click order!");
+        return false;
+      }
+    }
+    if (type === 'after') {
+      if (!(before_state === 'block' && anchor_state === 'block')) {
+        alert("Please follow the click order!");
+        return false;
+      }
+    }
   }
 </script>
 
