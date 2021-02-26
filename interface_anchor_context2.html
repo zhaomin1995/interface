@@ -11,19 +11,19 @@
     var after_state = document.getElementById("button_after").style.display;
     if (type === 'before') {
       if (!(anchor_state === 'block' && after_state === 'block')) {
-        alert("Please follow the click order!");
+        alert("You need to check the tweet1, tweet2, and tweet3 firstly!");
         return false;
       }
     }
     if (type === 'anchor') {
       if (!(before_state === 'none' && after_state === 'block')) {
-        alert("Please follow the click order!");
+        alert("Before checking the fourth tweet, you need to check first three tweets and you cannot see the last three tweets!");
         return false;
       }
     }
     if (type === 'after') {
       if (!(before_state === 'none' && anchor_state === 'none')) {
-        alert("Please follow the click order!");
+        alert("You need to check the first four tweets before checking the last three tweets!");
         return false;
       }
     }
@@ -40,9 +40,51 @@
     var before_state = document.getElementById("button_before").style.display;
     var anchor_state = document.getElementById("button_anchor").style.display;
     var after_state = document.getElementById("button_after").style.display;
+    var id_Q1yes = document.getElementById("id_Q1yes");
+    var id_Q1no = document.getElementById("id_Q1no");
+    var id_Q2_5 = document.getElementById("id_Q2_5");
+    var id_Q2_4 = document.getElementById("id_Q2_4");
+    var id_Q2_3 = document.getElementById("id_Q2_3");
+    var id_Q2_2 = document.getElementById("id_Q2_2");
+    var id_Q2_1 = document.getElementById("id_Q2_1");
+
     if (before_state === 'none' && anchor_state === 'none' && after_state === 'none') {
-      return true;
+      // annotator has checked all tweets, check if annotator has completed Q1 and Q2
+      if ((id_Q1yes.checked === true || id_Q1no.checked === true) && (id_Q2_1.checked === true ||
+              id_Q2_2.checked === true || id_Q2_3.checked === true || id_Q2_4.checked === true || id_Q2_5.checked === true)) {
+        // annotator has complete Q1 and Q2
+        return true;
+      } else {
+        // any one or all of them is/are not completed
+        if ((id_Q1yes.checked === false && id_Q1no.checked === false) && (id_Q2_1.checked === true || id_Q2_2.checked === true
+                || id_Q2_3.checked === true || id_Q2_4.checked === true || id_Q2_5.checked === true)) {
+          // Q1 is not completed but Q2 is completed
+          alert("Please complete the Q1!");
+          return false;
+        }
+        if ((id_Q1yes.checked === true || id_Q1no.checked === true) && (id_Q2_1.checked === false && id_Q2_2.checked === false
+                && id_Q2_3.checked === false && id_Q2_4.checked === false && id_Q2_5.checked === false)) {
+          // Q2 is not completed but Q1 is completed
+          alert("Please complete the Q2!");
+          return false;
+        }
+        if ((id_Q1yes.checked === false && id_Q1no.checked === false) && (id_Q2_1.checked === false && id_Q2_2.checked === false
+                && id_Q2_3.checked === false && id_Q2_4.checked === false && id_Q2_5.checked === false)) {
+          // both Q1 and Q2 are not completed
+          alert("Please complete the Q1 and Q2!");
+          return false;
+        }
+      }
     } else {
+      // annotator needs to recheck some of tweets or all tweets
+      alert("Please check all tweets and then submit your answer.");
+      id_Q1yes.checked = false;
+      id_Q1no.checked = false;
+      id_Q2_5.checked = false;
+      id_Q2_4.checked = false;
+      id_Q2_3.checked = false;
+      id_Q2_2.checked = false;
+      id_Q2_1.checked = false;
       return false;
     }
   }
@@ -61,14 +103,14 @@
 
       <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
-        <p>In this task, you will see 7 tweets that were posted chronologically by the same author. Your job is to determine
-          whether the author of the tweets was located in anchor_img_center when the middle tweet was posted.
-          The <span style="color: rgb(128, 0, 0);"><strong>city</strong></span> will always be named in the middle tweet. Specifically, you will answer two questions:</p>
+        <p>In this task, you will see seven tweets in the order they were published. Your job is to determine
+          whether the author was located in a <span style="color: rgb(128, 0, 0);"><strong>city</strong></span> when the author published the fourth tweet.
+          Specifically, you will answer two questions:</p>
 
-        <p>1. Was the author of the tweets located in the <span style="color: rgb(128, 0, 0);"><strong>city</strong></span> when the middle tweet was posted?</p>
+        <p>1. Was the author of the tweets located in <span style="color: rgb(128, 0, 0);"><strong>the city</strong></span> when the fourth tweet was published?</p>
         <ul>
-          <li><strong>Yes</strong>, the author of the tweets was located in the <span style="color: rgb(128, 0, 0);"><strong>city</strong></span> when the middle tweet was posted.</li>
-          <li><strong>No</strong>, I cannot determine whether or not the author of the tweets was located in the <span style="color: rgb(128, 0, 0);"><strong>city</strong></span> when the middle tweet was posted.</li>
+          <li><strong>Yes</strong>, the author of the tweets was located in the <span style="color: rgb(128, 0, 0);"><strong>the city</strong></span> when the fourth tweet was published.</li>
+          <li><strong>No</strong>, I cannot determine whether or not the author of the tweets was located in the <span style="color: rgb(128, 0, 0);"><strong>the city</strong></span> when the fourth tweet was posted.</li>
         </ul>
 
         <p>2. How confident are you about your answer?</p>
@@ -101,7 +143,7 @@
           <!-- context tweets before -->
           <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
-            <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="900">
+            <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="1050">
               <tbody style="font-size: 1.0em; line-height: 1.6em;">
 
                 <!-- section title -->
@@ -153,7 +195,7 @@
           <!-- context tweets after -->
           <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
-          <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="900">
+          <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="1050">
             <tbody style="font-size: 1.0em; line-height: 1.6em;">
 
               <!-- section title -->
@@ -203,7 +245,7 @@
         <!-- context tweets before -->
         <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
-          <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="900">
+          <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="1050">
             <tbody style="font-size: 1.0em; line-height: 1.6em;">
 
               <!-- section title -->
@@ -255,7 +297,7 @@
         <!-- context tweets after -->
         <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
-          <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="900">
+          <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="1050">
             <tbody style="font-size: 1.0em; line-height: 1.6em;">
 
               <!-- section title -->
@@ -298,13 +340,14 @@
       <!-- context tweets before section-->
       <div style="display: flex; justify-content: center; align-items: center">
         <button id="button_before" onclick="show('before')" style="display: block" class="show_button">
-          Show the previous tweets
+          STEP 1: Click to see Tweets 1, 2, and 3
         </button>
       </div>
       <br />
+
       <div class="panel-body" id="table_before" style="font-size: 1.0em; line-height: 1.6em; display: none">
 
-        <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="900">
+        <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="1050">
           <tbody style="font-size: 1.0em; line-height: 1.6em;">
 
             <!-- section title -->
@@ -316,13 +359,13 @@
 
             <!-- context tweets before -->
             <tr>
-              <td width="300">
+              <td width="350">
                 <img src=${context8_url} alt="context tweet7" class="context_img_center">
               </td>
-              <td width="300">
+              <td width="350">
                 <img src=${context9_url} alt="context tweet8" class="context_img_center">
               </td>
-              <td width="300">
+              <td width="350">
                 <img src=${context10_url} alt="context tweet9" class="context_img_center">
               </td>
             </tr>
@@ -335,7 +378,7 @@
       <!-- anchor tweet section -->
       <div style="display: flex; justify-content: center; align-items: center">
         <button id="button_anchor" onclick="show('anchor')" style="display: block" class="show_button">
-          Show the middle tweet
+          STEP 2: Click to see Tweet 4
         </button>
       </div>
       <br />
@@ -362,13 +405,13 @@
       <!-- context tweets after section -->
       <div style="display: flex; justify-content: center; align-items: center">
         <button id="button_after" onclick="show('after')" style="display: block" class="show_button">
-          Show the after tweets
+          STEP 3: Click to see Tweets 5, 6, and 7
         </button>
       </div>
       <br />
       <div class="panel-body" id="table_after" style="font-size: 1.0em; line-height: 1.6em; display: none;">
 
-        <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="900">
+        <table align="center" border="1" style="font-size: 1.0em; line-height: 1.6em;" width="1050">
           <tbody style="font-size: 1.0em; line-height: 1.6em;">
 
             <!-- section title -->
@@ -380,13 +423,13 @@
 
             <!-- context tweets before -->
             <tr>
-              <td width="300">
+              <td width="350">
                 <img src=${context11_url} alt="context tweet10" class="context_img_center">
               </td>
-              <td width="300">
+              <td width="350">
                 <img src=${context12_url} alt="context tweet11" class="context_img_center">
               </td>
-              <td width="300">
+              <td width="350">
                 <img src=${context13_url} alt="context tweet12" class="context_img_center">
               </td>
             </tr>

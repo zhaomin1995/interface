@@ -55,8 +55,8 @@
 .context_img_center {
   display: block;
   margin: 10px;
-  max-width: 320px;
-  max-height: 350px;
+  max-width: 335px;
+  /*max-height: 350px;*/
 }
 
 .question_describe {
