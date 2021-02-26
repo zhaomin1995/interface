@@ -44,7 +44,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
-  max-width: 400px;
+  max-width: 440px;
   height: auto;
 }
 
@@ -55,7 +55,7 @@
 .context_img_center {
   display: block;
   margin: 10px;
-  max-width: 335px;
+  max-width: 440px;
   /*max-height: 350px;*/
 }
 
