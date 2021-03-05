@@ -456,10 +456,10 @@
             </tr>
             <tr>
               <td width="300">
-                <p class="question_describe"><span>1. Was the author of the tweets located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the Tweet 4 was posted?</span></p>
+                <p class="question_describe"><span>Q1. Was the author of the tweets located in <span style="color: rgb(128, 0, 0);"><strong>${anchor_location}</strong></span> when the Tweet 4 was posted?</span></p>
               </td>
               <td width="300">
-                <p class="question_describe"><span>2. How confident are you about your answer?</span></p>
+                <p class="question_describe"><span>Q2. How confident are you about your answer?</span></p>
               </td>
             </tr>
             <tr>
@@ -490,6 +490,27 @@
         </table>
 
       </div>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <p id="checktweet_error" style="color: red; margin: 10px; font-weight: bold; font-size: medium; display: block;">
+          Please check all tweets and then submit your answer!
+        </p>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <p id="q1_error" style="color: red; margin: 10px; font-weight: bold; font-size: medium; display: block;">
+          Please complete the Q1!
+        </p>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <p id="q2_error" style="color: red; margin: 10px; font-weight: bold; font-size: medium; display: block;">
+          Please complete the Q2!
+        </p>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <p id="q1q2_error" style="color: red; margin: 10px; font-weight: bold; font-size: medium; display: block;">
+          Please complete the Q1 and Q2!
+        </p>
+      </div>
+
 
     </div>
 
