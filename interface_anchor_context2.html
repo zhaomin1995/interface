@@ -1,6 +1,6 @@
 <p><!-- Bootstrap v3.0.3 --></p>
-<link href="mturk2.css" rel="stylesheet" />
-<!--<link href="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/mturk2.css" rel="stylesheet" />-->
+<!--<link href="mturk2.css" rel="stylesheet" />-->
+<link href="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/mturk2.css" rel="stylesheet" />
 
 <script>
 
@@ -61,6 +61,10 @@
     var id_Q2_3 = document.getElementById("id_Q2_3");
     var id_Q2_2 = document.getElementById("id_Q2_2");
     var id_Q2_1 = document.getElementById("id_Q2_1");
+    var q1_error = document.getElementById("q1_error");
+    var q2_error = document.getElementById("q2_error");
+    var q1q2_error = document.getElementById("q1q2_error");
+    var checktweet_error = document.getElementById("checktweet_error");
 
     if (before_state === 'none' && anchor_state === 'none' && after_state === 'none') {
       // annotator has checked all tweets, check if annotator has completed Q1 and Q2
@@ -73,28 +77,36 @@
         if ((id_Q1yes.checked === false && id_Q1no.checked === false) && (id_Q2_1.checked === true || id_Q2_2.checked === true
                 || id_Q2_3.checked === true || id_Q2_4.checked === true || id_Q2_5.checked === true)) {
           // Q1 is not completed but Q2 is completed
-          var q1_error = document.getElementById("q1_error");
           q1_error.style.display = 'block';
+          q2_error.style.display = 'none';
+          q1q2_error.style.display = 'none';
+          checktweet_error.style.display = 'none';
           return false;
         }
         if ((id_Q1yes.checked === true || id_Q1no.checked === true) && (id_Q2_1.checked === false && id_Q2_2.checked === false
                 && id_Q2_3.checked === false && id_Q2_4.checked === false && id_Q2_5.checked === false)) {
           // Q2 is not completed but Q1 is completed
-          var q2_error = document.getElementById("q2_error");
+          q1_error.style.display = 'none';
           q2_error.style.display = 'block';
+          q1q2_error.style.display = 'none';
+          checktweet_error.style.display = 'none';
           return false;
         }
         if ((id_Q1yes.checked === false && id_Q1no.checked === false) && (id_Q2_1.checked === false && id_Q2_2.checked === false
                 && id_Q2_3.checked === false && id_Q2_4.checked === false && id_Q2_5.checked === false)) {
           // both Q1 and Q2 are not completed
-          var q1q2_error = document.getElementById("q1q2_error");
+          q1_error.style.display = 'none';
+          q2_error.style.display = 'none';
           q1q2_error.style.display = 'block';
+          checktweet_error.style.display = 'none';
           return false;
         }
       }
     } else {
       // annotator needs to recheck some of tweets or all tweets
-      var checktweet_error = document.getElementById("checktweet_error");
+      q1_error.style.display = 'none';
+      q2_error.style.display = 'none';
+      q1q2_error.style.display = 'none';
       checktweet_error.style.display = 'block';
       id_Q1yes.checked = false;
       id_Q1no.checked = false;
