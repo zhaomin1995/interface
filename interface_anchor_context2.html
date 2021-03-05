@@ -2,7 +2,7 @@
 <link href="mturk2.css" rel="stylesheet" />
 <!--<link href="https://zhaomin.s3.us-east-2.amazonaws.com/mturk/mturk2.css" rel="stylesheet" />-->
 
-<script language="JavaScript">
+<script>
 
   function show(type) {
     // validate the click order
@@ -73,25 +73,29 @@
         if ((id_Q1yes.checked === false && id_Q1no.checked === false) && (id_Q2_1.checked === true || id_Q2_2.checked === true
                 || id_Q2_3.checked === true || id_Q2_4.checked === true || id_Q2_5.checked === true)) {
           // Q1 is not completed but Q2 is completed
-          alert("Please complete the Q1!");
+          var q1_error = document.getElementById("q1_error");
+          q1_error.style.display = 'block';
           return false;
         }
         if ((id_Q1yes.checked === true || id_Q1no.checked === true) && (id_Q2_1.checked === false && id_Q2_2.checked === false
                 && id_Q2_3.checked === false && id_Q2_4.checked === false && id_Q2_5.checked === false)) {
           // Q2 is not completed but Q1 is completed
-          alert("Please complete the Q2!");
+          var q2_error = document.getElementById("q2_error");
+          q2_error.style.display = 'block';
           return false;
         }
         if ((id_Q1yes.checked === false && id_Q1no.checked === false) && (id_Q2_1.checked === false && id_Q2_2.checked === false
                 && id_Q2_3.checked === false && id_Q2_4.checked === false && id_Q2_5.checked === false)) {
           // both Q1 and Q2 are not completed
-          alert("Please complete the Q1 and Q2!");
+          var q1q2_error = document.getElementById("q1q2_error");
+          q1q2_error.style.display = 'block';
           return false;
         }
       }
     } else {
       // annotator needs to recheck some of tweets or all tweets
-      alert("Please check all tweets and then submit your answer.");
+      var checktweet_error = document.getElementById("checktweet_error");
+      checktweet_error.style.display = 'block';
       id_Q1yes.checked = false;
       id_Q1no.checked = false;
       id_Q2_5.checked = false;
@@ -490,27 +494,26 @@
         </table>
 
       </div>
-      <div style="display: flex; justify-content: center; align-items: center">
-        <p id="checktweet_error" style="color: red; margin: 10px; font-weight: bold; font-size: medium; display: block;">
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <p id="checktweet_error" style="color: red; margin: 10px; font-weight: bold; font-size: medium; display: none;">
           Please check all tweets and then submit your answer!
         </p>
       </div>
-      <div style="display: flex; justify-content: center; align-items: center">
-        <p id="q1_error" style="color: red; margin: 10px; font-weight: bold; font-size: medium; display: block;">
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <p id="q1_error" style="color: red; margin: 10px; font-weight: bold; font-size: medium; display: none;">
           Please complete the Q1!
         </p>
       </div>
-      <div style="display: flex; justify-content: center; align-items: center">
-        <p id="q2_error" style="color: red; margin: 10px; font-weight: bold; font-size: medium; display: block;">
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <p id="q2_error" style="color: red; margin: 10px; font-weight: bold; font-size: medium; display: none;">
           Please complete the Q2!
         </p>
       </div>
-      <div style="display: flex; justify-content: center; align-items: center">
-        <p id="q1q2_error" style="color: red; margin: 10px; font-weight: bold; font-size: medium; display: block;">
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <p id="q1q2_error" style="color: red; margin: 10px; font-weight: bold; font-size: medium; display: none;">
           Please complete the Q1 and Q2!
         </p>
       </div>
-
 
     </div>
 
