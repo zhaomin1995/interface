@@ -168,9 +168,18 @@
         <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
           <!-- explanation -->
-          <p>The right label is <strong>Yes</strong> because
-            the Tweet 4 and the Tweet 1 tells us that the author of the tweets was
-          very likely to live in the <span style="color: rgb(128, 0, 0);"><strong>Houston</strong></span> when the Tweet 4 was posted.</p>
+          <p>
+            Consider the following seven tweets published by <span style="color:blue;"><b>Gudello II Morales</b></span>: <br />
+            - Note that the tweets are shown in chronological order. <br />
+            - Tweets 2, 3, 5, 6, and 7 do not contain any information regarding the author's whereabouts. <br />
+            - Tweet 1 indicates that the author was in <span style="color: rgb(128, 0, 0);"><strong>Houston</strong></span> when the tweet was posted (May 27, 2019). <br />
+            - Tweet 4 also indicates that the author was in <span style="color: rgb(128, 0, 0);"><strong>Houston</strong></span> when the tweet was posted (May 29, 2019). <br />
+            <br />
+            We can conclude that the author was located in <span style="color: rgb(128, 0, 0);"><strong>Houston</strong></span> when Tweet 4 was published based on Tweets 4 and 1.
+            Therefore, the right label is <strong>Yes</strong>. <br />
+            <br />
+            Note that in general you should make a decision about whether the author is in the city when Tweet 4 was published based on the seven tweets.
+          </p>
 
           <!-- context tweets before -->
           <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
@@ -261,10 +270,19 @@
       <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
 
         <!-- explanation -->
-        <p>The right label is <strong>No</strong> because
-        all of the tweets indicate that the user should be an official Twitter
-        of an organization whose duty is to provide some useful information. And we cannot guarantee that this organization
-        is located in the <span style="color: rgb(128, 0, 0);"><strong>Seattle</strong></span>.</p>
+        <p>
+          Consider the following seven tweets published by <span style="color:blue;"><b>butYOUloveSLIMthough</b></span>: <br />
+          - Note that the tweets are also shown in chronological order. <br />
+          - Tweets 1, 2, 5, 6, and 7 do not contain any information regarding the author's whereabouts. <br />
+          - Tweet 3 indicates that the author was probably in a playground (which could be located in any city) when the tweet was posted (May 13, 2019). <br />
+          - Tweet 4 is a poster for an event which would happen at <span style="color: rgb(128, 0, 0);"><strong>Atlanta</strong></span>. But we cannot determine if the author was at <span style="color: rgb(128, 0, 0);"><strong>Atlanta</strong></span> when the tweet was posted (May 13, 2019). <br />
+          <br />
+          We cannot conclude that the author was located in <span style="color: rgb(128, 0, 0);"><strong>Atlanta</strong></span> when Tweet 4 was published based on Tweets 3 and 4.
+          Therefore, the right label is <strong>No</strong>. <br />
+          <br />
+          Note that in general you should make a decision about whether the author is in the city when Tweet 4 was published based on the seven tweets.
+
+        </p>
 
         <!-- context tweets before -->
         <div class="panel-body" style="font-size: 1.0em; line-height: 1.6em;">
