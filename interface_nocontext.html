@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<script type="text/javascript" language="JavaScript">
+<!--
+function checkCheckBoxes(theForm) {
+  if (
+  theForm.hate.checked == false &&
+  theForm.neutral.checked == false &&
+  theForm.counterhate.checked == false)
+  {
+    error.textContent = "* Please select one choice"
+    error.style.color = "red"
+    return false;
+  } else {
+    error.textContent = ""
+    return true;
+  }
+}
+//-->
+</script>
+
+
+<style>
+	p + ol {
+    margin-top: -10px;
+}
+</style>
+
+<div class="container">
+  <h3><b>Identify hate speech and counter-hate speech</b></h3>
+  <div class="row">
+    <!--Instruction part-->
+    <div class="col-sm-5" >
+      <h5><b>Instructions:</b></h5>
+      <p>In this task, you will see a short Reddit comment posted by a <span style="color: #ff7b25"><b>User</b></span>. Your job is to label the comment as <b><i>Hate</i></b>, <b><i>Counter-hate</i></b> or <b><i>Neutral</i></b>.</p> 
+      <h5><b>Definitions and Examples (click <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" >HERE</a> to see more details and examples):</b></h5>
+      <div class="panel panel-default">
+        <div class="panel-heading">  
+          <!--hate definition-->
+            <p><span style="font-weight:bold">[Hate]</span> The comment attacks an individual or a group with the intention to vilify, humiliate, or incite hatred.
+            </p>
+          <!--counter-hate definition-->
+          <p><span style="font-weight:bold">[Counter-hate]</span> The comment counters hate speech. Scenario examples:
+              <ol>
+                <li><span style="color: #ff7b25;font-weight:bold">User</span> presents facts to correct misstatements</li>
+                <li><span style="color: #ff7b25;font-weight:bold">User</span> warns offline or online consequences</li>
+                <li><span style="color: #ff7b25;font-weight:bold">User</span> appeals someone to calm down</li>
+                <li><span style="color: #ff7b25;font-weight:bold">User</span> disagrees with the hate in humor or sarcasm</li>
+              </ol>           
+          </p> 
+          <!--Neutral definition-->
+          <p><span style="font-weight:bold">[Neutral]</span> The comment neither conveys hate nor counters hate speech.</p>  
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+          <div class="panel-body">
+            <!--hate examples-->
+            <p style="font-size:12px"> <b>Hate example 1</b><br><span style="color: #ff7b25"><b>User</b></span>: Found a triggered r/feminism cunt!<br>[<b><i>Hate</i></b> because <span style="color: #ff7b25"><b>User</b></span> attacks another user.]</b></p>
+
+            <p style="font-size:12px"> <b>Hate example 2</b><br><span style="color: #ff7b25"><b>User</b></span>: She probably is a whore tbh. <br>[<b><i>Hate</i></b> because <span style="color: #ff7b25"><b>User</b></span> humiliates "she" (despite we don't know the person in question)]</b></p>
+
+            <p style="font-size:12px"> <b>Hate example 3</b><br><span style="color: #ff7b25"><b>User</b></span>: David Taylor is a widely out of touch with reality dumb cunt.<br>[<b><i>Hate</i></b> because <span style="color: #ff7b25"><b>User</b></span> attacks an individual.]</b></p>
+
+            <hr class="solid">
+
+            <!--counter-hate examples-->
+            <p style="font-size:12px"> <b>Counter-hate example 1</b><br><span style="color: #ff7b25"><b>User</b></span>: This thought just makes the whole thing even worse. <br>[<b><i>Counter-hate</i></b> because <span style="color: #ff7b25"><b>User</b></span> warns the consequence]</b></p>
+
+            <p style="font-size:12px"> <b>Counter-hate example 2</b><br><span style="color: #ff7b25"><b>User</b></span>: Not even remotely, i just feel bad for you. Good luck with life dude :/ <br>[<b><i>Counter-hate</i></b> because <span style="color: #ff7b25"><b>User</b></span> disagrees with the hateful comment (despite we don't know the comment in question)]</p>
+
+            <p style="font-size:12px"> <b>Counter-hate example 3</b><br><span style="color: #ff7b25"><b>User</b></span>: Common dyslexia is also a learning disability and not all people with dyslexia are "retards". <br>[<b><i>Counter-hate</i></b> because <span style="color: #ff7b25"><b>User</b></span> presents facts to correct misstatements on people with dyslexia]</p>
+            
+            <hr class="solid">
+            
+            <!--neutral examples-->
+            <p style="font-size:12px"> <b>Neutral example 1</b><br> <span style="color: #ff7b25"><b>User</b></span>: sounds like he means third wave feminists basically. <br>[<b><i>Neutral</i></b>]</p>
+            <p style="font-size:12px"> <b>Neutral example 2</b><br> <span style="color: #ff7b25"><b>User</b></span>: bad graphic design, thats why.  <br>[<b><i>Neutral</i></b>]</p>
+            <p style="font-size:12px"> <b>Neutral example 3</b><br> <span style="color: #ff7b25"><b>User</b></span>: I can agree with that too. People should be acknowledged for the things they do. <br>[<b><i>Neutral</i></b>]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--Reddit conversation part-->
+    <div class="col-sm-7" >
+      <h5><b>Read the Reddit comment by <span style="color: #ff7b25"><b>User</span></b></b> and answer the question:</h5>
+      <div class="panel panel-default">
+        <div class="panel-heading"> <h4>Title: ${title}</h4></div>
+        <div class="panel-body">
+          <!--show user_B and question-->
+          <div id="Page2" >
+            <div class="row">
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="80" height="80">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User:</b></span></p>
+                <p class="text-left">${target}</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>
+
+            <br></br>
+
+              <h4><b>The comment posted by <span style="color: #ff7b25"><b>User</b></span> is:</h4>
+               <form onsubmit="return checkCheckBoxes(this);">
+                  <div class="row">
+                    <div class="col-sm-4" >
+                      <div class="form-check-inline">
+                        <label class="form-check-label" for="radio1">
+                          <input type="radio" class="form-check-input" id="hate" name="label" value="hate" style="margin-right: 10px">Hate
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-sm-4" >
+                      <div class="form-check-inline" for="radio2">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" id="counterhate" name="label" value="counterhate" style="margin-right: 10px">Counter-hate
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-sm-4" >
+                      <div class="form-check-inline">
+                        <label class="form-check-label" for="radio3">
+                          <input type="radio" class="form-check-input" id="neutral" name="label" value="neutral" style="margin-right: 10px">Neutral
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                <div class="row text-center">
+                  <span id="error"></span>
+                  <br></br>
+                  <input type="submit" class="btn btn-primary" value="Submit">
+                </div>
+              </form>
+
+
+          </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

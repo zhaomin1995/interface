@@ -1,0 +1,2584 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<script>
+function show(shown, hidden) {
+  document.getElementById(shown).style.display='block';
+  document.getElementById(hidden).style.display='none';
+  return false;
+}
+</script>
+
+
+<script>
+function appear_button_hate1A() {button_hate1A.style="display:block; margin: 0 auto;";}
+function appear_button_hate1B() {button_hate1B.style="display:block; margin: 0 auto;";}
+function appear_button_hate2B() {button_hate2B.style="display:block; margin: 0 auto;";}
+function appear_button_hate3B() {button_hate3B.style="display:block; margin: 0 auto;";}
+function appear_button_counter1A() {button_counter1A.style="display:block; margin: 0 auto;";}
+function appear_button_counter1B() {button_counter1B.style="display:block; margin: 0 auto;";}
+function appear_button_counter2B() {button_counter2B.style="display:block; margin: 0 auto;";}
+function appear_button_counter3B() {button_counter3B.style="display:block; margin: 0 auto;";}
+function appear_button_neutral1A() {button_neutral1A.style="display:block; margin: 0 auto;";}
+function appear_button_neutral1B() {button_neutral1B.style="display:block; margin: 0 auto;";}
+function appear_button_neutral2B() {button_neutral2B.style="display:block; margin: 0 auto;";}
+function appear_button_neutral3B() {button_neutral3B.style="display:block; margin: 0 auto;";}
+function appear_button_q1B() {button_q1B.style="display:block; margin: 0 auto;";}
+function appear_button_q2B() {button_q2B.style="display:block; margin: 0 auto;";}
+function appear_button_q3B() {button_q3B.style="display:block; margin: 0 auto;";}
+function appear_button_q4B() {button_q4B.style="display:block; margin: 0 auto;";}
+function appear_button_q5B() {button_q5B.style="display:block; margin: 0 auto;";}
+function appear_button_q6B() {button_q6B.style="display:block; margin: 0 auto;";}
+function appear_button_q7B() {button_q7B.style="display:block; margin: 0 auto;";}
+function appear_button_q8B() {button_q8B.style="display:block; margin: 0 auto;";}
+function appear_button_q9B() {button_q9B.style="display:block; margin: 0 auto;";}
+function appear_button_q10B() {button_q10B.style="display:block; margin: 0 auto;";}
+function appear_button_q11B() {button_q11B.style="display:block; margin: 0 auto;";}
+function appear_button_q12B() {button_q12B.style="display:block; margin: 0 auto;";}
+</script>
+
+<script type="text/javascript" language="JavaScript">
+<!--
+function CheckBoxes_1() {
+  if (
+  hate_c1.checked == false &&
+  neutral_c1.checked == false &&
+  counterhate_c1.checked == false) 
+  {
+    error_1.textContent = "* Please select one choice" 
+    error_1.style.color = "red" 
+    return false;
+  } else {  
+    error_1.textContent = "" 
+    return show('question2','question1B');
+  }
+}
+
+function CheckBoxes_2() {
+  if (
+  hate_c2.checked == false &&
+  neutral_c2.checked == false &&
+  counterhate_c2.checked == false) 
+  {
+    error_2.textContent = "* Please select one choice" 
+    error_2.style.color = "red" 
+    return false;
+  } else {  
+    error_2.textContent = "" 
+    return show('question3','question2B');
+  }
+}
+
+function CheckBoxes_3() {
+  if (
+  hate_c3.checked == false &&
+  neutral_c3.checked == false &&
+  counterhate_c3.checked == false) 
+  {
+    error_3.textContent = "* Please select one choice" 
+    error_3.style.color = "red" 
+    return false;
+  } else {  
+    error_3.textContent = "" 
+    return show('question4','question3B');
+  }
+}
+
+function CheckBoxes_4() {
+  if (
+  hate_c4.checked == false &&
+  neutral_c4.checked == false &&
+  counterhate_c4.checked == false) 
+  {
+    error_4.textContent = "* Please select one choice" 
+    error_4.style.color = "red" 
+    return false;
+  } else {  
+    error_4.textContent = "" 
+    return show('question5','question4B');
+  }
+}
+
+function CheckBoxes_5() {
+  if (
+  hate_c5.checked == false &&
+  neutral_c5.checked == false &&
+  counterhate_c5.checked == false) 
+  {
+    error_5.textContent = "* Please select one choice" 
+    error_5.style.color = "red" 
+    return false;
+  } else {  
+    error_5.textContent = "" 
+    return show('question6','question5B');
+  }
+}
+
+function CheckBoxes_6() {
+  if (
+  hate_c6.checked == false &&
+  neutral_c6.checked == false &&
+  counterhate_c6.checked == false) 
+  {
+    error_6.textContent = "* Please select one choice" 
+    error_6.style.color = "red" 
+    return false;
+  } else {  
+    error_6.textContent = "" 
+    return show('question7','question6B');
+  }
+}
+
+function CheckBoxes_7() {
+  if (
+  hate_c7.checked == false &&
+  neutral_c7.checked == false &&
+  counterhate_c7.checked == false) 
+  {
+    error_7.textContent = "* Please select one choice" 
+    error_7.style.color = "red" 
+    return false;
+  } else {  
+    error_7.textContent = "" 
+    return show('question8','question7B');
+  }
+}
+
+function CheckBoxes_8() {
+  if (
+  hate_c8.checked == false &&
+  neutral_c8.checked == false &&
+  counterhate_c8.checked == false) 
+  {
+    error_8.textContent = "* Please select one choice" 
+    error_8.style.color = "red" 
+    return false;
+  } else {  
+    error_8.textContent = "" 
+    return show('question9','question8B');
+  }
+}
+
+function CheckBoxes_9() {
+  if (
+  hate_c9.checked == false &&
+  neutral_c9.checked == false &&
+  counterhate_c9.checked == false) 
+  {
+    error_9.textContent = "* Please select one choice" 
+    error_9.style.color = "red" 
+    return false;
+  } else {  
+    error_9.textContent = "" 
+    return show('question10','question9B');
+  }
+}
+
+function CheckBoxes_10() {
+  if (
+  hate_c10.checked == false &&
+  neutral_c10.checked == false &&
+  counterhate_c10.checked == false) 
+  {
+    error_10.textContent = "* Please select one choice" 
+    error_10.style.color = "red" 
+    return false;
+  } else {  
+    error_10.textContent = "" 
+    return show('question11','question10B');
+  }
+}
+
+function CheckBoxes_11() {
+  if (
+  hate_c11.checked == false &&
+  neutral_c11.checked == false &&
+  counterhate_c11.checked == false) 
+  {
+    error_11.textContent = "* Please select one choice" 
+    error_11.style.color = "red" 
+    return false;
+  } else {  
+    error_11.textContent = "" 
+    return show('question12','question11B');
+  }
+}
+
+function CheckBoxes_12(theForm) {
+  if (
+  theForm.hate_c12.checked == false &&
+  theForm.neutral_c12.checked == false &&
+  theForm.counterhate_c12.checked == false) 
+  {
+    error_12.textContent = "* Please select one choice" 
+    error_12.style.color = "red" 
+    return false;
+  } else {  
+    error_12.textContent = "" 
+    return true;
+  }
+}
+//-->
+</script> 
+
+<script>
+$(document).ready(function() {
+  setTimeout(function() {
+    $("#welcome_words").show();
+  }, 1500);
+});
+$(document).ready(function() {
+  setTimeout(function() {
+    $("#thank_words").show();
+  }, 3000);
+});
+$(document).ready(function() {
+  setTimeout(function() {
+    $("#qualify_words").show();
+  }, 5000);
+});
+$(document).ready(function() {
+  setTimeout(function() {
+    $("#qualify_example_words").show();
+  }, 7000);
+});
+$(document).ready(function() {
+  setTimeout(function() {
+    $("#see_questions_words").show();
+  }, 10000);
+});
+$(document).ready(function() {
+  setTimeout(function() {
+    $("#answer_questions_words").show();
+  }, 12000);
+});
+$(document).ready(function() {
+  setTimeout(function() {
+    $("#qualify_question_words").show();
+  }, 14000);
+});
+$(document).ready(function() {
+  setTimeout(function() {
+    $("#note_words").show();
+  }, 16000);
+});
+$(document).ready(function() {
+  setTimeout(function() {
+    $("#qualify_submit_words").show();
+  }, 19000);
+});
+$(document).ready(function() {
+  setTimeout(function() {
+    $("#start_example").show();
+  }, 21000);
+});
+</script>
+
+<div class="container">
+  <h3><b>Identify hate speech and counter-hate speech</b></h3>
+  <div class="row">
+    <!--Instruction part-->
+    <div class="col-sm-5" >
+      <h5><b>Instructions:</b></h5>
+      <p>In this task, you will see a short Reddit conversation between <span style="color: #32cd32"><b>User_A</b></span> and <span style="color: #ff7b25"><b>User_B</b></span>.
+        The conversation will include the title of the discussion and one comment by each user.
+        <b>Your job is to label the comment by <span style="color: #ff7b25"><b>User_B</b></span> as <i>Hate</i>, <i>Counter-hate</i> or <i>Neutral</i></b>.</p>
+      <p>You will follow these steps:
+        <ol>
+          <li>First, you will see the title of the discussion.</li>
+          <li>Second, you will click a button to see the comment by <span style="color: #32cd32"><b>User_A</b></span>, and then you will click another button to see the comment by <span style="color: #ff7b25"><b>User_B</b></span>.</li>
+          <li>Third,  you will label the comment by <span style="color: #ff7b25"><b>User_B</b></span> as <i><b>Hate</b></i>, <i><b>Counter-hate</b></i> or <i><b>Neutral</b></i>.</li>
+        </ol>
+      <p> In order to qualify to work in this task, you need to answer 12 questions.</p>
+    
+      <!--Definitions and examples-->  
+      <h5><b>Definitions and Examples (click <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" >HERE</a> to see more details and examples):</b></h5>
+      <div class="panel panel-default">
+        <div class="panel-heading">  
+          <!--hate definition-->
+          <p><span style="font-weight:bold">Hate</span><span style="font-size:13px"> (<span style="color: #ff7b25">User_B</span> attacks an individual or a group with the intention to vilify, humiliate, or incite hatred. <i>NOTE</i>: <span style="color: #ff7b25">User_B</span> may explicitly express hate in the comment or agree with the hate expressed by <span style="color: #32cd32">User_A</span>)</span></p>
+          <!--counter-hate definition-->
+          <p><span style="font-weight:bold">Counter-hate</span><span style="font-size:13px"> (<span style="color: #ff7b25">User_B</span> counters the hate expressed by user <span style="color: #32cd32">User_A</span>)</span></p>   
+          <!--Neutral definition-->
+          <p><span style="font-weight:bold">Neutral</span><span style="font-size:13px"> (<span style="color: #ff7b25">User_B</span> neither conveys hate nor counters hate expressed by <span style="color: #32cd32">User_A</span>)</span></p> 
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+          <div class="panel-body">
+            <!--hate examples-->
+            <p style="font-size:12px"> <b> Hate example 1</b><br><span style="color: #32cd32"><b>User_A</b></span>: Here here. I'm short and the exit row is still better. Being tall doesn't make you entitled to it because you think I'm just as comfortable in those shit cramped seats. <br><span style="color: #ff7b25"><b>User_B</b></span>: You're an angry little guy aren't you<br>[<b><i>Hate</i></b> because <span style="color: #ff7b25"><b>User_B</b></span> attacks <span style="color: #32cd32">User_A</span>]</br></p>
+            <p style="font-size:12px"> <b>Hate example 2</b><br> <span style="color: #32cd32"><b>User_A</b></span>: >It's not like they're trying to be assholes it's just the culture. So they're cultured assholes? :d <br><span style="color: #ff7b25"><b>User_B</b></span>: Worse than overly cultured cheese.<br>[<b><i>Hate</i></b> because <span style="color: #ff7b25"><b>User_B</b></span> attackes the same group that <span style="color: #32cd32">User_A</span> attacks (despite we don't know the group in question)]</p>
+            <p style="font-size:12px"> <b>Hate example 3</b><br> <span style="color: #32cd32"><b>User_A</b></span>: The moment you generalize all women is the moment you’re misogynistic garbage. <br><span style="color: #ff7b25"><b>User_B</b></span>: Found a triggered r/feminism cunt!<br>[<b><i>Hate</i></b> because <span style="color: #ff7b25"><b>User_B</b></span> attacks <span style="color: #32cd32">User_A</span>]</b></p>
+            <!--counter-hate examples-->
+            <p style="font-size:12px"> <b>Counter-hate example 1</b><br> <span style="color: #32cd32"><b>User_A</b></span>: All are fabricated lies most rape cases are fabricated by women<br><span style="color: #ff7b25"><b>User_B</b></span>: Most? source?? <br>[<b><i>Counter-hate</i></b> because <span style="color: #ff7b25"><b>User_B</b></span> casts doubts on <span style="color: #32cd32">User_A</span>'s comment about women]</b></p>
+            <p style="font-size:12px"> <b>Counter-hate example 2</b><br> <span style="color: #32cd32"><b>User_A</b></span>: You're fucking deluded. <br><span style="color: #ff7b25"><b>User_B</b></span>: Yikes! In what way? <br>[<b><i>Counter-hate</i></b> because <span style="color: #ff7b25"><b>User_B</b></span> is rhetorically asking for a justication of <span style="color: #32cd32">User_A</span>'s hateful comment] </b></p>
+            <p style="font-size:12px"> <b>Counter-hate example 3</b><br><span style="color: #32cd32"><b>User_A</b></span>:  lol, I trigger you feminazis so hard. this is amazing. <br><span style="color: #ff7b25"><b>User_B</b></span>: Not even remotely, i just feel bad for you. Good luck with life dude :/ <br>[<b><i>Counter-hate</i></b> because <span style="color: #ff7b25"><b>User_B</b></span> denies the hateful comment by <span style="color: #32cd32">User_A</span> about feminazis]</b></p>
+            <!--neutral examples-->
+            <p style="font-size:12px"> <b>Neutral example 1</b><br> <span style="color: #32cd32"><b>User_A</b></span>: The hell is an "identity feminist"? <br><span style="color: #ff7b25"><b>User_B</b></span>: sounds like he means third wave feminists basically. <br>[<b><i>Neutral</i></b>]</p>
+            <p style="font-size:12px"> <b>Neutral example 2</b><br> <span style="color: #32cd32"><b>User_A</b></span>: Why is "male privilege" in blue but the woman is colored blue along with the charts? /r/crappydesign  <br><span style="color: #ff7b25"><b>User_B</b></span>: bad graphic design, thats why.  <br>[<b><i>Neutral</i></b>]</p>
+            <p style="font-size:12px"> <b>Neutral example 3</b><br> <span style="color: #32cd32"><b>User_A</b></span>: >Unless I eat like scooby doo.   ... Do you keep a box of scooby snax in your desk or something?  <br><span style="color: #ff7b25"><b>User_B</b></span>: Yeah? wanna fight? <br>[<b><i>Neutral</i></b>]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--welcome page--> 
+    <div class="col-sm-7" id="welcome">
+      <h5><b>Read the instructions:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div id="welcome_words" style="display:none">
+            <h3>Welcome!</h3>
+          </div>
+          <div id="thank_words" style="display:none">
+            <p style="font-size:15px">Thank you for working on our task.</p>
+          </div>
+          <div id="qualify_words" style="display:none">
+            <p style="font-size:15px">We want you to pass this qualification test before starting our task.</p>
+          </div>
+          <div id="qualify_example_words" style="display:none">
+            <p style="font-size:15px">To be qualified, we're going to show you the definitions of <b>Hate</b>, <b>Counter-hate</b> and <b>Neutral</b> with their examples.</p>
+          </div>
+          <div id="see_questions_words" style="display:none">
+            <p style="font-size:15px">Then, you'll be able to see a short Reddit conversation followed by a question. </p>
+          </div>
+          <div id="answer_questions_words" style="display:none">
+            <p style="font-size:15px">You need to answer that question. </p>
+          </div>
+          <div id="qualify_question_words" style="display:none">
+            <p style="font-size:15px">Click <button type="button" style="padding: 2px 5px" class="btn btn-primary">next</button> to see the next conversation. There are 12 conversations in total.</p>
+          </div>
+          <div id="note_words" style="display:none">
+            <p style="font-size:15px">When answering the questions, you can always refer to the instructions, definitions and examples on the left panel.</p>
+          </div>
+          <div id="qualify_submit_words" style="display:none">
+            <p style="font-size:15px">After finishing all the 12 questions, click <button type="button" style="padding: 2px 5px" class="btn btn-primary">submit</button> and you're all set!</p>
+          </div>
+          <br></br>
+          <div class="text-center" id="start_example" style="display:none">
+            <button type="button" href="#" onclick="show('hate_1','welcome')" class="btn btn-default">click to <b>Start</b></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Reddit conversation part--> 
+    <!--hate example 1-->
+    <div class="col-sm-7" id="hate_1" style="display:none">
+      <h5><b>Read the Hate definition and the 1st Hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-center">
+            <button type="button" href="#" onclick="show('hate_1D','hate_1');setTimeout(appear_button_hate1A, 4000)" class="btn btn-default">click to see definition of <b>Hate</b></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--hate example show definition-->
+    <div class="col-sm-7" id="hate_1D" style="display:none">
+      <h5><b>Read the Hate definition and the 1st Hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> attacks an individual or a group with the intention to vilify, humiliate, or incite hatred in two ways: 
+              <ol>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may explicitly express hate in the comment </li>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may agree with the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></span></li>
+              </ol>
+            </p>
+          </div>
+          <hr class="solid">
+          <br>
+          <div class="text-center">
+            <button type="button" href="#" id="button_hate1A" style="display:none" onclick="show('hate_1A','hate_1D'); setTimeout(appear_button_hate1B, 3000)" class="btn btn-default">click to see <span style="font-weight:bold">Hate</span> example 1</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--hate example show userA-->
+    <div class="col-sm-7" id="hate_1A" style="display:none">
+      <h5><b>Read the Hate definition and the 1st Hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> attacks an individual or a group with the intention to vilify, humiliate, or incite hatred in two ways: 
+              <ol>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may explicitly express hate in the comment </li>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may agree with the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></span></li>
+              </ol>
+            </p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">Here here. I'm short and the exit row is still better. Being tall doesn't make you entitled to it because you think I'm just as comfortable in those shit cramped seats.</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button" id="button_hate1B" href="#" style="display:none" onclick="return show('hate_1B','hate_1A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--hate example show userB and answer-->
+    <div class="col-sm-7" id="hate_1B" style="display:none">
+      <h5><b>Read the Hate definition and the 1st Hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> attacks an individual or a group with the intention to vilify, humiliate, or incite hatred in two ways: 
+              <ol>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may explicitly express hate in the comment </li>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may agree with the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></span></li>
+              </ol>
+            </p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">Here here. I'm short and the exit row is still better. Being tall doesn't make you entitled to it because you think I'm just as comfortable in those shit cramped seats.</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left"> You're an angry little guy aren't you</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>
+            <hr class="solid">
+              <p class="text-left">Answer: <span style="color: #ff7b25"><b>User_B</b></span> is <b>Hate</b> (because <span style="color: #ff7b25"><b>User_B</b></span> attacks <span style="color: #32cd32; font-weight:bold">User_A</span>)</p>
+            <br>
+            <div class="row text-center">
+                <button onclick="show('hate_2D','hate_1B')" type="button" href="#"  class="btn btn-primary">next</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+
+    <!--hate example 2-->
+    <!--hate example show definition-->
+    <div class="col-sm-7" id="hate_2D" style="display:none">
+      <h5><b>Read the Hate definition and the 2nd Hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> attacks an individual or a group with the intention to vilify, humiliate, or incite hatred in two ways: 
+              <ol>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may explicitly express hate in the comment </li>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may agree with the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></span></li>
+              </ol>
+            </p>
+          </div>
+          <hr class="solid">
+          <br>
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('hate_2A','hate_2D');setTimeout(appear_button_hate2B, 2000)" class="btn btn-default">click to see <span style="font-weight:bold">Hate</span> example 2</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--hate example show userA-->
+    <div class="col-sm-7" id="hate_2A" style="display:none">
+      <h5><b>Read the Hate definition and the 2nd Hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> attacks an individual or a group with the intention to vilify, humiliate, or incite hatred in two ways: 
+              <ol>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may explicitly express hate in the comment </li>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may agree with the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></span></li>
+              </ol>
+            </p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">>It's not like they're trying to be assholes it's just the culture. So they're cultured assholes? :d</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_hate2B" style="display:none" onclick="show('hate_2B','hate_2A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--hate example show userB and answer-->
+    <div class="col-sm-7" id="hate_2B" style="display:none">
+      <h5><b>Read the Hate definition and the 2nd Hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> attacks an individual or a group with the intention to vilify, humiliate, or incite hatred in two ways: 
+              <ol>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may explicitly express hate in the comment </li>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may agree with the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></span></li>
+              </ol>
+            </p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">>It's not like they're trying to be assholes it's just the culture. So they're cultured assholes? :d</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left"> Worse than overly cultured cheese.</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>
+            <hr class="solid">
+              <p class="text-left">Answer: <span style="color: #ff7b25"><b>User_B</b></span> is <b>Hate</b> (because <span style="color: #ff7b25"><b>User_B</b></span> attacks the same group that <span style="color: #32cd32; font-weight:bold">User_A</span> attacks (despite we don't know the group in question))</p>
+            <br>
+            <div class="row text-center">
+                <button onclick="return show('hate_3D','hate_2B')" type="button" href="#"  class="btn btn-primary">next</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--hate example 3-->
+    <!--hate example show definition-->
+    <div class="col-sm-7" id="hate_3D" style="display:none">
+      <h5><b>Read the Hate definition and the 3rd Hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> attacks an individual or a group with the intention to vilify, humiliate, or incite hatred in two ways: 
+              <ol>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may explicitly express hate in the comment </li>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may agree with the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></span></li>
+              </ol>
+            </p>
+          </div>
+          <hr class="solid">
+          <br>
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('hate_3A','hate_3D');setTimeout(appear_button_hate3B, 2000)" class="btn btn-default">click to see <span style="font-weight:bold">Hate</span> example 3</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--hate example show userA-->
+    <div class="col-sm-7" id="hate_3A" style="display:none">
+      <h5><b>Read the Hate definition and the 3rd Hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> attacks an individual or a group with the intention to vilify, humiliate, or incite hatred in two ways: 
+              <ol>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may explicitly express hate in the comment </li>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may agree with the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></span></li>
+              </ol>
+            </p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">The moment you generalize all women is the moment you’re misogynistic garbage.</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_hate3B" style="display:none" onclick="show('hate_3B','hate_3A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--hate example show userB and answer-->   
+    <div class="col-sm-7" id="hate_3B" style="display:none">
+      <h5><b>Read the Hate definition and the 3rd Hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> attacks an individual or a group with the intention to vilify, humiliate, or incite hatred in two ways: 
+              <ol>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may explicitly express hate in the comment </li>
+                <li><span style="color: #ff7b25;font-weight:bold">User_B</span> may agree with the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></span></li>
+              </ol>
+            </p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">The moment you generalize all women is the moment you’re misogynistic garbage.</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left"> Found a triggered r/feminism cunt!</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>
+            <hr class="solid">
+              <p class="text-left">Answer: <span style="color: #ff7b25"><b>User_B</b></span> is <b>Hate</b> (because <span style="color: #ff7b25"><b>User_B</b></span> attacks <span style="color: #32cd32; font-weight:bold">User_A</span>)</p>
+            <br>
+            <div class="row text-center">
+                <button onclick="show('counter_1','hate_3B')" type="button" href="#"  class="btn btn-primary">next</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--Counterhate example 1-->
+    <div class="col-sm-7" id="counter_1" style="display:none">
+      <h5><b>Read the Counter-hate definition and the 1st Counter-hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-center">
+            <button type="button" href="#" onclick="show('counter_1D','counter_1');setTimeout(appear_button_counter1A, 3000)" class="btn btn-default">click to see definition of <b>Counter-hate</b></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Counterhate example show definition-->
+    <div class="col-sm-7" id="counter_1D" style="display:none">
+      <h5><b>Read the Counter-hate definition and the 1st Counter-hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Counter-hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> counters the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <br>
+          <div class="text-center">
+            <button type="button" href="#" id="button_counter1A" style="display:none" onclick="show('counter_1A','counter_1D'); setTimeout(appear_button_counter1B, 2000)" class="btn btn-default">click to see <span style="font-weight:bold">Counter-hate</span> example 1</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Counterhate example show userA-->
+    <div class="col-sm-7" id="counter_1A" style="display:none">
+      <h5><b>Read the Counter-hate definition and the 1st Counter-hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Counter-hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> counters the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">All are fabricated lies most rape cases are fabricated by women</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button" id="button_counter1B" href="#" style="display:none" onclick="show('counter_1B','counter_1A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Counterhate example show userB and answer-->
+    <div class="col-sm-7" id="counter_1B" style="display:none">
+      <h5><b>Read the Counter-hate definition and the 1st Counter-hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Counter-hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> counters the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">All are fabricated lies most rape cases are fabricated by women</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left"> Most? source??</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>
+            <hr class="solid">
+              <p class="text-left">Answer: <span style="color: #ff7b25"><b>User_B</b></span> is <b>Counter-hate</b> (because <span style="color: #ff7b25"><b>User_B</b></span> casts doubts on <span style="color: #32cd32; font-weight:bold">User_A</span>'s comment about women)</p>
+            <br>
+            <div class="row text-center">
+                <button onclick="show('counter_2D','counter_1B')" type="button" href="#"  class="btn btn-primary">next</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+
+    <!--Counterhate example 2-->
+    <!--counterhate example show definition-->
+    <div class="col-sm-7" id="counter_2D" style="display:none">
+      <h5><b>Read the Counter-hate definition and the 2st Counter-hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Counter-hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> counters the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <br>
+          <div class="text-center">
+            <button type="button" href="#" onclick="show('counter_2A','counter_2D');setTimeout(appear_button_counter2B, 1000)" class="btn btn-default">click to see <span style="font-weight:bold">Counter-hate</span> example 2</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--counterhate example show userA-->
+    <div class="col-sm-7" id="counter_2A" style="display:none">
+      <h5><b>Read the Counter-hate definition and the 2st Counter-hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Counter-hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> counters the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">You're fucking deluded.</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_counter2B" style="display:none" onclick="show('counter_2B','counter_2A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--counterhate example show userB and answer-->
+    <div class="col-sm-7" id="counter_2B" style="display:none">
+      <h5><b>Read the Counter-hate definition and the 2st Counter-hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Counter-hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> counters the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">You're fucking deluded.</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left"> Yikes! In what way?</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>
+            <hr class="solid">
+              <p class="text-left">Answer: <span style="color: #ff7b25"><b>User_B</b></span> is <b>Counter-hate</b> (because <span style="color: #ff7b25"><b>User_B</b></span> is rhetorically asking for a justication of <span style="color: #32cd32; font-weight:bold">User_A</span>'s hateful comment)</p>
+            <br>
+            <div class="row text-center">
+                <button onclick="show('counter_3D','counter_2B')" type="button" href="#"  class="btn btn-primary">next</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--counterhate example 3-->
+    <!--counterhate example show definition-->
+    <div class="col-sm-7" id="counter_3D" style="display:none">
+      <h5><b>Read the Counter-hate definition and the 3rd Counter-hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Counter-hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> counters the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <br>
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('counter_3A','counter_3D');setTimeout(appear_button_counter3B, 2000)" class="btn btn-default">click to see <span style="font-weight:bold">Counter-hate</span> example 3</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--counterhate example show userA-->
+    <div class="col-sm-7" id="counter_3A" style="display:none">
+      <h5><b>Read the Counter-hate definition and the 3rd Counter-hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Counter-hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> counters the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">lol, I trigger you feminazis so hard. This is amazing.</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button" href="#" id="button_counter3B" style="display:none" onclick="return show('counter_3B','counter_3A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--counterhate example show userB and answer-->   
+    <div class="col-sm-7" id="counter_3B" style="display:none">
+      <h5><b>Read the Counter-hate definition and the 3rd Counter-hate example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Counter-hate:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> counters the hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">lol, I trigger you feminazis so hard. This is amazing.</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left"> Not even remotely, i just feel bad for you. Good luck with life dude :/</p>
+              </div>
+              <div class="col-sm-3">
+              </div>
+            </div>
+            <hr class="solid">
+              <p class="text-left">Answer: <span style="color: #ff7b25"><b>User_B</b></span> is <b>Counter-hate</b> (because <span style="color: #ff7b25"><b>User_B</b></span> denies the hateful comment by <span style="color: #32cd32; font-weight:bold">User_A</span> about feminazis)</p>
+            <br>
+            <div class="row text-center">
+                <button onclick="show('neutral_1','counter_3B')" type="button" href="#"  class="btn btn-primary">next</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--neutral example 1-->
+    <div class="col-sm-7" id="neutral_1" style="display:none">
+      <h5><b>Read the Neutral definition and the 1st Neutral example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-center">
+            <button type="button" href="#" onclick="show('neutral_1D','neutral_1');setTimeout(appear_button_neutral1A, 2000)" class="btn btn-default">click to see definition of <b>Neutral</b></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--neutral example show definition-->
+    <div class="col-sm-7" id="neutral_1D" style="display:none">
+      <h5><b>Read the Neutral definition and the 1st Neutral example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Neutral:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> neither conveys hate nor counters hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <br>
+          <div class="text-center">
+            <button type="button" href="#" id="button_neutral1A" style="display:none" onclick="show('neutral_1A','neutral_1D'); setTimeout(appear_button_neutral1B, 1000)" class="btn btn-default">click to see <span style="font-weight:bold">Neutral</span> example 1</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--neutral example show userA-->
+    <div class="col-sm-7" id="neutral_1A" style="display:none">
+      <h5><b>Read the Neutral definition and the 1st Neutral example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Neutral:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> neither conveys hate nor counters hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">The hell is an "identity feminist"?</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button" id="button_neutral1B" href="#" style="display:none" onclick="show('neutral_1B','neutral_1A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--neutral example show userB and answer-->
+    <div class="col-sm-7" id="neutral_1B" style="display:none">
+      <h5><b>Read the Neutral definition and the 1st Neutral example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Neutral:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> neither conveys hate nor counters hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">The hell is an "identity feminist"?</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left">sounds like he means third wave feminists basically.</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>
+            <hr class="solid">
+              <p class="text-left">Answer: <span style="color: #ff7b25"><b>User_B</b></span> is <b>Neutral</b></p>
+            <br>
+            <div class="row text-center">
+                <button onclick="show('neutral_2D','neutral_1B')" type="button" href="#"  class="btn btn-primary">next</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+
+    <!--neutral example 2-->
+    <!--neutral example show definition-->
+    <div class="col-sm-7" id="neutral_2D" style="display:none">
+      <h5><b>Read the Neutral definition and the 2nd Neutral example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Neutral:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> neither conveys hate nor counters hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <br>
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('neutral_2A','neutral_2D');setTimeout(appear_button_neutral2B, 2000)" class="btn btn-default">click to see <span style="font-weight:bold">Neutral</span> example 2</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--neutral example show userA-->
+    <div class="col-sm-7" id="neutral_2A" style="display:none">
+      <h5><b>Read the Neutral definition and the 2nd Neutral example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Neutral:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> neither conveys hate nor counters hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">Why is "male privilege" in blue but the woman is colored blue along with the charts? /r/crappydesign</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_neutral2B" style="display:none" onclick="show('neutral_2B','neutral_2A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--neutral example show userB and answer-->
+    <div class="col-sm-7" id="neutral_2B" style="display:none">
+      <h5><b>Read the Neutral definition and the 2nd Neutral example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Neutral:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> neither conveys hate nor counters hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">Why is "male privilege" in blue but the woman is colored blue along with the charts? /r/crappydesign</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left"> bad graphic design, thats why.</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>
+            <hr class="solid">
+              <p class="text-left">Answer: <span style="color: #ff7b25"><b>User_B</b></span> is <b>Neutral</b></p>
+            <br>
+            <div class="row text-center">
+                <button onclick="return show('neutral_3D','neutral_2B')" type="button" href="#"  class="btn btn-primary">next</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--neutral example 3-->
+    <!--neutral example show definition-->
+    <div class="col-sm-7" id="neutral_3D" style="display:none">
+      <h5><b>Read the Neutral definition and the 3rd Neutral example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Neutral:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> neither conveys hate nor counters hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <br>
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('neutral_3A','neutral_3D');setTimeout(appear_button_neutral3B, 2000)" class="btn btn-default">click to see <span style="font-weight:bold">Neutral</span> example 3</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--neutral example show userA-->
+    <div class="col-sm-7" id="neutral_3A" style="display:none">
+      <h5><b>Read the Neutral definition and the 3rd Neutral example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Neutral:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> neither conveys hate nor counters hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">>Unless I eat like scooby doo. ... Do you keep a box of scooby snax in your desk or something?</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_neutral3B" style="display:none" onclick="show('neutral_3B','neutral_3A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--neutral example show userB and answer-->   
+    <div class="col-sm-7" id="neutral_3B" style="display:none">
+      <h5><b>Read the Neutral definition and the 3rd Neutral example:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-left">
+            <p><span style="font-weight:bold">Neutral:</span> <span style="color: #ff7b25; font-weight:bold">User_B</span> neither conveys hate nor counters hate expressed by <span style="color: #32cd32; font-weight:bold">User_A</span></p>
+          </div>
+          <hr class="solid">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">>Unless I eat like scooby doo. ... Do you keep a box of scooby snax in your desk or something?</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left">  Yeah? wanna fight?</p>
+              </div>
+              <div class="col-sm-3">
+              </div>
+            </div>
+            <hr class="solid">
+              <p class="text-left">Answer: <span style="color: #ff7b25"><b>User_B</b></span> is <b>Neutral</b></p>
+            <br>
+            <div class="row text-center">
+                <button onclick="show('example_question','neutral_3B')" type="button" href="#"  class="btn btn-primary">next</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Reddit conversation part--> 
+    <div class="col-sm-7" id="example_question" style="display: none">
+      <h5><b>Prepare to answer questions:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-body">
+          <div class="text-center">
+            <br></br>
+            <h4>Now you will see 12 conversations and answer 12 questions sequentially</h4>
+            <br></br>
+            <button type="button" href="#"  onclick="show('question1','example_question')" class="btn btn-primary">Start!</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--question 1--> 
+    <div class="col-sm-7" id="question1" style="display: none" >
+      <h5><b>Read the following Reddit conversation and answer the 1st question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_1}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('question1A','question1');setTimeout(appear_button_q1B, (document.getElementById('context_1').textContent.length)*25)" class="btn btn-default">click to see comment of <span style="color: #32cd32"><b>User_A</b></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question1A" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 1st question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_1}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3">   
+              </div>
+              <div class="col-sm-7">
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" id="context_1" style="text-align: justify; float:right">${context_1}</p>
+              </div>
+              <div class="col-sm-2">
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_q1B" style="display:none" onclick="return show('question1B','question1A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span></b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question1B" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 1st question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_1}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">${context_1}</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left">${target_1}</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>  
+            <br></br>
+            <h4 class="text-left"><b>The comment posted by </b><span style="color: #ff7b25"><b>User_B</b></span> is:</h4> 
+              <div class="text-left">
+                <div class="row">    
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="hate_c1" name="q_1" value="hate" style="margin-right: 10px">Hate
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="counterhate_c1" name="q_1" value="counterhate" style="margin-right: 10px">Counter-hate
+                      </label>
+                    </div> 
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="neutral_c1" name="q_1" value="neutral" style="margin-right: 10px">Neutral
+                      </label>
+                    </div>
+                  </div>
+                </div>      
+              </div>
+              <div class="row text-center">
+                <span id="error_1"></span>
+                <br></br>
+                <button id="next_1" type="button"  onclick="CheckBoxes_1();" href="#"  class="btn btn-primary">next</button> 
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--question 2-->    
+    <div class="col-sm-7" id="question2" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 2nd question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_2}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('question2A','question2'); setTimeout(appear_button_q2B, (document.getElementById('context_2').textContent.length)*25)" class="btn btn-default">click to see comment of <span style="color: #32cd32"><b>User_A</b></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question2A" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 2nd question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_2}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" id="context_2" style="text-align: justify; float:right">${context_2}</p>
+              </div>
+              <div class="col-sm-2">
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_q2B" style="display:none" onclick="show('question2B','question2A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question2B" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 2nd question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_2}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3">   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">${context_2}</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left">${target_2}</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>  
+            <br></br>
+            <h4 class="text-left"><b>The comment posted by</b> <span style="color: #ff7b25"><b>User_B</b></span> is:</h4> 
+              <div class="text-left">
+                <div class="row">    
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="hate_c2" name="q_2" value="hate" style="margin-right: 10px">Hate
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="counterhate_c2" name="q_2" value="counterhate" style="margin-right: 10px">Counter-hate
+                      </label>
+                    </div> 
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="neutral_c2" name="q_2" value="neutral" style="margin-right: 10px">Neutral
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>     
+              <div class="row text-center">
+                <span id="error_2"></span>
+                <br></br>
+                <button id="next_2" type="button" href="#" onclick="CheckBoxes_2();" class="btn btn-primary">next</button> 
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--question 3-->    
+    <div class="col-sm-7" id="question3" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 3rd question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_3}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('question3A','question3'); setTimeout(appear_button_q3B, (document.getElementById('context_3').textContent.length)*25)" class="btn btn-default">click to see comment of <span style="color: #32cd32"><b>User_A</b></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question3A" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 3rd question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_3}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" id="context_3" style="text-align: justify; float:right">${context_3}</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_q3B" style="display:none" onclick="show('question3B','question3A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question3B" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 3rd question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_3}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3">   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">${context_3}</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left">${target_3}</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>  
+            <br></br>
+            <h4 class="text-left"><b>The comment posted by</b> <span style="color: #ff7b25"><b>User_B</b></span> is:</h4> 
+              <div class="text-left">
+                <div class="row">    
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="hate_c3" name="q_3" value="hate" style="margin-right: 10px">Hate
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="counterhate_c3" name="q_3" value="counterhate" style="margin-right: 10px">Counter-hate
+                      </label>
+                    </div> 
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="neutral_c3" name="q_3" value="neutral" style="margin-right: 10px">Neutral
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>     
+              <div class="row text-center">
+                <span id="error_3"></span>
+                <br></br>
+                <button id="next_3" type="button" href="#" onclick="CheckBoxes_3();" class="btn btn-primary">next</button> 
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--question 4--> 
+    <div class="col-sm-7" id="question4" style="display: none" >
+      <h5><b>Read the following Reddit conversation and answer the 4th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_4}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('question4A','question4');setTimeout(appear_button_q4B, (document.getElementById('context_4').textContent.length)*25)" class="btn btn-default">click to see comment of <span style="color: #32cd32"><b>User_A</b></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question4A" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 4th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_4}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3">   
+              </div>
+              <div class="col-sm-7">
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" id="context_4" style="text-align: justify; float:right">${context_4}</p>
+              </div>
+              <div class="col-sm-2">
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_q4B" style="display:none" onclick="return show('question4B','question4A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question4B" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 4th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_4}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">${context_4}</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left">${target_4}</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>  
+            <br></br>
+            <h4 class="text-left"><b>The comment posted by </b><span style="color: #ff7b25"><b>User_B</b></span> is:</h4> 
+              <div class="text-left">
+                <div class="row">    
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="hate_c4" name="q_4" value="hate" style="margin-right: 10px">Hate
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="counterhate_c4" name="q_4" value="counterhate" style="margin-right: 10px">Counter-hate
+                      </label>
+                    </div> 
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="neutral_c4" name="q_4" value="neutral" style="margin-right: 10px">Neutral
+                      </label>
+                    </div>
+                  </div>
+                </div>      
+              </div>
+              <div class="row text-center">
+                <span id="error_4"></span>
+                <br></br>
+                <button id="next_4" type="button"  onclick="CheckBoxes_4();" href="#"  class="btn btn-primary">next</button> 
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--question 5--> 
+    <div class="col-sm-7" id="question5" style="display: none" >
+      <h5><b>Read the following Reddit conversation and answer the 5th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_5}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('question5A','question5');setTimeout(appear_button_q5B, (document.getElementById('context_5').textContent.length)*25)" class="btn btn-default">click to see comment of <span style="color: #32cd32"><b>User_A</b></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question5A" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 5th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_5}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3">   
+              </div>
+              <div class="col-sm-7">
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" id="context_5" style="text-align: justify; float:right">${context_5}</p>
+              </div>
+              <div class="col-sm-2">
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_q5B" style="display:none" onclick="return show('question5B','question5A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question5B" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 5th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_5}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">${context_5}</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left">${target_5}</p>
+              </div>
+              <div class="col-sm-3">
+              </div>
+            </div>  
+            <br></br>
+            <h4 class="text-left"><b>The comment posted by </b><span style="color: #ff7b25"><b>User_B</b></span> is:</h4> 
+              <div class="text-left">
+                <div class="row">    
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="hate_c5" name="q_5" value="hate" style="margin-right: 10px">Hate
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="counterhate_c5" name="q_5" value="counterhate" style="margin-right: 10px">Counter-hate
+                      </label>
+                    </div> 
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="neutral_c5" name="q_5" value="neutral" style="margin-right: 10px">Neutral
+                      </label>
+                    </div>
+                  </div>
+                </div>      
+              </div>
+              <div class="row text-center">
+                <span id="error_5"></span>
+                <br></br>
+                <button id="next_5" type="button"  onclick="CheckBoxes_5();" href="#"  class="btn btn-primary">next</button> 
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--question 6--> 
+    <div class="col-sm-7" id="question6" style="display: none" >
+      <h5><b>Read the following Reddit conversation and answer the 6th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_6}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('question6A','question6');setTimeout(appear_button_q6B, (document.getElementById('context_6').textContent.length)*25)" class="btn btn-default">click to see comment of <span style="color: #32cd32"><b>User_A</b></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question6A" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 6th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_6}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3">   
+              </div>
+              <div class="col-sm-7">
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" id="context_6" style="text-align: justify; float:right">${context_6}</p>
+              </div>
+              <div class="col-sm-2">
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_q6B" style="display:none" onclick="return show('question6B','question6A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question6B" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 6th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_6}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">${context_6}</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left">${target_6}</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>  
+            <br></br>
+            <h4 class="text-left"><b>The comment posted by </b><span style="color: #ff7b25"><b>User_B</b></span> is:</h4> 
+              <div class="text-left">
+                <div class="row">    
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="hate_c6" name="q_6" value="hate" style="margin-right: 10px">Hate
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="counterhate_c6" name="q_6" value="counterhate" style="margin-right: 10px">Counter-hate
+                      </label>
+                    </div> 
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="neutral_c6" name="q_6" value="neutral" style="margin-right: 10px">Neutral
+                      </label>
+                    </div>
+                  </div>
+                </div>      
+              </div>
+              <div class="row text-center">
+                <span id="error_6"></span>
+                <br></br>
+                <button id="next_6" type="button"  onclick="CheckBoxes_6();" href="#"  class="btn btn-primary">next</button> 
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--question 7--> 
+    <div class="col-sm-7" id="question7" style="display: none" >
+      <h5><b>Read the following Reddit conversation and answer the 7th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_7}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('question7A','question7');setTimeout(appear_button_q7B, (document.getElementById('context_7').textContent.length)*25)" class="btn btn-default">click to see comment of <span style="color: #32cd32"><b>User_A</b></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question7A" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 7th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_7}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3">   
+              </div>
+              <div class="col-sm-7">
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" id="context_7" style="text-align: justify; float:right">${context_7}</p>
+              </div>
+              <div class="col-sm-2">
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_q7B" style="display:none" onclick="return show('question7B','question7A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question7B" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 7th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_7}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">${context_7}</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left">${target_7}</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>  
+            <br></br>
+            <h4 class="text-left"><b>The comment posted by </b><span style="color: #ff7b25"><b>User_B</b></span> is:</h4> 
+              <div class="text-left">
+                <div class="row">    
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="hate_c7" name="q_7" value="hate" style="margin-right: 10px">Hate
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="counterhate_c7" name="q_7" value="counterhate" style="margin-right: 10px">Counter-hate
+                      </label>
+                    </div> 
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="neutral_c7" name="q_7" value="neutral" style="margin-right: 10px">Neutral
+                      </label>
+                    </div>
+                  </div>
+                </div>      
+              </div>
+              <div class="row text-center">
+                <span id="error_7"></span>
+                <br></br>
+                <button id="next_7" type="button"  onclick="CheckBoxes_7();" href="#"  class="btn btn-primary">next</button> 
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--question 8--> 
+    <div class="col-sm-7" id="question8" style="display: none" >
+      <h5><b>Read the following Reddit conversation and answer the 8th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_8}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('question8A','question8');setTimeout(appear_button_q8B, (document.getElementById('context_8').textContent.length)*25)" class="btn btn-default">click to see comment of <span style="color: #32cd32"><b>User_A</b></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question8A" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 8th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_8}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3">   
+              </div>
+              <div class="col-sm-7">
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" id="context_8" style="text-align: justify; float:right">${context_8}</p>
+              </div>
+              <div class="col-sm-2">
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_q8B" style="display:none" onclick="return show('question8B','question8A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question8B" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 8th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_8}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">${context_8}</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left">${target_8}</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>  
+            <br></br>
+            <h4 class="text-left"><b>The comment posted by </b><span style="color: #ff7b25"><b>User_B</b></span> is:</h4> 
+              <div class="text-left">
+                <div class="row">    
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="hate_c8" name="q_8" value="hate" style="margin-right: 10px">Hate
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="counterhate_c8" name="q_8" value="counterhate" style="margin-right: 10px">Counter-hate
+                      </label>
+                    </div> 
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="neutral_c8" name="q_8" value="neutral" style="margin-right: 10px">Neutral
+                      </label>
+                    </div>
+                  </div>
+                </div>      
+              </div>
+              <div class="row text-center">
+                <span id="error_8"></span>
+                <br></br>
+                <button id="next_8" type="button"  onclick="CheckBoxes_8();" href="#"  class="btn btn-primary">next</button> 
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--question 9--> 
+    <div class="col-sm-7" id="question9" style="display: none" >
+      <h5><b>Read the following Reddit conversation and answer the 9th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_9}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('question9A','question9');setTimeout(appear_button_q9B, (document.getElementById('context_9').textContent.length)*25)" class="btn btn-default">click to see comment of <span style="color: #32cd32"><b>User_A</b></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question9A" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 9th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_9}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3">   
+              </div>
+              <div class="col-sm-7">
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" id="context_9" style="text-align: justify; float:right">${context_9}</p>
+              </div>
+              <div class="col-sm-2">
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_q9B" style="display:none" onclick="return show('question9B','question9A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question9B" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 9th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_9}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">${context_9}</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left">${target_9}</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>  
+            <br></br>
+            <h4 class="text-left"><b>The comment posted by </b><span style="color: #ff7b25"><b>User_B</b></span> is:</h4> 
+              <div class="text-left">
+                <div class="row">    
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="hate_c9" name="q_9" value="hate" style="margin-right: 10px">Hate
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="counterhate_c9" name="q_9" value="counterhate" style="margin-right: 10px">Counter-hate
+                      </label>
+                    </div> 
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="neutral_c9" name="q_9" value="neutral" style="margin-right: 10px">Neutral
+                      </label>
+                    </div>
+                  </div>
+                </div>      
+              </div>
+              <div class="row text-center">
+                <span id="error_9"></span>
+                <br></br>
+                <button id="next_9" type="button"  onclick="CheckBoxes_9();" href="#"  class="btn btn-primary">next</button> 
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--question 10--> 
+    <div class="col-sm-7" id="question10" style="display: none">
+      <h5><b>Read the following Reddit conversation and answer the 10th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_10}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('question10A','question10');setTimeout(appear_button_q10B, (document.getElementById('context_10').textContent.length)*25)" class="btn btn-default">click to see comment of <span style="color: #32cd32"><b>User_A</b></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question10A" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 10th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_10}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3">   
+              </div>
+              <div class="col-sm-7">
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" id="context_10" style="text-align: justify; float:right">${context_10}</p>
+              </div>
+              <div class="col-sm-2">
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_q10B" style="display:none" onclick="return show('question10B','question10A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question10B" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 10th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_10}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">${context_10}</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left">${target_10}</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>  
+            <br></br>
+            <h4 class="text-left"><b>The comment posted by </b><span style="color: #ff7b25"><b>User_B</b></span> is:</h4> 
+              <div class="text-left">
+                <div class="row">    
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="hate_c10" name="q_10" value="hate" style="margin-right: 10px">Hate
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="counterhate_c10" name="q_10" value="counterhate" style="margin-right: 10px">Counter-hate
+                      </label>
+                    </div> 
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="neutral_c10" name="q_10" value="neutral" style="margin-right: 10px">Neutral
+                      </label>
+                    </div>
+                  </div>
+                </div>      
+              </div>
+              <div class="row text-center">
+                <span id="error_10"></span>
+                <br></br>
+                <button id="next_10" type="button"  onclick="CheckBoxes_10();" href="#"  class="btn btn-primary">next</button> 
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--question 8--> 
+    <div class="col-sm-7" id="question11" style="display: none" >
+      <h5><b>Read the following Reddit conversation and answer the 11th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_11}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('question11A','question11');setTimeout(appear_button_q11B, (document.getElementById('context_11').textContent.length)*25)" class="btn btn-default">click to see comment of <span style="color: #32cd32"><b>User_A</b></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question11A" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 11th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_11}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3">   
+              </div>
+              <div class="col-sm-7">
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" id="context_11" style="text-align: justify; float:right">${context_11}</p>
+              </div>
+              <div class="col-sm-2">
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_q11B" style="display:none" onclick="return show('question11B','question11A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question11B" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 11th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_11}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-3" >   
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" style="text-align: justify; float:right">${context_11}</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-7" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left">${target_11}</p>
+              </div>
+              <div class="col-sm-3" >
+              </div>
+            </div>  
+            <br></br>
+            <h4 class="text-left"><b>The comment posted by </b><span style="color: #ff7b25"><b>User_B</b></span> is:</h4> 
+              <div class="text-left">
+                <div class="row">    
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="hate_c11" name="q_11" value="hate" style="margin-right: 10px">Hate
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="counterhate_c11" name="q_11" value="counterhate" style="margin-right: 10px">Counter-hate
+                      </label>
+                    </div> 
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="neutral_c11" name="q_11" value="neutral" style="margin-right: 10px">Neutral
+                      </label>
+                    </div>
+                  </div>
+                </div>      
+              </div>
+              <div class="row text-center">
+                <span id="error_11"></span>
+                <br></br>
+                <button id="next_11" type="button"  onclick="CheckBoxes_11();" href="#"  class="btn btn-primary">next</button> 
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--question 12-->    
+    <div class="col-sm-7" id="question12" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 12th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_12}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <button type="button" href="#"  onclick="show('question12A','question12');setTimeout(appear_button_q12B, (document.getElementById('context_12').textContent.length)*25)" class="btn btn-default">click to see comment of <span style="color: #32cd32"><b>User_A</b></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question12A" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 12th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_12}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-4" >   
+              </div>
+              <div class="col-sm-6" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" id="context_12" style="text-align: justify; float:right">${context_12}</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row text-center">
+              <br></br>
+              <button type="button"  href="#" id="button_q12B" style="display:none" onclick="show('question12B','question12A')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7" id="question12B" style="display:none">
+      <h5><b>Read the following Reddit conversation and answer the 12th question:</b></h5>
+      <div class="panel panel-default">      
+        <div class="panel-heading">
+          <h4>Title: ${title_12}</h4>
+        </div>
+        <div class="panel-body">
+          <div class="text-center">
+            <div class="row">    
+              <div class="col-sm-4" >   
+              </div>
+              <div class="col-sm-6" >
+                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
+                <p class="text-right" id="context_12" style="text-align: justify; float:right">${context_12}</p>
+              </div>
+              <div class="col-sm-2" >
+               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="90" height="90">
+              </div>
+            </div>
+            <div class="row">    
+              <div class="col-sm-2" >
+                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="90" height="90">
+              </div>
+              <div class="col-sm-6" >
+                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
+                <p class="text-left">${target_12}</p>
+              </div>
+              <div class="col-sm-4" >
+              </div>
+            </div>  
+            <br></br>
+            <h4 class="text-left"><b>The comment posted by</b> <span style="color: #ff7b25"><b>User_B</b></span> is:</h4>
+            <form onsubmit="return CheckBoxes_12(this);"> 
+              <div class="text-left">
+                <div class="row">    
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio1">
+                        <input type="radio" class="form-check-input" id="hate_c12" name="q_12" value="hate" style="margin-right: 10px">Hate
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="counterhate_c12" name="q_12" value="counterhate" style="margin-right: 10px">Counter-hate
+                      </label>
+                    </div> 
+                  </div>
+                  <div class="col-sm-4" >
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="radio2">
+                        <input type="radio" class="form-check-input" id="neutral_c12" name="q_12" value="neutral" style="margin-right: 10px">Neutral
+                      </label>
+                    </div>
+                  </div>
+                </div>  
+              </div>    
+              <div class="row text-center">
+                <span id="error_12"></span>
+                <br></br>
+                <input id="final_answer" type="submit"  class="btn btn-primary" value="Submit">
+              </div>
+            </form> 
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    
+  </div>
+</div>
+
+</body>
+</html>
