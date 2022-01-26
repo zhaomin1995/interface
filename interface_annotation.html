@@ -96,34 +96,62 @@
           <p style="text-align: center"><b>IMAGE HERE</b></p>
 
           <!-- Show questions -->
-          <h4>The comment posted by <span style="color: #ff7b25"><b>User_B</b></span> is:</h4>
           <form onsubmit="return checkCheckBoxes(this);">
             <div class="row">
               <div class="col-sm-6">
-                <p>Was the author of the tweet living in the <span style="color: "><b>${city}</b></span>?</p>
-<!--                <div class="form-check-inline">-->
-<!--                  <label class="form-check-label" for="radio1">-->
-<!--                    <input type="radio" class="form-check-input" id="hate" name="label" value="hate" style="margin-right: 10px">Hate-->
-<!--                  </label>-->
-<!--                </div>-->
+                <p>Q1: Was the author of the tweet living in the <span style="color: #4A8FFF"><b>${city}</b></span>?</p>
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="radio1">
+                    <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px">Yes
+                  </label>
+                  <br>
+                  <label class="form-check-label" for="radio1">
+                    <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px">No
+                  </label>
+                </div>
               </div>
               <div class="col-sm-6">
-                asdasdasdsad
-<!--                <div class="form-check-inline">-->
-<!--                  <label class="form-check-label" for="radio1">-->
-<!--                    <input type="radio" class="form-check-input" id="hate" name="label" value="hate" style="margin-right: 10px">Hate-->
-<!--                  </label>-->
-<!--                </div>-->
+                <p>Q1+: How long has the user stayed at the <span style="color: #4A8FFF"><b>${city}</b></span>?</p>
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="radio1">
+                    <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px">hours ()
+                  </label>
+                  <br>
+                  <label class="form-check-label" for="radio1">
+                    <input type="radio" class="form-check-input" id="q1+_days" name="q1+" value="days" style="margin-right: 10px">days ()
+                  </label>
+                  <br>
+                  <label class="form-check-label" for="radio1">
+                    <input type="radio" class="form-check-input" id="q1+_weeks" name="q1+" value="weeks" style="margin-right: 10px">weeks ()
+                  </label>
+                </div>
               </div>
-              <div class="col-sm-12">
-                asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd
-<!--                <div class="form-check-inline">-->
-<!--                  <label class="form-check-label" for="radio1">-->
-<!--                    <input type="radio" class="form-check-input" id="hate" name="label" value="hate" style="margin-right: 10px">Hate-->
-<!--                  </label>-->
-<!--                </div>-->
+              <br>
+              <div class="col-sm-3"></div>
+              <div class="col-sm-8">
+                <p>Q2: Which part of the tweet is the most useful?</p>
+                <div class="form-check-inline">
+                  <label class="form-check-label" for="radio1">
+                    <input type="radio" class="form-check-input" id="q2_text" name="q2" value="text" style="margin-right: 10px">Text
+                  </label>
+                  <br>
+                  <label class="form-check-label" for="radio1">
+                    <input type="radio" class="form-check-input" id="q2_image" name="q2" value="image" style="margin-right: 10px">Image
+                  </label>
+                  <br>
+                  <label class="form-check-label" for="radio1">
+                    <input type="radio" class="form-check-input" id="q2_user" name="q2" value="user" style="margin-right: 10px">Profile information
+                  </label>
+                  <br>
+                  <label class="form-check-label" for="radio1">
+                    <input type="radio" class="form-check-input" id="q2_timestamp" name="q2" value="timestamp" style="margin-right: 10px">Timestamp
+                  </label>
+                  <br>
+                  <label class="form-check-label" for="radio1">
+                    <input type="radio" class="form-check-input" id="q2_other" name="q2" value="other" style="margin-right: 10px">I cannot tell which one is the most useful
+                  </label>
+                </div>
               </div>
-
             </div>
             <div class="row text-center">
               <span id="error"></span>
