@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress EqualityComparisonWithCoercionJS -->
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,21 +11,39 @@
 
 <script type="text/javascript">
 
-  function show(shown, hidden) {
-    document.getElementById(shown).style.display='block';
-    document.getElementById(hidden).style.display='none';
-    return false;
-  }
+  function checkCheckBoxes() {
 
-  function checkCheckBoxes(theForm) {
-    if (theForm.hate.checked == false && theForm.neutral.checked == false && theForm.counterhate.checked == false) {
-      error.textContent = "* Please select one choice"
-      error.style.color = "red"
-      return false;
-    } else {
-      error.textContent = ""
-      return true;
-    }
+      var q1_yes = document.getElementById('q1_yes');
+      var q1_no = document.getElementById('q1_no');
+      var q1_hours = document.getElementById('q1+_hours');
+      var q1_days = document.getElementById('q1+_days');
+      var q1_weeks = document.getElementById('q1+_weeks');
+      var q2_text = document.getElementById('q2_text');
+      var q2_image = document.getElementById('q2_image');
+      var q2_user = document.getElementById('q2_user');
+      var q2_timestamp = document.getElementById('q2_timestamp');
+      var q2_all = document.getElementById('q2_other');
+      var error = document.getElementById('error');
+
+      if (q1_yes.checked == false && q1_no == false) {
+          error.textContent = "Please answer Q1";
+          error.style.color = "red";
+          error.style.fontWeight = "bold";
+          return false;
+      } else if (q1_no.checked == true && q1_hours.checked == false && q1_days.checked == false && q1_weeks.checked == false) {
+          error.textContent = "Your answer of Q1 is No, please answer Q1+";
+          error.style.color = "red";
+          error.style.fontWeight = "bold";
+          return false;
+      } else if (q2_text.checked == false && q2_image.checked == false && q2_user.checked == false && q2_timestamp.checked == false && q2_all.checked == false) {
+          error.textContent = "Please answer Q2";
+          error.style.color = "red";
+          error.style.fontWeight = "bold";
+          return false;
+      } else {
+          error.textContent = "";
+          return true;
+      }
   }
 
 </script>
@@ -96,63 +115,71 @@
           <p style="text-align: center"><b>IMAGE HERE</b></p>
 
           <!-- Show questions -->
-          <form onsubmit="return checkCheckBoxes(this);">
+          <form onsubmit="return checkCheckBoxes();">
             <div class="row">
+
+              <!-- Show Q1 -->
               <div class="col-sm-6">
                 <p>Q1: Was the author of the tweet living in the <span style="color: #4A8FFF"><b>${city}</b></span>?</p>
                 <div class="form-check-inline">
-                  <label class="form-check-label" for="radio1">
+                  <label class="form-check-label">
                     <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px">Yes
                   </label>
                   <br>
-                  <label class="form-check-label" for="radio1">
+                  <label class="form-check-label">
                     <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px">No
                   </label>
                 </div>
               </div>
+
+              <!-- Show Q1+ -->
               <div class="col-sm-6">
                 <p>Q1+: How long has the user stayed at the <span style="color: #4A8FFF"><b>${city}</b></span>?</p>
                 <div class="form-check-inline">
-                  <label class="form-check-label" for="radio1">
+                  <label class="form-check-label">
                     <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px">hours ()
                   </label>
                   <br>
-                  <label class="form-check-label" for="radio1">
+                  <label class="form-check-label">
                     <input type="radio" class="form-check-input" id="q1+_days" name="q1+" value="days" style="margin-right: 10px">days ()
                   </label>
                   <br>
-                  <label class="form-check-label" for="radio1">
+                  <label class="form-check-label">
                     <input type="radio" class="form-check-input" id="q1+_weeks" name="q1+" value="weeks" style="margin-right: 10px">weeks ()
                   </label>
                 </div>
               </div>
-              <br>
+
+              <!-- Show Q2 -->
               <div class="col-sm-3"></div>
               <div class="col-sm-8">
                 <p>Q2: Which part of the tweet is the most useful?</p>
                 <div class="form-check-inline">
-                  <label class="form-check-label" for="radio1">
+                  <label class="form-check-label">
                     <input type="radio" class="form-check-input" id="q2_text" name="q2" value="text" style="margin-right: 10px">Text
                   </label>
                   <br>
-                  <label class="form-check-label" for="radio1">
+                  <label class="form-check-label">
                     <input type="radio" class="form-check-input" id="q2_image" name="q2" value="image" style="margin-right: 10px">Image
                   </label>
                   <br>
-                  <label class="form-check-label" for="radio1">
+                  <label class="form-check-label">
                     <input type="radio" class="form-check-input" id="q2_user" name="q2" value="user" style="margin-right: 10px">Profile information
                   </label>
                   <br>
-                  <label class="form-check-label" for="radio1">
+                  <label class="form-check-label">
                     <input type="radio" class="form-check-input" id="q2_timestamp" name="q2" value="timestamp" style="margin-right: 10px">Timestamp
                   </label>
                   <br>
-                  <label class="form-check-label" for="radio1">
+                  <label class="form-check-label">
                     <input type="radio" class="form-check-input" id="q2_other" name="q2" value="other" style="margin-right: 10px">I cannot tell which one is the most useful
                   </label>
                 </div>
               </div>
+
             </div>
+
+            <!-- Submit button and error message (if any) -->
             <div class="row text-center">
               <span id="error"></span>
               <br>
