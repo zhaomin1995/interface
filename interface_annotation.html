@@ -8,15 +8,14 @@
 </head>
 <body>
 
-<script>
-function show(shown, hidden) {
-  document.getElementById(shown).style.display='block';
-  document.getElementById(hidden).style.display='none';
-  return false;
-}
-</script>
-
 <script type="text/javascript">
+
+  function show(shown, hidden) {
+    document.getElementById(shown).style.display='block';
+    document.getElementById(hidden).style.display='none';
+    return false;
+  }
+
   function checkCheckBoxes(theForm) {
     if (theForm.hate.checked == false && theForm.neutral.checked == false && theForm.counterhate.checked == false) {
       error.textContent = "* Please select one choice"
@@ -27,26 +26,16 @@ function show(shown, hidden) {
       return true;
     }
   }
-</script>
 
-<script>
-$(document).ready(function() {
-  setTimeout(function() {
-    $("#proceed_1").show();
-  }, 2000);
-});
-$(document).ready(function() {
-  setTimeout(function() {
-    $("#proceed_2").show();
-  }, (document.getElementById("context").textContent.length)*25);
-});
 </script>
 
 <div class="container">
   <h3><b>Determine the period of author's stay</b></h3>
   <div class="row">
-    <!--Instruction part-->
+
     <div class="col-sm-5" >
+
+      <!-- Instruction part -->
       <h5><b>Instructions:</b></h5>
       <p>In this task, you will see a tweet.
         <b>Your job is to determine how long does the author of the tweet has stayed at the tagged city</b>.
@@ -57,89 +46,66 @@ $(document).ready(function() {
           <li>Second, you will determine whether the author was living in the tagged city.</li>
           <li>Third, you will determine what data source you rely on to answer the previous question.</li>
         </ol>
-      <p> In order to qualify to work in this task, you need to answer 12 questions.</p>
+      </p>
 
-      
+      <!-- Definition and Example part -->
       <h5><b>Definitions and Examples (click <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" >HERE</a> to see more details and examples):</b></h5>
       <div class="panel panel-default">
+
+        <!-- Definitions part -->
         <div class="panel-heading">  
-          <!-- Yes definition-->
-          <p><span style="font-weight:bold">Yes</span><span style="font-size:13px">: The user <u>was</u> living in the tagged city when he/she posted the tweet.</span></p>
-          <!-- No definition-->
-          <p><span style="font-weight:bold">No</span><span style="font-size:13px">: The user <u>was not</u> living in the tagged city when he/she posted the tweet.</span></p>
-          </div>
+          <!-- Definition of Yes -->
+          <p>
+            <span style="font-weight:bold">Yes</span>
+            <span style="font-size:13px">: The user <u>was</u> living in the tagged city when he/she posted the tweet.</span>
+          </p>
+          <!-- Definition of No -->
+          <p>
+            <span style="font-weight:bold">No</span>
+            <span style="font-size:13px">: The user <u>was not</u> living in the tagged city when he/she posted the tweet.</span>
+          </p>
+        </div>
+
+        <!-- Examples part -->
         <div id="collapse1" class="panel-collapse collapse">
           <div class="panel-body">
-            <!-- Yes example-->
-            <p style="font-size:12px"> <b>Example of Yes</b><br><span style="color: #32cd32"><b>User_A</b></span>: Here here. I'm short and the exit row is still better. Being tall doesn't make you entitled to it because you think I'm just as comfortable in those shit cramped seats. <br><span style="color: #ff7b25"><b>User_B</b></span>: You're an angry little guy aren't you<br>[<b><i>Hate</i></b> because <span style="color: #ff7b25"><b>User_B</b></span> attacks <span style="color: #32cd32">User_A</span>]</br></p>
-            <!-- No example-->
-            <p style="font-size:12px"> <b>Example of No</b><br> <span style="color: #32cd32"><b>User_A</b></span>: All are fabricated lies most rape cases are fabricated by women<br><span style="color: #ff7b25"><b>User_B</b></span>: Most? source?? <br>[<b><i>Counter-hate</i></b> because <span style="color: #ff7b25"><b>User_B</b></span> casts doubts on <span style="color: #32cd32">User_A</span>'s comment about women]</b></p>
-            <!--neutral examples-->
-            <p style="font-size:12px"> <b>Neutral example 1</b><br> <span style="color: #32cd32"><b>User_A</b></span>: The hell is an "identity feminist"? <br><span style="color: #ff7b25"><b>User_B</b></span>: sounds like he means third wave feminists basically. <br>[<b><i>Neutral</i></b>]</p>
-            <p style="font-size:12px"> <b>Neutral example 2</b><br> <span style="color: #32cd32"><b>User_A</b></span>: Why is "male privilege" in blue but the woman is colored blue along with the charts? /r/crappydesign  <br><span style="color: #ff7b25"><b>User_B</b></span>: bad graphic design, thats why.  <br>[<b><i>Neutral</i></b>]</p>
-            <p style="font-size:12px"> <b>Neutral example 3</b><br> <span style="color: #32cd32"><b>User_A</b></span>: >Unless I eat like scooby doo.   ... Do you keep a box of scooby snax in your desk or something?  <br><span style="color: #ff7b25"><b>User_B</b></span>: Yeah? wanna fight? <br>[<b><i>Neutral</i></b>]</p>
+            <!-- Example of Yes-->
+            <p style="font-size:12px">
+              <b>Example of Yes</b>
+              <br>
+              <p><b>IMAGE HERE</b></p>
+            </p>
+            <!-- Example of No-->
+            <p style="font-size:12px">
+              <b>Example of No</b>
+              <br>
+              <p><b>IMAGE HERE</b></p>
+            </p>
           </div>
         </div>
       </div>
     </div>
 
-    <!--Reddit conversation part-->
+    <!-- display the tweet and questions -->
     <div class="col-sm-7" >
       <h5><b>Read the tweet and answer the questions about the user:</b></h5>
       <div class="panel panel-default">
         <div class="panel-body">
-          <div id="Page1">
-            <div class="text-center">
-              <button type="button" href="#" id="proceed_1" style="display:none;font-size:15px" onclick="return show('Page2','Page1')" class="btn btn-default">click to see comment of <span style="color: #32cd32"><b>User_A</b></span></button>
-            </div>
-          </div>
-          <!--show user_A-->
-          <div id="Page2" style="display:none">
-            <div class="row">
-              <div class="col-sm-3" >
-              </div>
-              <div class="col-sm-7" >
-                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
-                <p class="text-right" style="text-align: justify; float:right">${context}</p>
-              </div>
-              <div class="col-sm-2" >
-               <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="80" height="80">
-              </div>
-            </div>
-            <div class="row text-center">
-              <br></br>
-              <button type="button" id="proceed_2" style="display:none; font-size : 15px;" href="#" onclick="return show('Page3','Page2')" class="btn btn-default">Click to see reply to User_A: <br> comment of <span style="color: #ff7b25"><b>User_B</span> </b></br></button>
-            </div>
-          </div>
-          <!--show user_B and question-->
-          <div id="Page3" style="display:none">
-            <div class="row">
-              <div class="col-sm-3" >
-              </div>
-              <div class="col-sm-7" >
-                <p class="text-right"><span style="color: #32cd32"><b>User_A:</b></span></p>
-                <p class="text-right" id="context" style="text-align: justify; float:right">${context}</p>
-              </div>
-              <div class="col-sm-2" >
-                <img src="https://drive.google.com/uc?export=view&id=1btSUuZMIkDLDql7Bug0edgCKE5EiqD8b" width="80" height="80">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-2" >
-                <img src="https://drive.google.com/uc?export=view&id=1WBJAGxbz1pz9SRThrQU-LvBZ28DtDzC5" width="80" height="80">
-              </div>
-              <div class="col-sm-7" >
-                <p class="text-left"><span style="color: #ff7b25"><b>User_B:</b></span></p>
-                <p class="text-left">${target}</p>
-              </div>
-              <div class="col-sm-3" >
-              </div>
-            </div>
 
-            <br>
+          <!--show tweet and question-->
+          <div style="display:block">
 
-              <h4>The comment posted by <span style="color: #ff7b25"><b>User_B</b></span> is:</h4>
-               <form onsubmit="return checkCheckBoxes(this);">
+            <!-- Show questions -->
+            <p style="text-align: center"><b>IMAGE HERE</b></p>
+
+          </div>
+
+          <!--show tweet and question-->
+          <div style="display:block">
+
+            <!-- Show questions -->
+            <h4>The comment posted by <span style="color: #ff7b25"><b>User_B</b></span> is:</h4>
+            <form onsubmit="return checkCheckBoxes(this);">
                   <div class="row">
                     <div class="col-sm-4" >
                       <div class="form-check-inline">
@@ -170,15 +136,12 @@ $(document).ready(function() {
                 </div>
               </form>
 
-
-          </div>
           </div>
         </div>
       </div>
-
     </div>
+
   </div>
 </div>
-
 </body>
 </html>
