@@ -57,13 +57,17 @@
       <!-- Instruction part -->
       <h5><b>Instructions:</b></h5>
       <p>In this task, you will see a tweet.
-        <b>Your job is to determine how long does the author of the tweet has stayed at the tagged city</b>.
+        <b>Your job is to determine how long the author of the tweet has stayed at the tagged city</b>.
       </p>
       <p>You will follow these steps:
         <ol>
           <li>First, you will read the tweet.</li>
-          <li>Second, you will determine whether the author was living in the tagged city.</li>
-          <li>Third, you will determine what data source you rely on to answer the previous question.</li>
+          <li>
+            Second, you will determine whether the author lives in the tagged city.
+            If you think the author does not live in the tagged city,
+            then you will determine how long the author has stayed at the tagged city.
+          </li>
+          <li>Third, you will determine which part of the tweet is the most useful.</li>
         </ol>
       </p>
 
@@ -76,12 +80,12 @@
           <!-- Definition of Yes -->
           <p>
             <span style="font-weight:bold">Yes</span>
-            <span style="font-size:13px">: The user <u>was</u> living in the tagged city when he/she posted the tweet.</span>
+            <span style="font-size:13px">: The user <u>lives in</u> the tagged city.</span>
           </p>
           <!-- Definition of No -->
           <p>
             <span style="font-weight:bold">No</span>
-            <span style="font-size:13px">: The user <u>was not</u> living in the tagged city when he/she posted the tweet.</span>
+            <span style="font-size:13px">: The user <u>does not live in</u> the tagged city.</span>
           </p>
         </div>
 
@@ -92,14 +96,21 @@
             <p style="font-size:12px">
               <p style="margin: 10px; text-align: center; font-weight: bold">Example of Yes</p>
               <br>
-              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1240728065983959040.png">
-              <p style="margin: 10px">EXPLANATION</p>
+              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1244666583894589440.png">
+              <p style="margin: 10px">
+                The text and image show the flower in the bathroom of the apartment/house.
+                Therefore, we can tell that she lives in <span style="color: #4A8FFF"><b>Charlottle</b></span>.
+              </p>
             </p>
             <!-- Example of No-->
             <p style="font-size:12px">
               <p style="margin: 10px; text-align: center; font-weight: bold">Example of No</p>
               <br>
-              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1240728065983959040.png">
+              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1385388145974267905.png">
+              <p style="margin: 10px">
+                The text shows that the user is in <span style="color: #4A8FFF"><b>Kennebunkport</b></span> for vacation,
+                which means that he does not live there.
+              </p>
             </p>
           </div>
         </div>
@@ -113,7 +124,11 @@
         <div class="panel-body">
 
           <!-- Show tweet -->
-          <p><img style="max-width: 350px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1240728065983959040.png"></p>
+          <div class="row">
+            <div class="col-sm-12">
+              <img style="max-width: 350px; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px" src="${image_link}">
+            </div>
+          </div>
 
           <!-- Show questions -->
           <form onsubmit="return checkCheckBoxes();">
@@ -121,7 +136,7 @@
 
               <!-- Show Q1 -->
               <div class="col-sm-6">
-                <p>Q1: Was the author of the tweet living in the <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
+                <p>Q1: Does the author of the tweet live in the <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
                     <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px">Yes
@@ -138,15 +153,15 @@
                 <p>Q1+: How long has the user stayed at the <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px">hours ()
+                    <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px">hours (0-24 hours)
                   </label>
                   <br>
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1+_days" name="q1+" value="days" style="margin-right: 10px">days ()
+                    <input type="radio" class="form-check-input" id="q1+_days" name="q1+" value="days" style="margin-right: 10px">days (1-7 days)
                   </label>
                   <br>
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1+_weeks" name="q1+" value="weeks" style="margin-right: 10px">weeks ()
+                    <input type="radio" class="form-check-input" id="q1+_weeks" name="q1+" value="weeks" style="margin-right: 10px">weeks (more than 1 week)
                   </label>
                 </div>
               </div>
