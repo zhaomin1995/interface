@@ -90,15 +90,16 @@
           <div class="panel-body">
             <!-- Example of Yes-->
             <p style="font-size:12px">
-              <b>Example of Yes</b>
+              <p style="margin: 10px; text-align: center; font-weight: bold">Example of Yes</p>
               <br>
-              <p><b>IMAGE HERE</b></p>
+              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1240728065983959040.png">
+              <p style="margin: 10px">EXPLANATION</p>
             </p>
             <!-- Example of No-->
             <p style="font-size:12px">
-              <b>Example of No</b>
+              <p style="margin: 10px; text-align: center; font-weight: bold">Example of No</p>
               <br>
-              <p><b>IMAGE HERE</b></p>
+              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1240728065983959040.png">
             </p>
           </div>
         </div>
@@ -112,7 +113,7 @@
         <div class="panel-body">
 
           <!-- Show tweet -->
-          <p style="text-align: center"><b>IMAGE HERE</b></p>
+          <p><img style="max-width: 350px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1240728065983959040.png"></p>
 
           <!-- Show questions -->
           <form onsubmit="return checkCheckBoxes();">
@@ -120,7 +121,7 @@
 
               <!-- Show Q1 -->
               <div class="col-sm-6">
-                <p>Q1: Was the author of the tweet living in the <span style="color: #4A8FFF"><b>${city}</b></span>?</p>
+                <p>Q1: Was the author of the tweet living in the <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
                     <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px">Yes
@@ -134,7 +135,7 @@
 
               <!-- Show Q1+ -->
               <div class="col-sm-6">
-                <p>Q1+: How long has the user stayed at the <span style="color: #4A8FFF"><b>${city}</b></span>?</p>
+                <p>Q1+: How long has the user stayed at the <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
                     <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px">hours ()
