@@ -11,7 +11,7 @@
 
 <script type="text/javascript">
 
-  function checkCheckBoxes() {
+  function validateForm() {
 
       var q1_yes = document.getElementById('q1_yes');
       var q1_no = document.getElementById('q1_no');
@@ -25,7 +25,7 @@
       var q2_all = document.getElementById('q2_other');
       var error = document.getElementById('error');
 
-      if (q1_yes.checked == false && q1_no == false) {
+      if (q1_yes.checked == false && q1_no.checked == false) {
           error.textContent = "Please answer Q1";
           error.style.color = "red";
           error.style.fontWeight = "bold";
@@ -44,6 +44,10 @@
           error.textContent = "";
           return true;
       }
+  }
+
+  window.onload = function() {
+    document.getElementById('submitButton').setAttribute('onclick', 'return validateForm()');
   }
 
 </script>
@@ -131,7 +135,7 @@
           </div>
 
           <!-- Show questions -->
-          <form onsubmit="return checkCheckBoxes();">
+          <form onsubmit="return validateForm();">
             <div class="row">
 
               <!-- Show Q1 -->
@@ -197,10 +201,12 @@
 
             <!-- Submit button and error message (if any) -->
             <div class="row text-center">
-              <span id="error"></span>
+              <span id="error" style="margin: 20px"></span>
               <br>
-              <input type="submit" class="btn btn-primary" value="Submit">
+              <br>
+              <input type="submit" id='submitButton' class="btn btn-primary" value="Submit">
             </div>
+
           </form>
 
         </div>
