@@ -73,7 +73,7 @@
 </script>
 
 <div class="container">
-  <p style="text-align: center; margin: 30px; display: block; font-size: 25px; font-weight: bold">Determine for how long people have stayed at a city</p>
+  <p style="text-align: center; margin: 30px; display: block; font-size: 25px; font-weight: bold">Determine for how long people have stayed at the given city</p>
   <div class="row">
 
     <div class="col-sm-5" >
@@ -87,13 +87,8 @@
       <p>You will follow these steps:
         <ol>
           <li>First, you will read the tweet.</li>
-          <li>
-            Second, you will determine whether the author of the tweet lives in the given city.
-          </li>
-          <li>
-            If you think the author does not live in the given city,
-            then you will determine how long the author has stayed at the given city.
-          </li>
+          <li>Second, you will determine whether the author of the tweet lives in the given city.</li>
+          <li>If the author does not live in the given city, you will determine how long the author has stayed at the given city.</li>
           <li>Fourth, you will determine which part(s) of the tweets is/are the most useful to answer the question.</li>
         </ol>
       </p>
@@ -255,8 +250,7 @@
               <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1385388145974267905.png">
               <p style="margin: 10px">
                 We can tell that the user went to <span style="color: #4A8FFF"><b>Kennebunkport</b></span> for vacation,
-                even without checking other components of the tweets.
-                And most people spend less than one week on staying at a city for vacation.
+                even without checking the image.
               </p>
             </p>
             <!-- Example of image -->
@@ -266,6 +260,7 @@
               <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1367595428573765638.png">
               <p style="margin: 10px">
                 The image shows that the user just got her covid vaccine.
+                The tweet text does not contain other information we can use to infer temporal information about the user.
               </p>
             </p>
             <!-- Example of text + image -->
@@ -274,8 +269,7 @@
               <br>
               <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1386483779976445956.png">
               <p style="margin: 10px">
-                All components, including text, image, timestamp, and username,
-                are important to infer that the user was running at Harvard Bridge (located in Cambridge),
+                Both text and image are important for us to infer that the user was running at Harvard Bridge (located in Cambridge),
                 which usually takes a couple of hours.
               </p>
             </p>
