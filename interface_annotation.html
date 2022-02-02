@@ -55,14 +55,15 @@
 </script>
 
 <div class="container">
-  <p style="text-align: center; margin: 30px; display: block; font-size: 25px; font-weight: bold">Determine how long people have stayed at a city</p>
+  <p style="text-align: center; margin: 30px; display: block; font-size: 25px; font-weight: bold">Determine for how long people have stayed at a city</p>
   <div class="row">
 
     <div class="col-sm-5" >
 
       <!-- Instruction part -->
       <h5><b>Instructions:</b></h5>
-      <p>In this task, you will see a tweet.
+      <p>
+        In this task, you will first see a tweet.
         <b>Your job is to determine for how long the author of the tweet has stayed at the given city</b>.
       </p>
       <p>You will follow these steps:
@@ -269,7 +270,7 @@
 
     <!-- display the tweet and questions -->
     <div class="col-sm-7" >
-      <h5><b>Read the tweet and answer the questions about the user:</b></h5>
+      <h5><b>Read the tweet and answer the questions about the author of the tweet:</b></h5>
       <div class="panel panel-default">
         <div class="panel-body">
 
@@ -286,7 +287,7 @@
 
               <!-- Show Q1 -->
               <div class="col-sm-6">
-                <p>Q1: Does the author of the tweet live in <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
+                <p>Does the author of the tweet live in <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
                     <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px">Yes
@@ -300,7 +301,7 @@
 
               <!-- Show Q1+ -->
               <div class="col-sm-6">
-                <p>Q1+: How long has the user stayed at <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
+                <p>How long has the author of the tweet stayed at <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
                     <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px">hours (0-24 hours)
@@ -319,7 +320,7 @@
               <!-- Show Q2 -->
               <div class="col-sm-3"></div>
               <div class="col-sm-8">
-                <p>Q2: Which part of the tweet is the most useful?</p>
+                <p>Which part of the tweet is the most useful?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
                     <input type="radio" class="form-check-input" id="q2_text" name="q2" value="text" style="margin-right: 10px">Text
