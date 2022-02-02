@@ -286,7 +286,7 @@
             <div class="row">
 
               <!-- Show Q1 -->
-              <div class="col-sm-6">
+              <div id="q1_question" class="col-sm-12 col-sm-offset-3">
                 <p>Does the author of the tweet live in <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
@@ -297,10 +297,13 @@
                     <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px">No
                   </label>
                 </div>
+                <div style="margin-bottom: 5px"></div>
               </div>
 
+
+
               <!-- Show Q1+ -->
-              <div class="col-sm-6">
+              <div id="q1duration_question" class="col-sm-12 col-sm-offset-3">
                 <p>How long has the author of the tweet stayed at <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
@@ -315,11 +318,13 @@
                     <input type="radio" class="form-check-input" id="q1+_weeks" name="q1+" value="weeks" style="margin-right: 10px">weeks (more than 1 week)
                   </label>
                 </div>
+                <div style="margin-bottom: 5px"></div>
               </div>
 
+              <div style="margin-bottom: 150px"></div>
+
               <!-- Show Q2 -->
-              <div class="col-sm-3"></div>
-              <div class="col-sm-8">
+              <div id="q2_question" class="col-sm-12 col-sm-offset-3">
                 <p>Which part of the tweet is the most useful?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
