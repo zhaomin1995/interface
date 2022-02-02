@@ -33,6 +33,10 @@
       document.getElementById('q2_other').checked = false;
   }
 
+  function clearError() {
+      document.getElementById('error').textContent = "";
+  }
+
   function validateForm() {
 
       var q1_yes = document.getElementById('q1_yes');
@@ -47,30 +51,25 @@
 
       if (q1_yes.checked == false && q1_no.checked == false) {
           error.textContent = "Please tell me if the author of tweet lives in ${location}";
+      } else if (q1_yes.checked == true && (q2_text.checked == false && q2_image.checked == false && q2_all.checked == false)) {
+          error.textContent = "Please tell me which part(s) of the tweet is/are the most useful";
       } else if (q1_no.checked == true && (q1_hours.checked == false && q1_days.checked == false && q1_weeks.checked == false)) {
           error.textContent = "Please tell me how long has the author of the tweet stayed at ${location}";
-          document.getElementById('q1duration_question').style.display = 'none';
       } else if (q1_no.checked == true && (q1_hours.checked == true || q1_days.checked == true || q1_weeks.checked == true) && (q2_text.checked == false && q2_image.checked == false && q2_all.checked == false)) {
-          error.textContent = "Please tell me how long has the author of the tweet stayed at ${location}";
-          document.getElementById('q2_question').style.display = 'none';
-      } else if (q1_no.checked == true && q2_text.checked == false && q2_image.checked == false && q2_all.checked == false) {
           error.textContent = "Please tell me which part(s) of the tweet is/are the most useful";
-      } else if (q2_text.checked == false && q2_image.checked == false && q2_all.checked == false) {
-          error.textContent = "Please tell me which part(s) of the tweet is/are the most useful";
-          document.getElementById('q2_question').style.display = 'none';
       } else {
           error.textContent = "";
           return true;
       }
 
-      q1_yes.checked = false;
-      q1_no.checked = false;
-      q1_hours.checked = false;
-      q1_days.checked = false;
-      q1_weeks.checked = false;
-      q2_text.checked = false;
-      q2_image.checked = false;
-      q2_all.checked = false;
+      // q1_yes.checked = false;
+      // q1_no.checked = false;
+      // q1_hours.checked = false;
+      // q1_days.checked = false;
+      // q1_weeks.checked = false;
+      // q2_text.checked = false;
+      // q2_image.checked = false;
+      // q2_all.checked = false;
       return false;
 
   }
@@ -317,11 +316,11 @@
                 <p>Does the author of the tweet live in <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px" onclick="showComponent(); hideDuration()">Yes
+                    <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px" onclick="showComponent(); hideDuration(); clearError()">Yes
                   </label>
                   <br>
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px" onclick="hideComponent(); showDuration()">No
+                    <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px" onclick="hideComponent(); showDuration(); clearError()">No
                   </label>
                 </div>
                 <div style="margin-bottom: 5px"></div>
@@ -332,15 +331,15 @@
                 <p>How long has the author of the tweet stayed at <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px" onclick="showComponent()">hours (0-24 hours)
+                    <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px" onclick="showComponent(); clearError()">hours (0-24 hours)
                   </label>
                   <br>
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1+_days" name="q1+" value="days" style="margin-right: 10px" onclick="showComponent()">days (1-7 days)
+                    <input type="radio" class="form-check-input" id="q1+_days" name="q1+" value="days" style="margin-right: 10px" onclick="showComponent(); clearError()">days (1-7 days)
                   </label>
                   <br>
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1+_weeks" name="q1+" value="weeks" style="margin-right: 10px" onclick="showComponent()">weeks (more than 1 week)
+                    <input type="radio" class="form-check-input" id="q1+_weeks" name="q1+" value="weeks" style="margin-right: 10px" onclick="showComponent(); clearError()">weeks (more than 1 week)
                   </label>
                 </div>
                 <div style="margin-bottom: 5px"></div>
@@ -351,15 +350,15 @@
                 <p>Which part of the tweet is the most useful?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q2_text" name="q2" value="text" style="margin-right: 10px">Text
+                    <input type="radio" class="form-check-input" id="q2_text" name="q2" value="text" style="margin-right: 10px" onclick="clearError()">Text
                   </label>
                   <br>
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q2_image" name="q2" value="image" style="margin-right: 10px">Image
+                    <input type="radio" class="form-check-input" id="q2_image" name="q2" value="image" style="margin-right: 10px" onclick="clearError()">Image
                   </label>
                   <br>
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q2_other" name="q2" value="other" style="margin-right: 10px">Text and Image
+                    <input type="radio" class="form-check-input" id="q2_other" name="q2" value="other" style="margin-right: 10px" onclick="clearError()">Text and Image
                   </label>
                 </div>
               </div>
