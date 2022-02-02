@@ -11,6 +11,28 @@
 
 <script type="text/javascript">
 
+  function showDuration() {
+      document.getElementById('q1duration_question').style.display = 'block';
+  }
+
+  function showComponent() {
+      document.getElementById('q2_question').style.display = 'block';
+  }
+
+  function hideDuration() {
+    document.getElementById('q1duration_question').style.display = 'none';
+    document.getElementById('q1+_hours').checked = false;
+    document.getElementById('q1+_days').checked = false;
+    document.getElementById('q1+_weeks').checked = false;
+  }
+
+  function hideComponent() {
+      document.getElementById('q2_question').style.display = 'none';
+      document.getElementById('q2_text').checked = false;
+      document.getElementById('q2_image').checked = false;
+      document.getElementById('q2_other').checked = false;
+  }
+
   function validateForm() {
 
       var q1_yes = document.getElementById('q1_yes');
@@ -24,13 +46,18 @@
       var error = document.getElementById('error');
 
       if (q1_yes.checked == false && q1_no.checked == false) {
-          error.textContent = "Please answer Q1!";
-      } else if (q1_no.checked == true && q1_hours.checked == false && q1_days.checked == false && q1_weeks.checked == false) {
-          error.textContent = "Your answer of Q1 is No, please answer Q1+!";
-      } else if (q1_yes.checked == true && (q1_hours.checked == true || q1_days.checked == true || q1_weeks.checked == true)) {
-          error.textContent = "Your answer of Q1 is Yes, you cannot answer Q1+!";
+          error.textContent = "Please tell me if the author of tweet lives in ${location}";
+      } else if (q1_no.checked == true && (q1_hours.checked == false && q1_days.checked == false && q1_weeks.checked == false)) {
+          error.textContent = "Please tell me how long has the author of the tweet stayed at ${location}";
+          document.getElementById('q1duration_question').style.display = 'none';
+      } else if (q1_no.checked == true && (q1_hours.checked == true || q1_days.checked == true || q1_weeks.checked == true) && (q2_text.checked == false && q2_image.checked == false && q2_all.checked == false)) {
+          error.textContent = "Please tell me how long has the author of the tweet stayed at ${location}";
+          document.getElementById('q2_question').style.display = 'none';
+      } else if (q1_no.checked == true && q2_text.checked == false && q2_image.checked == false && q2_all.checked == false) {
+          error.textContent = "Please tell me which part(s) of the tweet is/are the most useful";
       } else if (q2_text.checked == false && q2_image.checked == false && q2_all.checked == false) {
-          error.textContent = "Please answer Q2!";
+          error.textContent = "Please tell me which part(s) of the tweet is/are the most useful";
+          document.getElementById('q2_question').style.display = 'none';
       } else {
           error.textContent = "";
           return true;
@@ -49,7 +76,7 @@
   }
 
   window.onload = function() {
-    document.getElementById('submitButton').setAttribute('onclick', 'return validateForm()');
+      document.getElementById('submitButton').setAttribute('onclick', 'return validateForm()');
   }
 
 </script>
@@ -290,41 +317,37 @@
                 <p>Does the author of the tweet live in <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px">Yes
+                    <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px" onclick="showComponent(); hideDuration()">Yes
                   </label>
                   <br>
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px">No
+                    <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px" onclick="hideComponent(); showDuration()">No
                   </label>
                 </div>
                 <div style="margin-bottom: 5px"></div>
               </div>
 
-
-
               <!-- Show Q1+ -->
-              <div id="q1duration_question" class="col-sm-12 col-sm-offset-3">
+              <div id="q1duration_question" class="col-sm-12 col-sm-offset-3" style="display: none">
                 <p>How long has the author of the tweet stayed at <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px">hours (0-24 hours)
+                    <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px" onclick="showComponent()">hours (0-24 hours)
                   </label>
                   <br>
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1+_days" name="q1+" value="days" style="margin-right: 10px">days (1-7 days)
+                    <input type="radio" class="form-check-input" id="q1+_days" name="q1+" value="days" style="margin-right: 10px" onclick="showComponent()">days (1-7 days)
                   </label>
                   <br>
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1+_weeks" name="q1+" value="weeks" style="margin-right: 10px">weeks (more than 1 week)
+                    <input type="radio" class="form-check-input" id="q1+_weeks" name="q1+" value="weeks" style="margin-right: 10px" onclick="showComponent()">weeks (more than 1 week)
                   </label>
                 </div>
                 <div style="margin-bottom: 5px"></div>
               </div>
 
-              <div style="margin-bottom: 150px"></div>
-
               <!-- Show Q2 -->
-              <div id="q2_question" class="col-sm-12 col-sm-offset-3">
+              <div id="q2_question" class="col-sm-12 col-sm-offset-3" style="display: none">
                 <p>Which part of the tweet is the most useful?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
