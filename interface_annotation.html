@@ -20,8 +20,6 @@
       var q1_weeks = document.getElementById('q1+_weeks');
       var q2_text = document.getElementById('q2_text');
       var q2_image = document.getElementById('q2_image');
-      var q2_user = document.getElementById('q2_user');
-      var q2_timestamp = document.getElementById('q2_timestamp');
       var q2_all = document.getElementById('q2_other');
       var error = document.getElementById('error');
 
@@ -31,7 +29,7 @@
           error.textContent = "Your answer of Q1 is No, please answer Q1+!";
       } else if (q1_yes.checked == true && (q1_hours.checked == true || q1_days.checked == true || q1_weeks.checked == true)) {
           error.textContent = "Your answer of Q1 is Yes, you cannot answer Q1+!";
-      } else if (q2_text.checked == false && q2_image.checked == false && q2_user.checked == false && q2_timestamp.checked == false && q2_all.checked == false) {
+      } else if (q2_text.checked == false && q2_image.checked == false && q2_all.checked == false) {
           error.textContent = "Please answer Q2!";
       } else {
           error.textContent = "";
@@ -45,8 +43,6 @@
       q1_weeks.checked = false;
       q2_text.checked = false;
       q2_image.checked = false;
-      q2_user.checked = false;
-      q2_timestamp.checked = false;
       q2_all.checked = false;
       return false;
 
@@ -67,17 +63,19 @@
       <!-- Instruction part -->
       <h5><b>Instructions:</b></h5>
       <p>In this task, you will see a tweet.
-        <b>Your job is to determine how long the author of the tweet has stayed at the tagged city</b>.
+        <b>Your job is to determine for how long the author of the tweet has stayed at the given city</b>.
       </p>
       <p>You will follow these steps:
         <ol>
           <li>First, you will read the tweet.</li>
           <li>
-            Second, you will determine whether the author lives in the tagged city.
-            If you think the author does not live in the tagged city,
-            then you will determine how long the author has stayed at the tagged city.
+            Second, you will determine whether the author of the tweet lives in the given city.
           </li>
-          <li>Third, you will determine which part of the tweet is the most useful.</li>
+          <li>
+            If you think the author does not live in the given city,
+            then you will determine how long the author has stayed at the given city.
+          </li>
+          <li>Fourth, you will determine which part(s) of the tweets is/are the most useful to answer the question.</li>
         </ol>
       </p>
 
@@ -85,7 +83,7 @@
       <h5><b>Definitions and Examples:</b></h5>
 
       <!-- Q1 part -->
-      <h6><b>(click <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" >HERE</a> to see more details and examples of Q1 options):</b></h6>
+      <h6><b>(click <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" >HERE</a> to see more details and examples of Q1):</b></h6>
       <div class="panel panel-default">
 
         <!-- Definitions -->
@@ -93,13 +91,16 @@
 
           <!-- Definition of Yes -->
           <p>
+            <span style="font-size:13px; font-weight: bold">Does the author of the tweet live in the given city?</span>
+          </p>
+          <p>
             <span style="font-weight:bold">Yes</span>
-            <span style="font-size:13px">: The user <u>lives in</u> the tagged city.</span>
+            <span style="font-size:13px">: The user <u>lives in</u> the given city.</span>
           </p>
           <!-- Definition of No -->
           <p>
             <span style="font-weight:bold">No</span>
-            <span style="font-size:13px">: The user <u>does not live in</u> the tagged city.</span>
+            <span style="font-size:13px">: The user <u>does not live in</u> the given city.</span>
           </p>
 
         </div>
@@ -133,7 +134,7 @@
       </div>
 
       <!-- Q1+ part -->
-      <h6><b>(click <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" >HERE</a> to see more details and examples of Q1+ options):</b></h6>
+      <h6><b>(click <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" >HERE</a> to see more details and examples of Q1+):</b></h6>
       <div class="panel panel-default">
 
         <!-- Definitions -->
@@ -141,13 +142,16 @@
 
           <!-- Definition of hours -->
           <p>
+            <span style="font-size:13px; font-weight: bold">How long has the user stayed at the given city?</span>
+          </p>
+          <p>
             <span style="font-weight:bold">hours</span>
-            <span style="font-size:13px">: The user has stayed at the tagged city for <u>0-24 hours</u>.</span>
+            <span style="font-size:13px">: The user has stayed at the given city between <u>0-24 hours</u>.</span>
           </p>
           <!-- Definition of days -->
           <p>
             <span style="font-weight:bold">days</span>
-            <span style="font-size:13px">: The user has stayed at the tagged city for <u>1-7 days</u>.</span>
+            <span style="font-size:13px">: The user has stayed at the given city between <u>1-7 days</u>.</span>
           </p>
           <!-- Definition of weeks -->
           <p>
@@ -195,7 +199,7 @@
       </div>
 
       <!-- Q2 part -->
-      <h6><b>(click <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" >HERE</a> to see more details and examples of Q2 options):</b></h6>
+      <h6><b>(click <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" >HERE</a> to see more details and examples of Q2):</b></h6>
       <div class="panel panel-default">
 
         <!-- Definitions -->
@@ -203,28 +207,21 @@
 
           <!-- Definition of text -->
           <p>
+            <span style="font-size:13px; font-weight: bold">Which part of the tweet is the most useful?</span>
+          </p>
+          <p>
             <span style="font-weight:bold">Text</span>
-            <span style="font-size:13px">: <u>Text</u> provides most information.</span>
+            <span style="font-size:13px">: <u>Text</u> are the most useful.</span>
           </p>
           <!-- Definition of image -->
           <p>
             <span style="font-weight:bold">Image</span>
-            <span style="font-size:13px">: <u>Image</u> provides most information.</span>
-          </p>
-          <!-- Definition of profile information -->
-          <p>
-            <span style="font-weight:bold">Profile information</span>
-            <span style="font-size:13px">: <u>Profile information</u> is the most useful.</span>
-          </p>
-          <!-- Definition of timestamp -->
-          <p>
-            <span style="font-weight:bold">Timestamp</span>
-            <span style="font-size:13px">: <u>Timestamp</u> provides most information.</span>
+            <span style="font-size:13px">: <u>Image</u> are the most useful.</span>
           </p>
           <!-- Definition of cannot tell -->
           <p>
-            <span style="font-weight:bold">I cannot tell which one is the most useful</span>
-            <span style="font-size:13px">: <u>I cannot tell which part of the tweet</u> is the most useful.</span>
+            <span style="font-weight:bold">Text and Image</span>
+            <span style="font-size:13px">: Both <u>text and image</u> are useful.</span>
           </p>
 
         </div>
@@ -234,7 +231,7 @@
           <div class="panel-body">
             <!-- Example of text -->
             <p style="font-size:12px">
-              <p style="margin: 10px; text-align: center; font-weight: bold">Example of text</p>
+              <p style="margin: 10px; text-align: center; font-weight: bold">Example of Text</p>
               <br>
               <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1385388145974267905.png">
               <p style="margin: 10px">
@@ -245,34 +242,16 @@
             </p>
             <!-- Example of image -->
             <p style="font-size:12px">
-              <p style="margin: 10px; text-align: center; font-weight: bold">Example of image</p>
+              <p style="margin: 10px; text-align: center; font-weight: bold">Example of Image</p>
               <br>
               <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1367595428573765638.png">
               <p style="margin: 10px">
-                The image shows that the user just got her covid vaccine
+                The image shows that the user just got her covid vaccine.
               </p>
             </p>
-            <!-- Example of profile information -->
+            <!-- Example of text + image -->
             <p style="font-size:12px">
-              <p style="margin: 10px; text-align: center; font-weight: bold">Example of profile information</p>
-              <br>
-              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="undecided">
-              <p style="margin: 10px">
-                explanation explanation explanation
-              </p>
-            </p>
-            <!-- Example of timestamp -->
-            <p style="font-size:12px">
-              <p style="margin: 10px; text-align: center; font-weight: bold">Example of image</p>
-              <br>
-              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="undecided">
-              <p style="margin: 10px">
-                explanation explanation explanation
-              </p>
-            </p>
-            <!-- Example of cannot tell -->
-            <p style="font-size:12px">
-              <p style="margin: 10px; text-align: center; font-weight: bold">Example of I cannot tell which one is the most useful</p>
+              <p style="margin: 10px; text-align: center; font-weight: bold">Example of Text and Image</p>
               <br>
               <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1386483779976445956.png">
               <p style="margin: 10px">
@@ -351,15 +330,7 @@
                   </label>
                   <br>
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q2_user" name="q2" value="user" style="margin-right: 10px">Profile information
-                  </label>
-                  <br>
-                  <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q2_timestamp" name="q2" value="timestamp" style="margin-right: 10px">Timestamp
-                  </label>
-                  <br>
-                  <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q2_other" name="q2" value="other" style="margin-right: 10px">I cannot tell which one is the most useful
+                    <input type="radio" class="form-check-input" id="q2_other" name="q2" value="other" style="margin-right: 10px">Text and Image
                   </label>
                 </div>
               </div>
