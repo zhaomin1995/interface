@@ -2,12 +2,42 @@
 <!--suppress EqualityComparisonWithCoercionJS -->
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-database.js"></script>
+
+<script>
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "firebase/app";
+  import { getAnalytics } from "firebase/analytics";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAmpUX0s93lGIDIAKkY24w25z_WebrOABQ",
+    authDomain: "interface-a8745.firebaseapp.com",
+    databaseURL: "https://interface-a8745-default-rtdb.firebaseio.com",
+    projectId: "interface-a8745",
+    storageBucket: "interface-a8745.appspot.com",
+    messagingSenderId: "973392653615",
+    appId: "1:973392653615:web:0049be89c8337c3b08c5da",
+    measurementId: "G-4CLWZQ1DGT"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+
 
 <script type="text/javascript">
 
@@ -125,8 +155,8 @@
             <!-- Example of Yes -->
             <p style="font-size:12px">
               <p style="margin: 10px; text-align: center; font-weight: bold">Example of Yes</p>
-              <br />
-              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1244666583894589440.png" />
+              <br>
+              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1244666583894589440.png">
               <p style="margin: 10px">
                 The text and image show the flower in the bathroom of the apartment/house.
                 Therefore, we can tell that author of the tweet lives in <span style="color: #4A8FFF"><b>Charlottle</b></span>.
@@ -135,8 +165,8 @@
             <!-- Example of No-->
             <p style="font-size:12px">
               <p style="margin: 10px; text-align: center; font-weight: bold">Example of No</p>
-              <br />
-              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1385388145974267905.png" />
+              <br>
+              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1385388145974267905.png">
               <p style="margin: 10px">
                 The text shows that the author of the tweet is in <span style="color: #4A8FFF"><b>Kennebunkport</b></span> for vacation,
                 which means that he does not live there.
@@ -181,8 +211,8 @@
             <!-- Example of hours -->
             <p style="font-size:12px">
               <p style="margin: 10px; text-align: center; font-weight: bold">Example of hours</p>
-              <br />
-              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1300879167169331200.png" />
+              <br>
+              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1300879167169331200.png">
               <p style="margin: 10px">
                 The text and image show that the author of the tweet was working in a park,
                 which means he would go back to his home after hours.
@@ -191,8 +221,8 @@
             <!-- Example of days -->
             <p style="font-size:12px">
               <p style="margin: 10px; text-align: center; font-weight: bold">Example of days</p>
-              <br />
-              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1385388145974267905.png" />
+              <br>
+              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1385388145974267905.png">
               <p style="margin: 10px">
                 The text shows that the author of the tweet is in <span style="color: #4A8FFF"><b>Kennebunkport</b></span> for vacation
                 which usually 1-7 days.
@@ -201,8 +231,8 @@
             <!-- Example of weeks -->
             <p style="font-size:12px">
               <p style="margin: 10px; text-align: center; font-weight: bold">Example of weeks</p>
-              <br />
-              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1246944199460696066.png" />
+              <br>
+              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1246944199460696066.png">
               <p style="margin: 10px">
                 The hashtag #nyclockdownday15 in the text shows that the author of the tweet has already stuck in <span style="color: #4A8FFF"><b>Manhattan</b></span> for more than one week.
               </p>
@@ -246,8 +276,8 @@
             <!-- Example of text -->
             <p style="font-size:12px">
               <p style="margin: 10px; text-align: center; font-weight: bold">Example of Text</p>
-              <br />
-              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1385388145974267905.png" />
+              <br>
+              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1385388145974267905.png">
               <p style="margin: 10px">
                 We can tell that the author of the tweet went to <span style="color: #4A8FFF"><b>Kennebunkport</b></span> for vacation,
                 even without checking the image.
@@ -256,8 +286,8 @@
             <!-- Example of image -->
             <p style="font-size:12px">
               <p style="margin: 10px; text-align: center; font-weight: bold">Example of Image</p>
-              <br />
-              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1367595428573765638.png" />
+              <br>
+              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1367595428573765638.png">
               <p style="margin: 10px">
                 The image shows that the author of the tweet just got her covid vaccine.
                 The tweet text does not contain other information we can use to infer temporal information about the author of the tweet.
@@ -266,8 +296,8 @@
             <!-- Example of text + image -->
             <p style="font-size:12px">
               <p style="margin: 10px; text-align: center; font-weight: bold">Example of Text and Image</p>
-              <br />
-              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1386483779976445956.png" />
+              <br>
+              <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1386483779976445956.png">
               <p style="margin: 10px">
                 Both text and image are important for us to infer that the author of the tweet was running at Harvard Bridge (located in Cambridge),
                 which usually takes a couple of hours.
@@ -289,7 +319,7 @@
           <!-- Show tweet -->
           <div class="row">
             <div class="col-sm-12">
-              <img style="max-width: 350px; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px" src="${image_link}" />
+              <img style="max-width: 350px; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px" src="${image_link}">
             </div>
           </div>
 
@@ -302,11 +332,11 @@
                 <p>Does the author of the tweet live in <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px" onclick="showComponent(); hideDuration(); clearError()" />Yes
+                    <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px" onclick="showComponent(); hideDuration(); clearError()">Yes
                   </label>
-                  <br />
+                  <br>
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px" onclick="hideComponent(); showDuration(); clearError()" />No
+                    <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px" onclick="hideComponent(); showDuration(); clearError()">No
                   </label>
                 </div>
                 <div style="margin-bottom: 5px"></div>
@@ -317,15 +347,15 @@
                 <p>How long has the author of the tweet stayed at <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px" onclick="showComponent(); clearError()" />hours (0-24 hours)
-                  </label>
-                  <br />
-                  <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1+_days" name="q1+" value="days" style="margin-right: 10px" onclick="showComponent(); clearError()" />days (1-7 days)
+                    <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px" onclick="showComponent(); clearError()">hours (0-24 hours)
                   </label>
                   <br>
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1+_weeks" name="q1+" value="weeks" style="margin-right: 10px" onclick="showComponent(); clearError()" />weeks (more than 1 week)
+                    <input type="radio" class="form-check-input" id="q1+_days" name="q1+" value="days" style="margin-right: 10px" onclick="showComponent(); clearError()">days (1-7 days)
+                  </label>
+                  <br>
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" id="q1+_weeks" name="q1+" value="weeks" style="margin-right: 10px" onclick="showComponent(); clearError()">weeks (more than 1 week)
                   </label>
                 </div>
                 <div style="margin-bottom: 5px"></div>
@@ -336,15 +366,15 @@
                 <p>Which part of the tweet is the most useful?</p>
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q2_text" name="q2" value="text" style="margin-right: 10px" onclick="clearError()" />Text
+                    <input type="radio" class="form-check-input" id="q2_text" name="q2" value="text" style="margin-right: 10px" onclick="clearError()">Text
                   </label>
-                  <br />
+                  <br>
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q2_image" name="q2" value="image" style="margin-right: 10px" onclick="clearError()" />Image
+                    <input type="radio" class="form-check-input" id="q2_image" name="q2" value="image" style="margin-right: 10px" onclick="clearError()">Image
                   </label>
-                  <br />
+                  <br>
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q2_other" name="q2" value="all" style="margin-right: 10px" onclick="clearError()" />Text and Image
+                    <input type="radio" class="form-check-input" id="q2_other" name="q2" value="all" style="margin-right: 10px" onclick="clearError()">Text and Image
                   </label>
                 </div>
               </div>
@@ -356,7 +386,7 @@
               <span id="error" style="margin: 20px; color: red; font-weight: bold"></span>
               <br>
               <br>
-              <input type="submit" id='submitButton' class="btn btn-primary" value="Submit" />
+              <input type="submit" id='submitButton' class="btn btn-primary" value="Submit">
             </div>
 
           </form>
@@ -368,4 +398,7 @@
   </div>
 </div>
 </body>
+
+<script src="save_data.js"></script>
+
 </html>
