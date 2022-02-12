@@ -16,10 +16,10 @@
         <div class="row">
             <div class="col-md-6 offset-md-3 mt-5">
                 <h1>Please log in firstly</h1>
-                <p style="margin-bottom: 10px;"><button type="button" class="btn btn-primary" id="GoogleLogin">Login with Google</button></p>
-                <p style="margin-bottom: 10px;"><button type="button" class="btn btn-primary" id="FacebookLogin">Login with Google</button></p>
-                <p style="margin-bottom: 10px;"><button type="button" class="btn btn-primary" id="GithubLogin">Login with Google</button></p>
-                <p style="margin-bottom: 10px;"><button type="button" class="btn btn-primary" id="TwitterLogin">Login with Google</button></p>
+                <p style="margin-bottom: 10px;"><button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false" id="GoogleLogin">Login with Google</button></p>
+                <p style="margin-bottom: 10px;"><button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false" id="FacebookLogin">Login with Facebook</button></p>
+                <p style="margin-bottom: 10px;"><button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false" id="GithubLogin">Login with Github</button></p>
+                <p style="margin-bottom: 10px;"><button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false" id="TwitterLogin">Login with Twitter</button></p>
                 <span id="error" style="color: red; font-weight: bold;"></span>
             </div>
         </div>
@@ -42,41 +42,44 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
 
-        document.getElementById('login').addEventListener('click', GoogleLogin);
+        document.getElementById('GoogleLogin').addEventListener('click', GoogleLogin);
+        document.getElementById('FacebookLogin').addEventListener('click', FacebookLogin);
+        document.getElementById('GithubLogin').addEventListener('click', GithubLogin);
+        document.getElementById('TwitterLogin').addEventListener('click', TwitterLogin);
 
         function GoogleLogin() {
             var provider = new firebase.auth.GoogleAuthProvider();
             firebase.auth().signInWithPopup(provider).then(function (result) {
                 window.location = 'interface.html'
             }).catch(function (error) {
-                console.log(error)
+                document.getElementById('error').textContent = "Login failed. Please login again."
             });
         }
 
-        function GoogleLogin() {
-            var provider = new firebase.auth.GoogleAuthProvider();
+        function FacebookLogin() {
+            var provider = new firebase.auth.FacebookAuthProvider();
             firebase.auth().signInWithPopup(provider).then(function (result) {
                 window.location = 'interface.html'
             }).catch(function (error) {
-                console.log(error)
+                document.getElementById('error').textContent = "Login failed. Please login again."
             });
         }
 
-        function GoogleLogin() {
-            var provider = new firebase.auth.GoogleAuthProvider();
+        function GithubLogin() {
+            var provider = new firebase.auth.GithubAuthProvider();
             firebase.auth().signInWithPopup(provider).then(function (result) {
                 window.location = 'interface.html'
             }).catch(function (error) {
-                console.log(error)
+                document.getElementById('error').textContent = "Login failed. Please login again."
             });
         }
 
-        function GoogleLogin() {
-            var provider = new firebase.auth.GoogleAuthProvider();
+        function TwitterLogin() {
+            var provider = new firebase.auth.TwitterAuthProvider();
             firebase.auth().signInWithPopup(provider).then(function (result) {
                 window.location = 'interface.html'
             }).catch(function (error) {
-                console.log(error)
+                document.getElementById('error').textContent = "Login failed. Please login again."
             });
         }
 
