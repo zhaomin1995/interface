@@ -16,11 +16,11 @@
         <div class="row">
             <div class="col-md-6 offset-md-3 mt-5">
                 <h1>Please log in firstly</h1>
-                <button type="button" class="btn btn-primary" id="login">Log in with Google</button>
-                <br>
-                <br>
-                <br>
-                <button type="button" class="btn btn-primary" id="logout">Log out</button>
+                <p style="margin-bottom: 10px;"><button type="button" class="btn btn-primary" id="GoogleLogin">Login with Google</button></p>
+                <p style="margin-bottom: 10px;"><button type="button" class="btn btn-primary" id="FacebookLogin">Login with Google</button></p>
+                <p style="margin-bottom: 10px;"><button type="button" class="btn btn-primary" id="GithubLogin">Login with Google</button></p>
+                <p style="margin-bottom: 10px;"><button type="button" class="btn btn-primary" id="TwitterLogin">Login with Google</button></p>
+                <span id="error" style="color: red; font-weight: bold;"></span>
             </div>
         </div>
     </div>
@@ -43,30 +43,41 @@
         firebase.initializeApp(firebaseConfig);
 
         document.getElementById('login').addEventListener('click', GoogleLogin);
-        document.getElementById('logout').addEventListener('click', Logout);
 
         function GoogleLogin() {
             var provider = new firebase.auth.GoogleAuthProvider();
             firebase.auth().signInWithPopup(provider).then(function (result) {
-                var token = result.credential.accessToken;
-                var user = result.user;
-                // ...
-                console.log(user)
+                window.location = 'interface.html'
             }).catch(function (error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // The email of the user's account used.
-                var email = error.email;
-                // The firebase.auth.AuthCredential type that was used.
-                var credential = error.credential;
-                // ...
                 console.log(error)
             });
         }
 
-        function Logout() {
+        function GoogleLogin() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(provider).then(function (result) {
+                window.location = 'interface.html'
+            }).catch(function (error) {
+                console.log(error)
+            });
+        }
 
+        function GoogleLogin() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(provider).then(function (result) {
+                window.location = 'interface.html'
+            }).catch(function (error) {
+                console.log(error)
+            });
+        }
+
+        function GoogleLogin() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(provider).then(function (result) {
+                window.location = 'interface.html'
+            }).catch(function (error) {
+                console.log(error)
+            });
         }
 
     </script>
