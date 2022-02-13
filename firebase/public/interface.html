@@ -8,9 +8,9 @@
 <body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 
     <script type="module">
 
@@ -26,10 +26,18 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
 
-
     </script>
 
     <script type="text/javascript">
+
+        function Logout() {
+            firebase.auth().signOut().then(function () {
+                // Sign-out successfully.
+                window.location = "index.html"
+            }).catch(function (error) {
+                // An error happened.
+            })
+        }
 
         function showDuration() {
             document.getElementById('q1duration_question').style.display = 'block';
@@ -102,6 +110,11 @@
     </script>
 
     <div class="container">
+
+        <div class="container">
+            <button class="btn btn-outline-secondary pull-right" style="margin-top:10px" data-toggle="button" aria-pressed="false" onclick="Logout()">Logout</button>
+        </div>
+
         <p style="text-align: center; margin: 30px; display: block; font-size: 25px; font-weight: bold">Determine for how long people have stayed at the given city</p>
         <div class="row">
 
