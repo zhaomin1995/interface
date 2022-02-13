@@ -102,9 +102,9 @@
             } catch (error) {
                 let duration_answer = 'null';
             }
-            //console.log(q1_answer);
+            console.log(q1_answer);
             //console.log(duration_answer);
-            //console.log(q2_answer);
+            console.log(q2_answer);
         }
 
     </script>
@@ -337,74 +337,73 @@
                         </div>
 
                         <!-- Show questions -->
-                        <form id='form'>
-                            <div class="row">
+                        <div class="row">
 
-                                <!-- Show Q1 -->
-                                <div id="q1_question" class="col-sm-12 col-sm-offset-3">
-                                    <p>Does the author of the tweet live in <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
-                                    <div class="form-check-inline">
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px" onclick="showComponent(); hideDuration(); clearError()" />Yes
-                                        </label>
-                                        <br />
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px" onclick="hideComponent(); showDuration(); clearError()" />No
-                                        </label>
-                                    </div>
-                                    <div style="margin-bottom: 5px"></div>
+                            <!-- Show Q1 -->
+                            <div id="q1_question" class="col-sm-12 col-sm-offset-3">
+                                <p>Does the author of the tweet live in <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px" onclick="showComponent(); hideDuration(); clearError()" />Yes
+                                    </label>
+                                    <br />
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px" onclick="hideComponent(); showDuration(); clearError()" />No
+                                    </label>
                                 </div>
-
-                                <!-- Show Q1+ -->
-                                <div id="q1duration_question" class="col-sm-12 col-sm-offset-3" style="display: none">
-                                    <p>How long has the author of the tweet stayed at <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
-                                    <div class="form-check-inline">
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px" onclick="showComponent(); clearError()" />hours (0-24 hours)
-                                        </label>
-                                        <br />
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" id="q1+_days" name="q1+" value="days" style="margin-right: 10px" onclick="showComponent(); clearError()" />days (1-7 days)
-                                        </label>
-                                        <br>
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" id="q1+_weeks" name="q1+" value="weeks" style="margin-right: 10px" onclick="showComponent(); clearError()" />weeks (more than 1 week)
-                                        </label>
-                                    </div>
-                                    <div style="margin-bottom: 5px"></div>
-                                </div>
-
-                                <!-- Show Q2 -->
-                                <div id="q2_question" class="col-sm-12 col-sm-offset-3" style="display: none">
-                                    <p>Which part of the tweet is the most useful?</p>
-                                    <div class="form-check-inline">
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" id="q2_text" name="q2" value="text" style="margin-right: 10px" onclick="clearError()" />Text
-                                        </label>
-                                        <br />
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" id="q2_image" name="q2" value="image" style="margin-right: 10px" onclick="clearError()" />Image
-                                        </label>
-                                        <br />
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" id="q2_other" name="q2" value="all" style="margin-right: 10px" onclick="clearError()" />Text and Image
-                                        </label>
-                                    </div>
-                                </div>
-
+                                <div style="margin-bottom: 5px"></div>
                             </div>
 
-                            <!-- Submit button and error message (if any) -->
-                            <div class="row text-center">
-                                <span id="error" style="margin: 20px; color: red; font-weight: bold"></span>
-                                <br>
-                                <br>
-                                <button class="btn btn-primary" onclick="addData()">add data</button>
-                                <!--<input type="submit" id='submitButton' class="btn btn-primary" value="Submit" onclick="addData()" />-->
-                                <!--<input type="submit" id='submitButton' class="btn btn-primary" value="Submit" onclick="return validateForm(); addData()" />-->
+                            <!-- Show Q1+ -->
+                            <div id="q1duration_question" class="col-sm-12 col-sm-offset-3" style="display: none">
+                                <p>How long has the author of the tweet stayed at <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px" onclick="showComponent(); clearError()" />hours (0-24 hours)
+                                    </label>
+                                    <br />
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="q1+_days" name="q1+" value="days" style="margin-right: 10px" onclick="showComponent(); clearError()" />days (1-7 days)
+                                    </label>
+                                    <br>
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="q1+_weeks" name="q1+" value="weeks" style="margin-right: 10px" onclick="showComponent(); clearError()" />weeks (more than 1 week)
+                                    </label>
+                                </div>
+                                <div style="margin-bottom: 5px"></div>
                             </div>
 
-                        </form>
+                            <!-- Show Q2 -->
+                            <div id="q2_question" class="col-sm-12 col-sm-offset-3" style="display: none">
+                                <p>Which part of the tweet is the most useful?</p>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="q2_text" name="q2" value="text" style="margin-right: 10px" onclick="clearError()" />Text
+                                    </label>
+                                    <br />
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="q2_image" name="q2" value="image" style="margin-right: 10px" onclick="clearError()" />Image
+                                    </label>
+                                    <br />
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="q2_other" name="q2" value="all" style="margin-right: 10px" onclick="clearError()" />Text and Image
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Submit button and error message (if any) -->
+                        <div class="row text-center">
+                            <span id="error" style="margin: 20px; color: red; font-weight: bold"></span>
+                            <br>
+                            <br>
+                        </div>
+
+                        <div class="row text-center">
+                            <button class="btn btn-primary" onclick="validateForm(); addData()">Next</button>
+                        </div>
+
 
                     </div>
                 </div>
