@@ -118,7 +118,7 @@
             // Get user's annotations
             var current_user = firebase.auth().currentUser;
             var worker_id = current_user.uid;
-            var instance_id = document.getElementById('instance_id').value;
+            var instance_id = document.getElementById('instance_id').textContent;
             var q1_answer = document.querySelector('input[name="q1"]:checked').value;
             var q2_answer = document.querySelector('input[name="q2"]:checked').value;
             if (document.querySelector('input[name="q1+"]:checked')) {
@@ -363,7 +363,7 @@
 
             <!-- display the tweet and questions -->
             <div class="col-sm-7">
-                <h5><b>Read the tweet and answer the questions about the author of the tweet:</b></h5>
+                <h5><b>Read the tweet and answer the questions about the author of the tweet:<span id="instance_id" style="display: none"></span></b></h5>
                 <div class="panel panel-default">
                     <div class="panel-body">
 
@@ -439,8 +439,8 @@
                         </div>
 
                         <div class="row text-center">
-                            <!--<button id="submitButton" class="btn btn-primary" onclick="validateForm(); addData(); hideDuration(); hideComponent(); uncheckQ1()">Next</button>-->
-                            <button id="submitButton" class="btn btn-primary" onclick="validateForm(); hideDuration(); hideComponent(); uncheckQ1()">Next</button>
+                            <button id="submitButton" class="btn btn-primary" onclick="validateForm(); addData(); hideDuration(); hideComponent(); uncheckQ1()">Next</button>
+<!--                            <button id="submitButton" class="btn btn-primary" onclick="validateForm(); hideDuration(); hideComponent(); uncheckQ1()">Next</button>-->
                         </div>
 
 
@@ -469,7 +469,8 @@
 
             data.docs.forEach(doc => {
                 const instance = doc.data();
-                console.log(instance.location)
+                console.log(instance)
+                document.getElementById('instance_id').textContent = instance.instance_id;
                 document.getElementById('image_link').src = instance.image_link;
                 document.getElementById('location_q1').textContent = instance.location;
                 document.getElementById('location_duration').textContent = instance.location;
