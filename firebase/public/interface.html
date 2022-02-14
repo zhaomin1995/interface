@@ -40,7 +40,7 @@
 
     </script>
 
-    <script src="pagination.js"></script>
+    <!--<script src="pagination.js"></script>-->
      
     <script type="text/javascript">
 
@@ -73,6 +73,11 @@
             document.getElementById('q2_text').checked = false;
             document.getElementById('q2_image').checked = false;
             document.getElementById('q2_other').checked = false;
+        }
+
+        function uncheckQ1() {
+            document.getElementById('q1_yes').checked = false;
+            document.getElementById('q1_no').checked = false;
         }
 
         function clearError() {
@@ -108,30 +113,6 @@
 
         }
 
-        function readData() {
-
-            // Get all data
-            firebase.firestore().collection('data').onSnapshot((querySnapshot) => {
-                var instances = [];
-                querySnapshot.forEach(doc => {
-                    instances.push(doc.data())
-                });
-                console.log(querySnapshot)
-                console.log(instances)
-            });
-        }
-
-        //function loadNext() {
-
-        //    // Load next instance
-        //    const ref = firebase.firestore().collection('data').limit(1);
-        //    const instance = await ref.get().data();
-        //    document.getElementById('image_link').src = instance.image_link;
-        //    document.getElementById('location_q1').src = instance.location;
-        //    document.getElementById('location_duration').src = instance.location;
-
-        //}
-
         function addData() {
             
             // Get user's annotations
@@ -160,8 +141,6 @@
                 console.log(e)
             })
         }
-
-        window.onload = readData
 
     </script>
 
@@ -400,7 +379,7 @@
 
                             <!-- Show Q1 -->
                             <div id="q1_question" class="col-sm-12 col-sm-offset-3">
-                                <p>Does the author of the tweet live in <span id="location_q1" style="color: #4A8FFF"><b></b></span>?</p>
+                                <p>Does the author of the tweet live in <span id="location_q1" style="color: #4A8FFF; font-weight: bold;"></span>?</p>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
                                         <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px" onclick="showComponent(); hideDuration(); clearError()" />Yes
@@ -415,7 +394,7 @@
 
                             <!-- Show Q1+ -->
                             <div id="q1duration_question" class="col-sm-12 col-sm-offset-3" style="display: none">
-                                <p>How long has the author of the tweet stayed at <span id="location_duration" style="color: #4A8FFF"><b></b></span>?</p>
+                                <p>How long has the author of the tweet stayed at <span id="location_duration" style="color: #4A8FFF; font-weight: bold;"></span>?</p>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
                                         <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px" onclick="showComponent(); clearError()" />hours (0-24 hours)
@@ -460,7 +439,8 @@
                         </div>
 
                         <div class="row text-center">
-                            <button id="submitButton" class="btn btn-primary" onclick="validateForm(); addData()">Next</button>
+                            <!--<button id="submitButton" class="btn btn-primary" onclick="validateForm(); addData(); hideDuration(); hideComponent(); uncheckQ1()">Next</button>-->
+                            <button id="submitButton" class="btn btn-primary" onclick="validateForm(); hideDuration(); hideComponent(); uncheckQ1()">Next</button>
                         </div>
 
 
@@ -470,5 +450,49 @@
 
         </div>
     </div>
+
+    <script>
+
+        var latestDoc = null;
+
+        const loadNext = async () => {
+
+            // Load next instance
+            const ref = firebase
+                .firestore()
+                .collection('data')
+                .orderBy('instance_id')
+                .startAfter(latestDoc || 0)
+                .limit(1);
+
+            const data = await ref.get();
+
+            data.docs.forEach(doc => {
+                const instance = doc.data();
+                console.log(instance.location)
+                document.getElementById('image_link').src = instance.image_link;
+                document.getElementById('location_q1').textContent = instance.location;
+                document.getElementById('location_duration').textContent = instance.location;
+            })
+            
+            // Update latest doc
+            latestDoc = data.docs[data.docs.length - 1];
+
+            // Unattach event listeners if there is no more data
+            if (data.empty) {
+                loadMore.removeEventListener('click', handleClick);
+            }
+        }
+
+        // Wait for DOM content to load
+        window.addEventListener('DOMContentLoaded', () => loadNext());
+
+        // Load more data
+        const loadMore = document.getElementById('submitButton');
+        const handleClick = () => {
+            loadNext();
+        }
+        loadMore.addEventListener('click', handleClick);
+    </script>
 </body>
 </html>
