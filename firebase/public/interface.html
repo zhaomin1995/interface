@@ -11,6 +11,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
     <script type="module">
 
@@ -30,8 +31,8 @@
         firebase.auth().onAuthStateChanged(function (current_user) {
             if (current_user) {
                 document.getElementById('user_details').innerHTML = `
-                    <p>Logged in with ${current_user.displayName}</p>
-                `;
+                        <p>Logged in with ${current_user.displayName}</p>
+                    `;
             } else {
                 window.location = 'index.html'
             }
@@ -39,6 +40,8 @@
 
     </script>
 
+    <script src="pagination.js"></script>
+     
     <script type="text/javascript">
 
         function Logout() {
@@ -105,7 +108,36 @@
 
         }
 
+        function readData() {
+
+            // Get all data
+            firebase.firestore().collection('data').onSnapshot((querySnapshot) => {
+                var instances = [];
+                querySnapshot.forEach(doc => {
+                    instances.push(doc.data())
+                });
+                console.log(querySnapshot)
+                console.log(instances)
+            });
+        }
+
+        //function loadNext() {
+
+        //    // Load next instance
+        //    const ref = firebase.firestore().collection('data').limit(1);
+        //    const instance = await ref.get().data();
+        //    document.getElementById('image_link').src = instance.image_link;
+        //    document.getElementById('location_q1').src = instance.location;
+        //    document.getElementById('location_duration').src = instance.location;
+
+        //}
+
         function addData() {
+            
+            // Get user's annotations
+            var current_user = firebase.auth().currentUser;
+            var worker_id = current_user.uid;
+            var instance_id = document.getElementById('instance_id').value;
             var q1_answer = document.querySelector('input[name="q1"]:checked').value;
             var q2_answer = document.querySelector('input[name="q2"]:checked').value;
             if (document.querySelector('input[name="q1+"]:checked')) {
@@ -113,7 +145,23 @@
             } else {
                 var duration_answer = 'null'
             }
+
+            // Save the annotation to the firebase database
+            var annot = {
+                instance_id: instance_id,
+                worker_id: worker_id,
+                q1_answer: q1_answer,
+                duration_answer: duration_answer,
+                q2_answer: q2_answer
+            }
+            firebase.firestore().collection('annotation').add(annot).then(doc => {
+                console.log(`Doc ${doc.id} added successfully.`)
+            }).catch(e => {
+                console.log(e)
+            })
         }
+
+        window.onload = readData
 
     </script>
 
@@ -343,7 +391,7 @@
                         <!-- Show tweet -->
                         <div class="row">
                             <div class="col-sm-12">
-                                <img style="max-width: 350px; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px" src="${image_link}" />
+                                <img id="image_link" style="max-width: 350px; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px" src="" />
                             </div>
                         </div>
 
@@ -352,7 +400,7 @@
 
                             <!-- Show Q1 -->
                             <div id="q1_question" class="col-sm-12 col-sm-offset-3">
-                                <p>Does the author of the tweet live in <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
+                                <p>Does the author of the tweet live in <span id="location_q1" style="color: #4A8FFF"><b></b></span>?</p>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
                                         <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px" onclick="showComponent(); hideDuration(); clearError()" />Yes
@@ -367,7 +415,7 @@
 
                             <!-- Show Q1+ -->
                             <div id="q1duration_question" class="col-sm-12 col-sm-offset-3" style="display: none">
-                                <p>How long has the author of the tweet stayed at <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
+                                <p>How long has the author of the tweet stayed at <span id="location_duration" style="color: #4A8FFF"><b></b></span>?</p>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
                                         <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px" onclick="showComponent(); clearError()" />hours (0-24 hours)
@@ -412,7 +460,7 @@
                         </div>
 
                         <div class="row text-center">
-                            <button class="btn btn-primary" onclick="validateForm(); addData()">Next</button>
+                            <button id="submitButton" class="btn btn-primary" onclick="validateForm(); addData()">Next</button>
                         </div>
 
 
