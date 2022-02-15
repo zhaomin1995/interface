@@ -2,8 +2,9 @@
 <!--suppress EqualityComparisonWithCoercionJS -->
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <title>Annotation Interface - Duration</title>
 </head>
 <body>
 
@@ -469,7 +470,6 @@
 
             data.docs.forEach(doc => {
                 const instance = doc.data();
-                console.log(instance)
                 document.getElementById('instance_id').textContent = instance.instance_id;
                 document.getElementById('image_link').src = instance.image_link;
                 document.getElementById('location_q1').textContent = instance.location;
@@ -482,6 +482,8 @@
             // Unattach event listeners if there is no more data
             if (data.empty) {
                 loadMore.removeEventListener('click', handleClick);
+                document.getElementById('submitButton').style.display = 'none';
+                document.getElementById('error').textContent = 'You have completed all tasks! Thanks for your help!'
             }
         }
 
