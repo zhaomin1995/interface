@@ -8,7 +8,7 @@
     <title>Annotation Interface - Duration</title>
 
     <!-- CSS for login page -->
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <link rel="icon" type="image/png" href="loginPage/images/icons/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="loginPage/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="loginPage/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="loginPage/fonts/iconic/css/material-design-iconic-font.min.css">
@@ -19,65 +19,74 @@
     <link rel="stylesheet" type="text/css" href="loginPage/vendor/daterangepicker/daterangepicker.css">
     <link rel="stylesheet" type="text/css" href="loginPage/css/util.css">
     <link rel="stylesheet" type="text/css" href="loginPage/css/main.css">
+
+    <script>
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+        function resetSignIn() {
+            document.getElementById('email').value = "";
+            document.getElementById('password').value = "";
+        }
+    </script>
 </head>
 <body>
 
-    <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+    <div class="container-login100" style="background-image: url('loginPage/images/bg-01.jpg');">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-            <form class="login100-form validate-form">
-                <span class="login100-form-title p-b-37">Sign In</span>
+            <span class="login100-form-title p-b-37">Sign In</span>
 
-                <div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
-                    <input class="input100" type="text" name="username" placeholder="username or email">
-                    <span class="focus-input100"></span>
-                </div>
+            <div class="wrap-input100 m-b-20">
+                <input class="input100" id="email" type="email" placeholder="email">
+                <span class="focus-input100"></span>
+            </div>
 
-                <div class="wrap-input100 validate-input m-b-25" data-validate="Enter password">
-                    <input class="input100" type="password" name="pass" placeholder="password">
-                    <span class="focus-input100"></span>
-                </div>
+            <div class="wrap-input100 m-b-25">
+                <input class="input100" id="password" type="password" placeholder="password">
+                <span class="focus-input100"></span>
+            </div>
 
-                <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
-                        Sign In
-                    </button>
-                </div>
+            <div class="container-login100-form-btn">
+                <button id="signIn" class="login100-form-btn">
+                    Sign In
+                </button>
+            </div>
 
-                <div class="text-center p-t-57 p-b-20">
-                    <span class="txt1">
-                        Or login with
-                    </span>
-                </div>
+            <div class="text-center p-t-57 p-b-20">
+                <span class="txt1">
+                    Or login with
+                </span>
+            </div>
 
-                <div class="flex-c p-b-50">
-                    <a class="login100-social-item">
-                        <img id="FacebookLogin" src="loginPage/images/icons/icon-facebook.png" />
-                    </a>
+            <div class="flex-c p-b-50">
+                <a class="login100-social-item">
+                    <img id="FacebookLogin" src="loginPage/images/icons/icon-facebook.png" />
+                </a>
 
-                    <a class="login100-social-item">
-                        <img id="GoogleLogin" src="loginPage/images/icons/icon-google.png" />
-                    </a>
+                <a class="login100-social-item">
+                    <img id="GoogleLogin" src="loginPage/images/icons/icon-google.png" />
+                </a>
 
-                    <a class="login100-social-item">
-                        <img id="GithubLogin" src="loginPage/images/icons/icon-github.png" />
-                    </a>
+                <a class="login100-social-item">
+                    <img id="GithubLogin" src="loginPage/images/icons/icon-github.png" />
+                </a>
 
-                    <a class="login100-social-item">
-                        <img id="TwitterLogin" src="loginPage/images/icons/icon-twitter.png" />
-                    </a>
-                </div>
+                <a class="login100-social-item">
+                    <img id="TwitterLogin" src="loginPage/images/icons/icon-twitter.png" />
+                </a>
+            </div>
 
-                <div class="text-center p-t-0 p-b-50">
-                    <p><span id="error" class="txt1" style="color: red"></span></p>
-                </div>
+            <div class="text-center p-t-0 p-b-50">
+                <p><span id="error" class="txt1" style="color: red; display: inline-block;"></span></p>
+            </div>
 
 
-                <div class="text-center">
-                    <a href="#" class="txt2 hov1">
-                        Sign Up
-                    </a>
-                </div>
-            </form>
+            <div class="text-center">
+                <a id="signUp" class="txt2 hov1">
+                    Sign Up
+                </a>
+            </div>
 
 
         </div>
@@ -113,6 +122,52 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
 
+        // Sign up
+        document.getElementById('signUp').addEventListener('click', SignUp);
+        function SignUp() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            if (email == null) {
+                document.getElementById('error').textContent = 'email is empty';
+            } else if (!validateEmail(email)) {
+                document.getElementById('error').textContent = 'email is not valid';
+            } else if (password == null) {
+                document.getElementById('error').textContent = 'password is empty';
+            } else {
+                firebase.auth().createUserWithEmailAndPassword(email, password).catch(e => {
+                    console.log(e);
+                });
+                console.log('successfully signed up!');
+                SignIn();
+            }
+        }
+
+        // Sign in with email & password
+        document.getElementById('signIn').addEventListener('click', SignIn);
+        function SignIn() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            console.log(email);
+            console.log(password);
+            if (email === "") {
+                document.getElementById('error').textContent = 'email is empty';
+            } else if (!validateEmail(email)) {
+                document.getElementById('error').textContent = 'email is not valid';
+            } else if (password === "") {
+                document.getElementById('error').textContent = 'password is empty';
+            } else {
+                firebase.auth().signInWithEmailAndPassword(email, password);
+                firebase.auth().onAuthStateChanged(user => {
+                    if (!user) {
+                        document.getElementById('error').textContent = 'email and password do not match';
+                    } else {
+                        window.location = 'interface.html';
+                    }
+                })
+            }
+        }
+
+        // Sign in with Google/Facebook/Github/Twitter
         document.getElementById('GoogleLogin').addEventListener('click', GoogleLogin);
         document.getElementById('FacebookLogin').addEventListener('click', FacebookLogin);
         document.getElementById('GithubLogin').addEventListener('click', GithubLogin);

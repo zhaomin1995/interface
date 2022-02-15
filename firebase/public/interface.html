@@ -32,9 +32,15 @@
         var current_user = firebase.auth().currentUser;
         firebase.auth().onAuthStateChanged(function (current_user) {
             if (current_user) {
-                document.getElementById('user_details').innerHTML = `
-                                    <p>Logged in with ${current_user.displayName}</p>
-                                `;
+                if (current_user.displayName) {
+                    document.getElementById('user_details').innerHTML = `
+                        <p>Logged in with ${current_user.displayName}</p>
+                    `;
+                } else {
+                    document.getElementById('user_details').innerHTML = `
+                        <p>Logged in with ${current_user.email}</p>
+                    `;
+                }
             } else {
                 window.location = 'index.html'
             }
