@@ -75,11 +75,13 @@
 
         function hideReason() {
             document.getElementById('reason').style.display = 'none';
+            document.getElementById('reason').value = "";
         }
 
         function uncheckQ1() {
             document.getElementById('q1_yes').checked = false;
             document.getElementById('q1_no').checked = false;
+            document.getElementById('q1_hard').checked = false;
         }
 
         function clearError() {
@@ -97,16 +99,15 @@
             var error = document.getElementById('error');
 
             if (q1_yes.checked == false && q1_no.checked == false && q1_hard.checked == false) {
-                error.textContent = "Please tell me if the author of tweet lives in ${location}";
+                error.textContent = "Please tell me if the author of tweet lives in the given city";
             } else if (q1_no.checked == true && (duration_long.checked == false && duration_short.checked == false)) {
-                error.textContent = "Please tell me how long has the author of the tweet stayed at ${location}";
-            } else if (reason.value.length == 0) {
-                error.textContent = "Please tell me why you cannot determine if the author of the tweet lives in ${location}";
+                error.textContent = "Please tell me how long has the author of the tweet stayed at the given city";
+            } else if (q1_hard.checked == true && reason.value.length == 0) {
+                error.textContent = "Please tell me why you cannot determine if the author of the tweet lives in the given city";
             } else {
                 error.textContent = "";
                 return true;
             }
-
             return false;
 
         }
@@ -118,7 +119,8 @@
             var worker_id = current_user.uid;
             var instance_id = document.getElementById('instance_id').textContent;
             var q1_answer = document.querySelector('input[name="q1"]:checked').value;
-            if (document.querySelector('input[name="q1+"]:checked')) {
+            var q1_reason = document.getElementById('reason').value;
+            if (document.querySelector('input[name="duration"]:checked')) {
                 var duration_answer = document.querySelector('input[name="duration"]:checked').value;
             } else {
                 var duration_answer = 'null'
@@ -129,14 +131,28 @@
                 instance_id: instance_id,
                 worker_id: worker_id,
                 q1_answer: q1_answer,
+                q1_reason: q1_reason,
                 duration_answer: duration_answer,
-                q2_answer: q2_answer
             }
             firebase.firestore().collection('annotation').add(annot).then(doc => {
                 console.log(`Doc ${doc.id} added successfully.`)
             }).catch(e => {
                 console.log(e)
             })
+        }
+
+        function combine() {
+            var validate = validateForm();
+            if (validate) {
+                addData();
+                clearError(); 
+                hideDuration(); 
+                hideReason(); 
+                uncheckQ1();
+                handleClick();
+            } else {
+                return false;
+            }
         }
 
     </script>
@@ -309,15 +325,15 @@
                                 <p>Does the author of the tweet live in <span id="location_q1" style="color: #4A8FFF; font-weight: bold;"></span>?</p>
                                 <div class="form-check-inline" style="margin-bottom: 10px">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px" onclick="hideDuration(); clearError()" />Yes
+                                        <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px" onclick="hideDuration(); hideReason(); clearError()" />Yes
                                     </label>
                                     <br />
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px" onclick="showDuration(); clearError()" />No
+                                        <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px" onclick="showDuration(); hideReason(); clearError()" />No
                                     </label>
                                     <br />
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" id="q1_hard" name="q1" value="hard" style="margin-right: 10px" onclick="hideDuration(); showReason(); clearError()" />I cannot determine
+                                        <input type="radio" class="form-check-input" id="q1_hard" name="q1" value="hard" style="margin-right: 10px" onclick="hideDuration(); showReason(); clearError(); clearError()" />I cannot determine
                                     </label>
                                     <br />
 
@@ -332,11 +348,11 @@
                                 <p>How long has the author of the tweet stayed at <span id="location_duration" style="color: #4A8FFF; font-weight: bold;"></span>?</p>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" id="short" name="duration" value="less than one day" style="margin-right: 10px" onclick="clearError()" />less than one day
+                                        <input type="radio" class="form-check-input" id="short" name="duration" value="less than one day" style="margin-right: 10px" onclick="clearError(); clearError()" />less than one day
                                     </label>
                                     <br />
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" id="long" name="duration" value="more than one day" style="margin-right: 10px" onclick="clearError()" />more than one day
+                                        <input type="radio" class="form-check-input" id="long" name="duration" value="more than one day" style="margin-right: 10px" onclick="clearError(); clearError()" />more than one day
                                     </label>
                                 </div>
                             </div>
@@ -349,8 +365,9 @@
                         </div>
 
                         <div class="row text-center">
-                            <button id="submitButton" class="btn btn-primary" onclick="validateForm(); addData(); hideDuration(); hideReason(); uncheckQ1()">Next</button>
-                            <!--                            <button id="submitButton" class="btn btn-primary" onclick="validateForm(); hideDuration(); uncheckQ1()">Next</button>-->
+                            <!-- <button id="submitButton" class="btn btn-primary" onclick="validateForm(); addData(); clearError(); hideDuration(); hideReason(); uncheckQ1()">Next</button> -->
+                            <button id="submitButton" class="btn btn-primary" onclick="combine()">Next</button>
+                            <!-- <button id="submitButton" class="btn btn-primary" onclick="validateForm(); hideDuration(); uncheckQ1()">Next</button> -->
                         </div>
 
 
@@ -404,7 +421,7 @@
         const handleClick = () => {
             loadNext();
         }
-        loadMore.addEventListener('click', handleClick);
+        // loadMore.addEventListener('click', handleClick);
     </script>
 </body>
 </html>

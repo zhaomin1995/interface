@@ -12,7 +12,7 @@ firebase.initializeApp({
 var db = firebase.firestore();
 
 // COPY INSTANCES YOU WANT TO UPLOAD HERE
-var menu =[  
+var menu = [  
     {"instance_id": "1240728065983959040", "location": "Pickerington", "image_link": "https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1240728065983959040.png"},
     {"instance_id": "1240733998923550724", "location": "Towson", "image_link": "https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1240733998923550724.png"},
     {"instance_id": "1240734107090456576", "location": "Santa Monica", "image_link": "https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1240734107090456576.png"},
