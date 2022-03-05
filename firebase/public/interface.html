@@ -65,9 +65,16 @@
 
         function hideDuration() {
             document.getElementById('q1duration_question').style.display = 'none';
-            document.getElementById('q1+_hours').checked = false;
-            document.getElementById('q1+_days').checked = false;
-            document.getElementById('q1+_weeks').checked = false;
+            document.getElementById('long').checked = false;
+            document.getElementById('short').checked = false;
+        }
+
+        function showReason() {
+            document.getElementById('reason').style.display = 'block';
+        }
+
+        function hideReason() {
+            document.getElementById('reason').style.display = 'none';
         }
 
         function uncheckQ1() {
@@ -83,19 +90,18 @@
 
             var q1_yes = document.getElementById('q1_yes');
             var q1_no = document.getElementById('q1_no');
-            var q1_hours = document.getElementById('q1+_hours');
-            var q1_days = document.getElementById('q1+_days');
-            var q1_weeks = document.getElementById('q1+_weeks');
+            var q1_hard = document.getElementById('q1_hard');
+            var reason = document.getElementById('reason');
+            var duration_long = document.getElementById('long');
+            var duration_short = document.getElementById('short');
             var error = document.getElementById('error');
 
-            if (q1_yes.checked == false && q1_no.checked == false) {
+            if (q1_yes.checked == false && q1_no.checked == false && q1_hard.checked == false) {
                 error.textContent = "Please tell me if the author of tweet lives in ${location}";
-            } else if (q1_yes.checked == true && (q2_text.checked == false && q2_image.checked == false && q2_all.checked == false)) {
-                error.textContent = "Please tell me which part(s) of the tweet is/are the most useful";
-            } else if (q1_no.checked == true && (q1_hours.checked == false && q1_days.checked == false && q1_weeks.checked == false)) {
+            } else if (q1_no.checked == true && (duration_long.checked == false && duration_short.checked == false)) {
                 error.textContent = "Please tell me how long has the author of the tweet stayed at ${location}";
-            } else if (q1_no.checked == true && (q1_hours.checked == true || q1_days.checked == true || q1_weeks.checked == true) && (q2_text.checked == false && q2_image.checked == false && q2_all.checked == false)) {
-                error.textContent = "Please tell me which part(s) of the tweet is/are the most useful";
+            } else if (reason.value.length == 0) {
+                error.textContent = "Please tell me why you cannot determine if the author of the tweet lives in ${location}";
             } else {
                 error.textContent = "";
                 return true;
@@ -112,9 +118,8 @@
             var worker_id = current_user.uid;
             var instance_id = document.getElementById('instance_id').textContent;
             var q1_answer = document.querySelector('input[name="q1"]:checked').value;
-            var q2_answer = document.querySelector('input[name="q2"]:checked').value;
             if (document.querySelector('input[name="q1+"]:checked')) {
-                var duration_answer = document.querySelector('input[name="q1+"]:checked').value;
+                var duration_answer = document.querySelector('input[name="duration"]:checked').value;
             } else {
                 var duration_answer = 'null'
             }
@@ -302,48 +307,49 @@
                             <!-- Show Q1 -->
                             <div id="q1_question" class="col-sm-12 col-sm-offset-1">
                                 <p>Does the author of the tweet live in <span id="location_q1" style="color: #4A8FFF; font-weight: bold;"></span>?</p>
-                                <div class="form-check-inline">
+                                <div class="form-check-inline" style="margin-bottom: 10px">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px" onclick="showComponent(); hideDuration(); clearError()" />Yes
+                                        <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px" onclick="hideDuration(); clearError()" />Yes
                                     </label>
                                     <br />
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px" onclick="hideComponent(); showDuration(); clearError()" />No
+                                        <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px" onclick="showDuration(); clearError()" />No
                                     </label>
+                                    <br />
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="q1_hard" name="q1" value="hard" style="margin-right: 10px" onclick="hideDuration(); showReason(); clearError()" />I cannot determine
+                                    </label>
+                                    <br />
+
                                 </div>
-                                <div style="margin-bottom: 5px"></div>
+                                <div class="form-group">
+                                    <textarea class="form-control" id="reason" rows="3" style="max-width: 70%; display: none;" placeholder="Please tell us why you cannot determine"></textarea>
+                                </div>
                             </div>
 
-                            <!-- Show Q1+ -->
+                            <!-- Show duration question -->
                             <div id="q1duration_question" class="col-sm-12 col-sm-offset-1" style="display: none">
                                 <p>How long has the author of the tweet stayed at <span id="location_duration" style="color: #4A8FFF; font-weight: bold;"></span>?</p>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" id="q1+_hours" name="q1+" value="hours" style="margin-right: 10px" onclick="showComponent(); clearError()" />hours (0-24 hours)
+                                        <input type="radio" class="form-check-input" id="short" name="duration" value="less than one day" style="margin-right: 10px" onclick="clearError()" />less than one day
                                     </label>
                                     <br />
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" id="q1+_days" name="q1+" value="days" style="margin-right: 10px" onclick="showComponent(); clearError()" />days (1-7 days)
-                                    </label>
-                                    <br>
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" id="q1+_weeks" name="q1+" value="weeks" style="margin-right: 10px" onclick="showComponent(); clearError()" />weeks (more than 1 week)
+                                        <input type="radio" class="form-check-input" id="long" name="duration" value="more than one day" style="margin-right: 10px" onclick="clearError()" />more than one day
                                     </label>
                                 </div>
-                                <div style="margin-bottom: 5px"></div>
                             </div>
 
                         </div>
 
                         <!-- Submit button and error message (if any) -->
-                        <div class="row text-center">
+                        <div class="row text-center" style="margin-bottom: 15px;">
                             <span id="error" style="margin: 20px; color: red; font-weight: bold"></span>
-                            <br>
-                            <br>
                         </div>
 
                         <div class="row text-center">
-                            <button id="submitButton" class="btn btn-primary" onclick="validateForm(); addData(); hideDuration(); uncheckQ1()">Next</button>
+                            <button id="submitButton" class="btn btn-primary" onclick="validateForm(); addData(); hideDuration(); hideReason(); uncheckQ1()">Next</button>
                             <!--                            <button id="submitButton" class="btn btn-primary" onclick="validateForm(); hideDuration(); uncheckQ1()">Next</button>-->
                         </div>
 
