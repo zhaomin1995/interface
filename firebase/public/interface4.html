@@ -134,7 +134,7 @@
                 q1_reason: q1_reason,
                 duration_answer: duration_answer,
             }
-            firebase.firestore().collection('annotation').add(annot).then(doc => {
+            firebase.firestore().collection('annotation4').add(annot).then(doc => {
                 console.log(`Doc ${doc.id} added successfully.`)
             }).catch(e => {
                 console.log(e)
@@ -387,7 +387,7 @@
             // Load next instance
             const ref = firebase
                 .firestore()
-                .collection('data')
+                .collection('data4')
                 .orderBy('instance_id')
                 .startAfter(latestDoc || 0)
                 .limit(1);

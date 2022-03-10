@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!--suppress EqualityComparisonWithCoercionJS -->
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <title>Annotation Interface - Duration</title>
+</head>
+<body>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <script type="module">
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyCEKSSQzuifi0bLqT7u2Lqz3_xGJinv6BI",
+            authDomain: "duration-interface-firebase.firebaseapp.com",
+            projectId: "duration-interface-firebase",
+            storageBucket: "duration-interface-firebase.appspot.com",
+            messagingSenderId: "794421775961",
+            appId: "1:794421775961:web:ac47962b5bab9ce7e1ab48"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        var current_user = firebase.auth().currentUser;
+        firebase.auth().onAuthStateChanged(function (current_user) {
+            if (current_user) {
+                if (current_user.displayName) {
+                    document.getElementById('user_details').innerHTML = `
+                        <p>Logged in with ${current_user.displayName}</p>
+                    `;
+                } else {
+                    document.getElementById('user_details').innerHTML = `
+                        <p>Logged in with ${current_user.email}</p>
+                    `;
+                }
+            } else {
+                window.location = 'index.html'
+            }
+        })
+
+    </script>
+
+    <script type="text/javascript">
+
+        function Logout() {
+            firebase.auth().signOut().then(function () {
+                // Sign-out successfully.
+                window.location = "index.html"
+            }).catch(function (error) {
+                // An error happened.
+            })
+        }
+
+        function showDuration() {
+            document.getElementById('q1duration_question').style.display = 'block';
+        }
+
+        function hideDuration() {
+            document.getElementById('q1duration_question').style.display = 'none';
+            document.getElementById('long').checked = false;
+            document.getElementById('short').checked = false;
+        }
+
+        function showReason() {
+            document.getElementById('reason').style.display = 'block';
+        }
+
+        function hideReason() {
+            document.getElementById('reason').style.display = 'none';
+            document.getElementById('reason').value = "";
+        }
+
+        function uncheckQ1() {
+            document.getElementById('q1_yes').checked = false;
+            document.getElementById('q1_no').checked = false;
+            document.getElementById('q1_hard').checked = false;
+        }
+
+        function clearError() {
+            document.getElementById('error').textContent = "";
+        }
+
+        function validateForm() {
+
+            var q1_yes = document.getElementById('q1_yes');
+            var q1_no = document.getElementById('q1_no');
+            var q1_hard = document.getElementById('q1_hard');
+            var reason = document.getElementById('reason');
+            var duration_long = document.getElementById('long');
+            var duration_short = document.getElementById('short');
+            var error = document.getElementById('error');
+
+            if (q1_yes.checked == false && q1_no.checked == false && q1_hard.checked == false) {
+                error.textContent = "Please tell me if the author of tweet lives in the given city";
+            } else if (q1_no.checked == true && (duration_long.checked == false && duration_short.checked == false)) {
+                error.textContent = "Please tell me how long has the author of the tweet stayed at the given city";
+            } else if (q1_hard.checked == true && reason.value.length == 0) {
+                error.textContent = "Please tell me why you cannot determine if the author of the tweet lives in the given city";
+            } else {
+                error.textContent = "";
+                return true;
+            }
+            return false;
+
+        }
+
+        function addData() {
+
+            // Get user's annotations
+            var current_user = firebase.auth().currentUser;
+            var worker_id = current_user.uid;
+            var instance_id = document.getElementById('instance_id').textContent;
+            var q1_answer = document.querySelector('input[name="q1"]:checked').value;
+            var q1_reason = document.getElementById('reason').value;
+            if (document.querySelector('input[name="duration"]:checked')) {
+                var duration_answer = document.querySelector('input[name="duration"]:checked').value;
+            } else {
+                var duration_answer = 'null'
+            }
+
+            // Save the annotation to the firebase database
+            var annot = {
+                instance_id: instance_id,
+                worker_id: worker_id,
+                q1_answer: q1_answer,
+                q1_reason: q1_reason,
+                duration_answer: duration_answer,
+            }
+            firebase.firestore().collection('annotation6').add(annot).then(doc => {
+                console.log(`Doc ${doc.id} added successfully.`)
+            }).catch(e => {
+                console.log(e)
+            })
+        }
+
+        function combine() {
+            var validate = validateForm();
+            if (validate) {
+                addData();
+                clearError(); 
+                hideDuration(); 
+                hideReason(); 
+                uncheckQ1();
+                handleClick();
+            } else {
+                return false;
+            }
+        }
+
+    </script>
+
+    <div class="container">
+
+        <div class="container">
+            <button class="btn btn-outline-secondary pull-right" style="margin-top:10px; margin-bottom:10px;" data-toggle="button" aria-pressed="false" onclick="Logout()">Logout</button>
+        </div>
+
+        <div class="container">
+            <p class="text-right" id="user_details" style="font-weight: 600;"></p>
+        </div>
+        <p style="text-align: center; margin: 30px; display: block; font-size: 25px; font-weight: bold">Determine for how long people have stayed at the given city</p>
+        <div class="row">
+
+            <div class="col-sm-5">
+
+                <!-- Instruction part -->
+                <h5><b>Instructions:</b></h5>
+                <p>
+                    In this task, you will see a tweet.
+                    <b>Your job is to determine how long the author of the tweet has stayed at the given city if it is not his/her home city</b>.
+                    You will follow these steps:
+                </p>
+                <p>
+                    <ol>
+                        <li>First, you will read a tweet.</li>
+                        <li>Second, you will determine whether the author of the tweet lives in the given city.</li>
+                        <li>If the author does not live in the given city, you will determine how long the author has stayed at the given city.</li>
+                    </ol>
+                </p>
+
+                <!-- Definition and Example part -->
+                <h5><b>Definitions and Examples:</b></h5>
+
+                <!-- Q1 part -->
+                <div class="panel panel-default" style="margin-bottom: 5px;">
+
+                    <!-- Definitions -->
+                    <div class="panel-heading">
+
+                        <!-- Definition of Yes -->
+                        <p>
+                            <span style="font-size:13px; font-weight: bold">Does the author of the tweet live in the given city?</span>
+                        </p>
+                        <p>
+                            <span style="font-weight:bold">Yes:</span>
+                            <span style="font-size:13px">The author of the tweet <u>lives in</u> the given city.</span>
+                        </p>
+                        <!-- Definition of No -->
+                        <p>
+                            <span style="font-weight:bold">No:</span>
+                            <span style="font-size:13px">The author of the tweet <u>does not live in</u> the given city.</span>
+                        </p>
+                        <!-- Definition of I cannot determine -->
+                        <p>
+                            <span style="font-weight:bold">I cannot determine:</span>
+                            <span style="font-size:13px"><u>I cannot determine</u> if the author of the tweet lives in the given city.</span>
+                        </p>
+
+                    </div>
+
+                    <!-- Examples -->
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <!-- Example of Yes -->
+                            <p style="font-size:12px">
+                                <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>Yes</i></p>
+                                <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1244666583894589440.png" />
+                                <p style="margin: 10px">
+                                    The text and image show the flower in the bathroom of the apartment/house.
+                                    Therefore, we can tell that author of the tweet lives in <span style="color: #4A8FFF"><b>Charlottle</b></span>.
+                                </p>
+                            </p>
+                            <!-- Example of No -->
+                            <p style="font-size:12px">
+                                <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>No</i></p>
+                                <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1385388145974267905.png" />
+                                <p style="margin: 10px">
+                                    The text shows that the author of the tweet is in <span style="color: #4A8FFF"><b>Kennebunkport</b></span> for vacation,
+                                    which means that he does not live there.
+                                </p>
+                            </p>
+                            <!-- Example of I cannot determine -->
+                            <p style="font-size:12px">
+                                <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>I cannot determine</i></p>
+                                <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1240744731421880331.png" />
+                                <p style="margin: 10px">
+                                    We cannot determine if the author of the tweet lives in the <span style="color: #4A8FFF"><b>Phoenix</b></span> because we need more information.
+                                </p>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <p style="margin-left: 10px; font-weight: bolder; font-size: 13px;">(click <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">HERE</a> to see/hide examples of the above question)</p>
+
+                <!-- duration part -->
+                <div class="panel panel-default" style="margin-bottom: 5px;">
+
+                    <!-- Definitions -->
+                    <div class="panel-heading">
+
+                        <!-- Definition of less than one day -->
+                        <p>
+                            <span style="font-size:13px; font-weight: bold">How long has the author of the tweet stayed at the given city?</span>
+                        </p>
+                        <p>
+                            <span style="font-weight:bold">less than one day:</span>
+                            <span style="font-size:13px">The author of the tweet has stayed at the given city <u>less than one day</u>.</span>
+                        </p>
+                        <!-- Definition of more than one day -->
+                        <p>
+                            <span style="font-weight:bold">more than one day:</span>
+                            <span style="font-size:13px">The author of the tweet has stayed at the given city <u>more than one day</u>.</span>
+                        </p>
+
+                    </div>
+
+                    <!-- Examples -->
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <!-- Example of less than one day -->
+                            <p style="font-size:12px">
+                            <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>less than one day</i></p>
+                            <br />
+                            <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1300879167169331200.png" />
+                            <p style="margin: 10px">
+                                The text and image show that the author of the tweet is working in a park,
+                                which means he/she would spend only a couple of hours there.
+                            </p>
+                            </p>
+                            <!-- Example of more than one day -->
+                            <p style="font-size:12px">
+                            <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>more than one day</i></p>
+                            <br />
+                            <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1385388145974267905.png" />
+                            <p style="margin: 10px">
+                                The text shows that the author of the tweet is in <span style="color: #4A8FFF"><b>Kennebunkport</b></span> for vacation
+                                which takes more than one day.
+                            </p>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <p style="margin-left: 10px; font-weight: bolder; font-size: 13px;">(click <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">HERE</a> to see/hide examples of the above question)</p>
+
+            </div>
+
+            <!-- display the tweet and questions -->
+            <div class="col-sm-7">
+                <h5><b>Read the tweet and answer the questions about the author of the tweet:<span id="instance_id" style="display: none"></span></b></h5>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <!-- Show tweet -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <img id="image_link" style="max-width: 350px; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px" src="" />
+                            </div>
+                        </div>
+
+                        <!-- Show questions -->
+                        <div class="row">
+
+                            <!-- Show Q1 -->
+                            <div id="q1_question" class="col-sm-12 col-sm-offset-1">
+                                <p>Does the author of the tweet live in <span id="location_q1" style="color: #4A8FFF; font-weight: bold;"></span>?</p>
+                                <div class="form-check-inline" style="margin-bottom: 10px">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px" onclick="hideDuration(); hideReason(); clearError()" />Yes
+                                    </label>
+                                    <br />
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px" onclick="showDuration(); hideReason(); clearError()" />No
+                                    </label>
+                                    <br />
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="q1_hard" name="q1" value="hard" style="margin-right: 10px" onclick="hideDuration(); showReason(); clearError(); clearError()" />I cannot determine
+                                    </label>
+                                    <br />
+
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" id="reason" rows="3" style="max-width: 70%; display: none;" placeholder="Please tell us why you cannot determine"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Show duration question -->
+                            <div id="q1duration_question" class="col-sm-12 col-sm-offset-1" style="display: none">
+                                <p>How long has the author of the tweet stayed at <span id="location_duration" style="color: #4A8FFF; font-weight: bold;"></span>?</p>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="short" name="duration" value="less than one day" style="margin-right: 10px" onclick="clearError(); clearError()" />less than one day
+                                    </label>
+                                    <br />
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" id="long" name="duration" value="more than one day" style="margin-right: 10px" onclick="clearError(); clearError()" />more than one day
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Submit button and error message (if any) -->
+                        <div class="row text-center" style="margin-bottom: 15px;">
+                            <span id="error" style="margin: 20px; color: red; font-weight: bold"></span>
+                        </div>
+
+                        <div class="row text-center">
+                            <!-- <button id="submitButton" class="btn btn-primary" onclick="validateForm(); addData(); clearError(); hideDuration(); hideReason(); uncheckQ1()">Next</button> -->
+                            <button id="submitButton" class="btn btn-primary" onclick="combine()">Next</button>
+                            <!-- <button id="submitButton" class="btn btn-primary" onclick="validateForm(); hideDuration(); uncheckQ1()">Next</button> -->
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        var latestDoc = null;
+
+        const loadNext = async () => {
+
+            // Load next instance
+            const ref = firebase
+                .firestore()
+                .collection('data6')
+                .orderBy('instance_id')
+                .startAfter(latestDoc || 0)
+                .limit(1);
+
+            const data = await ref.get();
+
+            data.docs.forEach(doc => {
+                const instance = doc.data();
+                document.getElementById('instance_id').textContent = instance.instance_id;
+                document.getElementById('image_link').src = instance.image_link;
+                document.getElementById('location_q1').textContent = instance.location;
+                document.getElementById('location_duration').textContent = instance.location;
+            })
+
+            // Update latest doc
+            latestDoc = data.docs[data.docs.length - 1];
+
+            // Unattach event listeners if there is no more data
+            if (data.empty) {
+                loadMore.removeEventListener('click', handleClick);
+                document.getElementById('submitButton').style.display = 'none';
+                document.getElementById('error').textContent = 'You have completed all tasks! Thanks for your help!'
+            }
+        }
+
+        // Wait for DOM content to load
+        window.addEventListener('DOMContentLoaded', () => loadNext());
+
+        // Load more data
+        const loadMore = document.getElementById('submitButton');
+        const handleClick = () => {
+            loadNext();
+        }
+        // loadMore.addEventListener('click', handleClick);
+    </script>
+</body>
+</html>
