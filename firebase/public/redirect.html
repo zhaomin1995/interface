@@ -12,6 +12,46 @@
 
 <body>
 
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+    <script type="module">
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyCEKSSQzuifi0bLqT7u2Lqz3_xGJinv6BI",
+            authDomain: "duration-interface-firebase.firebaseapp.com",
+            projectId: "duration-interface-firebase",
+            storageBucket: "duration-interface-firebase.appspot.com",
+            messagingSenderId: "794421775961",
+            appId: "1:794421775961:web:ac47962b5bab9ce7e1ab48"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        var current_user = firebase.auth().currentUser;
+        firebase.auth().onAuthStateChanged(function (current_user) {
+            if (current_user) {
+                if (current_user.displayName) {
+                    document.getElementById('user_details').innerHTML = `
+                        <p>Logged in with ${current_user.displayName}</p>
+                    `;
+                } else {
+                    document.getElementById('user_details').innerHTML = `
+                        <p>Logged in with ${current_user.email}</p>
+                    `;
+                }
+            } else {
+                window.location = 'index.html'
+            }
+        })
+
+    </script>
+
+    <div class="container">
+        <p class="text-right" id="user_details" style="font-weight: 600; margin-top: 10px;"></p>
+    </div>
+    
     <div class="jumbotron">
         <div class="container text-center">
             <h2>Please click button based on your student ID</h2>
