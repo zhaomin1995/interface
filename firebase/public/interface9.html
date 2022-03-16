@@ -166,13 +166,13 @@
         <div class="container">
             <p class="text-right" id="user_details" style="font-weight: 600;"></p>
         </div>
-        <p style="text-align: center; margin: 30px; display: block; font-size: 25px; font-weight: bold">Determine for how long people have stayed at the given city</p>
+        <p style="text-align: center; margin: 30px; font-size: 30px; font-weight: bold">Determine how long people have stayed at the given city</p>
         <div class="row">
 
             <div class="col-sm-5">
 
                 <!-- Instruction part -->
-                <h5><b>Instructions:</b></h5>
+                <p style="font-size: 25px; font-weight: bold; color: rgb(194, 119, 7);">Instructions:</p>
                 <p>
                     In this task, you will see a tweet.
                     <b>Your job is to determine how long the author of the tweet has stayed at the given city if it is not his/her home city</b>.
@@ -187,7 +187,7 @@
                 </p>
 
                 <!-- Definition and Example part -->
-                <h5><b>Definitions and Examples:</b></h5>
+                <p style="font-size: 25px; font-weight: bold; color: rgb(194, 119, 7);">Definitions and Examples:</p>
 
                 <!-- Q1 part -->
                 <div class="panel panel-default" style="margin-bottom: 5px;">
@@ -197,21 +197,21 @@
 
                         <!-- Definition of Yes -->
                         <p>
-                            <span style="font-size:13px; font-weight: bold">Does the author of the tweet live in the given city?</span>
+                            <span style="font-size:18px; font-weight: bolder">Does the author of the tweet live in the given city?</span>
                         </p>
                         <p>
-                            <span style="font-weight:bold">Yes:</span>
-                            <span style="font-size:13px">The author of the tweet <u>lives in</u> the given city.</span>
+                            <span style="font-size: 15px; font-weight: bold; color: crimson;">Yes:</span>
+                            <span style="font-size: 15px">The author of the tweet <u>lives in</u> the given city.</span>
                         </p>
                         <!-- Definition of No -->
                         <p>
-                            <span style="font-weight:bold">No:</span>
-                            <span style="font-size:13px">The author of the tweet <u>does not live in</u> the given city.</span>
+                            <span style="font-size: 15px; font-weight: bold; color: crimson;">No:</span>
+                            <span style="font-size: 15px">The author of the tweet <u>does not live in</u> the given city.</span>
                         </p>
                         <!-- Definition of I cannot determine -->
                         <p>
-                            <span style="font-weight:bold">I cannot determine:</span>
-                            <span style="font-size:13px"><u>I cannot determine</u> if the author of the tweet lives in the given city.</span>
+                            <span style="font-size: 15px; font-weight: bold; color: crimson;">I cannot determine:</span>
+                            <span style="font-size: 15px"><u>I cannot determine</u> if the author of the tweet lives in the given city.</span>
                         </p>
 
                     </div>
@@ -259,16 +259,16 @@
 
                         <!-- Definition of less than one day -->
                         <p>
-                            <span style="font-size:13px; font-weight: bold">How long has the author of the tweet stayed at the given city?</span>
+                            <span style="font-size:18px; font-weight: bolder">How long has the author of the tweet stayed at the given city?</span>
                         </p>
                         <p>
-                            <span style="font-weight:bold">less than one day:</span>
-                            <span style="font-size:13px">The author of the tweet has stayed at the given city <u>less than one day</u>.</span>
+                            <span style="font-size: 15px; font-weight: bold; color: crimson;">less than one day:</span>
+                            <span style="font-size: 15px">The author of the tweet has stayed at the given city <u>less than one day</u>.</span>
                         </p>
                         <!-- Definition of more than one day -->
                         <p>
-                            <span style="font-weight:bold">more than one day:</span>
-                            <span style="font-size:13px">The author of the tweet has stayed at the given city <u>more than one day</u>.</span>
+                            <span style="font-size: 15px; font-weight: bold; color: crimson;">more than one day:</span>
+                            <span style="font-size: 15px">The author of the tweet has stayed at the given city <u>more than one day</u>.</span>
                         </p>
 
                     </div>
@@ -306,7 +306,7 @@
 
             <!-- display the tweet and questions -->
             <div class="col-sm-7">
-                <h5><b>Read the tweet and answer the questions about the author of the tweet:<span id="instance_id" style="display: none"></span></b></h5>
+                <p style="font-size: 20px; font-weight: bold; color: rgb(194, 119, 7);">Read the tweet and answer the questions about the author of the tweet:<span id="instance_id" style="display: none"></span></p>
                 <div class="panel panel-default">
                     <div class="panel-body">
 
@@ -365,9 +365,7 @@
                         </div>
 
                         <div class="row text-center">
-                            <!-- <button id="submitButton" class="btn btn-primary" onclick="validateForm(); addData(); clearError(); hideDuration(); hideReason(); uncheckQ1()">Next</button> -->
                             <button id="submitButton" class="btn btn-primary" onclick="combine()">Next</button>
-                            <!-- <button id="submitButton" class="btn btn-primary" onclick="validateForm(); hideDuration(); uncheckQ1()">Next</button> -->
                         </div>
 
 
@@ -409,7 +407,7 @@
             if (data.empty) {
                 loadMore.removeEventListener('click', handleClick);
                 document.getElementById('submitButton').style.display = 'none';
-                document.getElementById('error').textContent = 'You have completed all tasks! Thanks for your help!'
+                document.getElementById('error').textContent = 'You have completed all tasks! Thank you!'
             }
         }
 
