@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!--suppress EqualityComparisonWithCoercionJS -->
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+
+  function showDuration() {
+      document.getElementById('q1duration_question').style.display = 'block';
+  }
+
+  function hideDuration() {
+      document.getElementById('q1duration_question').style.display = 'none';
+      document.getElementById('long').checked = false;
+      document.getElementById('short').checked = false;
+  }
+
+  function showReason() {
+      document.getElementById('reason').style.display = 'block';
+  }
+
+  function hideReason() {
+      document.getElementById('reason').style.display = 'none';
+      document.getElementById('reason').value = "";
+  }
+
+  function clearError() {
+      document.getElementById('error').textContent = "";
+  }
+
+  function validateForm() {
+
+      var q1_yes = document.getElementById('q1_yes');
+      var q1_no = document.getElementById('q1_no');
+      var q1_hard = document.getElementById('q1_hard');
+      var reason = document.getElementById('reason');
+      var duration_long = document.getElementById('long');
+      var duration_short = document.getElementById('short');
+      var error = document.getElementById('error');
+
+      if (q1_yes.checked == false && q1_no.checked == false && q1_hard.checked == false) {
+          error.textContent = "Please tell me if the author of tweet lives in the given city";
+      } else if (q1_no.checked == true && (duration_long.checked == false && duration_short.checked == false)) {
+          error.textContent = "Please tell me how long has the author of the tweet stayed at the given city";
+      } else if (q1_hard.checked == true && reason.value.length < 10) {
+          error.textContent = "The reason you provide is too short";
+      } else {
+          error.textContent = "";
+          return true;
+      }
+      return false;
+
+  }
+
+  window.onload = function() {
+      document.getElementById('submitButton').setAttribute('onclick', 'return validateForm()');
+  }
+
+</script>
+
+<div class="container">
+  <p style="text-align: center; margin: 30px; display: block; font-size: 25px; font-weight: bold">Determine for how long people have stayed at the given city</p>
+  <div class="row">
+
+    <div class="col-sm-5">
+
+        <!-- Instruction part -->
+        <p style="font-size: 25px; font-weight: bold; color: rgb(194, 119, 7);">Instructions:</p>
+        <p>
+            In this task, you will see a tweet.
+            <b>Your job is to determine how long the author of the tweet has stayed at the given city if it is not his/her home city</b>.
+            You will follow these steps:
+        </p>
+        <p>
+            <ol>
+                <li>First, you will read a tweet.</li>
+                <li>Second, you will determine whether the author of the tweet lives in the given city.</li>
+                <li>If the author does not live in the given city, you will determine how long the author has stayed at the given city.</li>
+            </ol>
+        </p>
+
+        <!-- Definition and Example part -->
+        <p style="font-size: 25px; font-weight: bold; color: rgb(194, 119, 7);">Definitions and Examples:</p>
+
+        <!-- Q1 part -->
+        <div class="panel panel-default" style="margin-bottom: 5px;">
+
+            <!-- Definitions -->
+            <div class="panel-heading">
+
+                <!-- Definition of Yes -->
+                <p>
+                    <span style="font-size:18px; font-weight: bolder">Does the author of the tweet live in the given city?</span>
+                </p>
+                <p>
+                    <span style="font-size: 15px; font-weight: bold; color: crimson;">Yes:</span>
+                    <span style="font-size: 15px">The author of the tweet <u>lives in</u> the given city.</span>
+                </p>
+                <!-- Definition of No -->
+                <p>
+                    <span style="font-size: 15px; font-weight: bold; color: crimson;">No:</span>
+                    <span style="font-size: 15px">The author of the tweet <u>does not live in</u> the given city.</span>
+                </p>
+                <!-- Definition of I cannot determine -->
+                <p>
+                    <span style="font-size: 15px; font-weight: bold; color: crimson;">I cannot determine:</span>
+                    <span style="font-size: 15px"><u>I cannot determine</u> if the author of the tweet lives in the given city.</span>
+                </p>
+
+            </div>
+
+            <!-- Examples -->
+            <div id="collapse1" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <!-- Example of Yes -->
+                    <p style="font-size:12px">
+                        <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>Yes</i></p>
+                        <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1244666583894589440.png" />
+                        <p style="margin: 10px">
+                            The text and image show the flower in the bathroom of the apartment/house.
+                            Therefore, we can tell that author of the tweet lives in <span style="color: #4A8FFF"><b>Charlottle</b></span>.
+                        </p>
+                    </p>
+                    <!-- Example of No -->
+                    <p style="font-size:12px">
+                        <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>No</i></p>
+                        <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1385388145974267905.png" />
+                        <p style="margin: 10px">
+                            The text shows that the author of the tweet is in <span style="color: #4A8FFF"><b>Kennebunkport</b></span> for vacation,
+                            which means that he does not live there.
+                        </p>
+                    </p>
+                    <!-- Example of I cannot determine -->
+                    <p style="font-size:12px">
+                        <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>I cannot determine</i></p>
+                        <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1240744731421880331.png" />
+                        <p style="margin: 10px">
+                            We cannot determine if the author of the tweet lives in the <span style="color: #4A8FFF"><b>Phoenix</b></span> because we need more information.
+                        </p>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <p style="margin-left: 10px; font-weight: bolder; font-size: 13px;">(click <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">HERE</a> to see/hide examples of the above question)</p>
+
+        <!-- duration part -->
+        <div class="panel panel-default" style="margin-bottom: 5px;">
+
+            <!-- Definitions -->
+            <div class="panel-heading">
+
+                <!-- Definition of less than one day -->
+                <p>
+                    <span style="font-size:18px; font-weight: bolder">How long has the author of the tweet stayed at the given city?</span>
+                </p>
+                <p>
+                    <span style="font-size: 15px; font-weight: bold; color: crimson;">Less than one day:</span>
+                    <span style="font-size: 15px">The author of the tweet has stayed at the given city <u>less than one day</u>.</span>
+                </p>
+                <!-- Definition of more than one day -->
+                <p>
+                    <span style="font-size: 15px; font-weight: bold; color: crimson;">More than one day:</span>
+                    <span style="font-size: 15px">The author of the tweet has stayed at the given city <u>more than one day</u>.</span>
+                </p>
+
+            </div>
+
+            <!-- Examples -->
+            <div id="collapse2" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <!-- Example of less than one day -->
+                    <p style="font-size:12px">
+                      <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>Less than one day</i></p>
+                      <br />
+                      <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1300879167169331200.png" />
+                      <p style="margin: 10px">
+                          The text and image show that the author of the tweet is working in a park,
+                          which means he/she would spend only a couple of hours there.
+                      </p>
+                    </p>
+                    <!-- Example of more than one day -->
+                    <p style="font-size:12px">
+                      <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>More than one day</i></p>
+                      <br />
+                      <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1385388145974267905.png" />
+                      <p style="margin: 10px">
+                          The text shows that the author of the tweet is in <span style="color: #4A8FFF"><b>Kennebunkport</b></span> for vacation
+                          which takes more than one day.
+                      </p>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <p style="margin-left: 10px; font-weight: bolder; font-size: 13px;">(click <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">HERE</a> to see/hide examples of the above question)</p>
+
+        <br />
+        <br />
+    </div>
+
+    <!-- display the tweet and questions -->
+    <div class="col-sm-7" >
+      <p style="font-size: 20px; font-weight: bold; color: rgb(194, 119, 7);">Read the tweet and answer the questions about the author of the tweet:<span id="instance_id" style="display: none"></span></p>
+      <div class="panel panel-default">
+        <div class="panel-body">
+
+          <!-- Show tweet -->
+          <div class="row">
+            <div class="col-sm-12">
+              <img style="max-width: 350px; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px" src="${image_link}" />
+            </div>
+          </div>
+
+          <!-- Show questions -->
+          <form id='form' onsubmit="return validateForm();">
+            <div class="row">
+
+              <!-- Show Q1 -->
+              <div id="q1_question" class="col-sm-12 col-sm-offset-1">
+                <p>Does the author of the tweet live in <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px" onclick="hideDuration(); hideReason(); clearError()" />Yes
+                  </label>
+                  <br />
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px" onclick="showDuration(); hideReason(); clearError()" />No
+                  </label>
+                  <br />
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" id="q1_hard" name="q1" value="hard" style="margin-right: 10px" onclick="hideDuration(); showReason(); clearError()" />I cannot determine whether the author of the tweet lives in <span style="color: #4A8FFF"><b>${location}</b></span>
+                  </label>
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control" id="reason" name="reason" rows="3" style="max-width: 70%; display: none;" minlength="15" placeholder="Please tell us why you cannot determine (at least 15 characters)"></textarea>
+                </div>
+              </div>
+
+              <!-- Show Q1+ -->
+              <div id="q1duration_question" class="col-sm-12 col-sm-offset-1" style="display: none">
+                <p>How long has the author of the tweet stayed at <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" id="short" name="duration" value="less_than_one_day" style="margin-right: 10px" onclick="clearError()" />Less than one day
+                  </label>
+                  <br />
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" id="long" name="duration" value="more_than_one_day" style="margin-right: 10px" onclick="clearError()" />More than one day
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Submit button and error message (if any) -->
+            <div class="row text-center">
+              <span id="error" style="margin: 20px; color: red; font-weight: bold"></span>
+              <br>
+              <br>
+              <input type="submit" id='submitButton' class="btn btn-primary" value="Submit" />
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
