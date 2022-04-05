@@ -54,7 +54,8 @@
           error.textContent = "";
           return true;
       }
-      return false;
+      // return false;
+      return true;
 
   }
 
@@ -224,37 +225,54 @@
 
               <!-- Show Q1 -->
               <div id="q1_question" class="col-sm-12 col-sm-offset-1">
-                <p>Does the author of the tweet live in <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
+                <p>How long will the author of the tweet continuously stay at <span style="color: #4A8FFF"><b>${location}</b></span> before publishing this tweet?</p>
+
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1_yes" name="q1" value="yes" style="margin-right: 10px" onclick="hideDuration(); hideReason(); clearError()" />Yes
+                    <input type="radio" class="form-check-input" id="q1_hours" name="q1" value="hours" style="margin-right: 10px" onclick="hideDuration(); hideReason(); clearError()" />0-24 hours
                   </label>
                   <br />
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1_no" name="q1" value="no" style="margin-right: 10px" onclick="showDuration(); hideReason(); clearError()" />No
+                    <input type="radio" class="form-check-input" id="q1_days" name="q1" value="days" style="margin-right: 10px" onclick="showDuration(); hideReason(); clearError()" />1-30 days
                   </label>
                   <br />
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1_hard" name="q1" value="hard" style="margin-right: 10px" onclick="hideDuration(); showReason(); clearError()" />I cannot determine whether the author of the tweet lives in <span style="color: #4A8FFF"><b>${location}</b></span>
+                    <input type="radio" class="form-check-input" id="q1_more_than_days" name="q1" value="more_than_days" style="margin-right: 10px" onclick="showDuration(); hideReason(); clearError()" />more than 30 days
+                  </label>
+                  <br />
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" id="q1_hard" name="q1" value="hard" style="margin-right: 10px" onclick="hideDuration(); showReason(); clearError()" />I cannot determine how long the author of the tweet will continuously stay at <span style="color: #4A8FFF"><b>${location}</b></span>
                   </label>
                 </div>
 
                 <div class="form-group">
-                    <textarea class="form-control" id="reason" name="reason" rows="3" style="max-width: 70%; display: none;" minlength="15" placeholder="Please tell us why you cannot determine (at least 15 characters)"></textarea>
+                    <textarea class="form-control" id="reason1" name="reason1" rows="3" style="max-width: 70%; display: none;" minlength="15" placeholder="Please tell us why you cannot determine (at least 15 characters)"></textarea>
                 </div>
               </div>
 
-              <!-- Show Q1+ -->
-              <div id="q1duration_question" class="col-sm-12 col-sm-offset-1" style="display: none">
-                <p>How long has the author of the tweet stayed at <span style="color: #4A8FFF"><b>${location}</b></span>?</p>
+              <div id="q1_question" class="col-sm-12 col-sm-offset-1">
+                <p>How long will the author of the tweet continuously stay at <span style="color: #4A8FFF"><b>${location}</b></span> after publishing this tweet?</p>
+
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="short" name="duration" value="less_than_one_day" style="margin-right: 10px" onclick="clearError()" />Less than one day
+                    <input type="radio" class="form-check-input" id="q2_hours" name="q2" value="hours" style="margin-right: 10px" onclick="hideDuration(); hideReason(); clearError()" />0-24 hours
                   </label>
                   <br />
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="long" name="duration" value="more_than_one_day" style="margin-right: 10px" onclick="clearError()" />More than one day
+                    <input type="radio" class="form-check-input" id="q2_days" name="q2" value="days" style="margin-right: 10px" onclick="showDuration(); hideReason(); clearError()" />1-30 days
                   </label>
+                  <br />
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" id="q2_more_than_days" name="q2" value="more_than_days" style="margin-right: 10px" onclick="showDuration(); hideReason(); clearError()" />more than 30 days
+                  </label>
+                  <br />
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" id="q2_hard" name="q2" value="hard" style="margin-right: 10px" onclick="hideDuration(); showReason(); clearError()" />I cannot determine how long the author of the tweet will continuously stay at <span style="color: #4A8FFF"><b>${location}</b></span>
+                  </label>
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control" id="reason2" name="reason2" rows="3" style="max-width: 70%; display: none;" minlength="15" placeholder="Please tell us why you cannot determine (at least 15 characters)"></textarea>
                 </div>
               </div>
 

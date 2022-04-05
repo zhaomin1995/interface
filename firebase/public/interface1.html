@@ -117,6 +117,7 @@
             // Get user's annotations
             var current_user = firebase.auth().currentUser;
             var worker_id = current_user.uid;
+            var timestamp = new Date().toString();
             var instance_id = document.getElementById('instance_id').textContent;
             var q1_answer = document.querySelector('input[name="q1"]:checked').value;
             var q1_reason = document.getElementById('reason').value;
@@ -130,6 +131,7 @@
             var annot = {
                 instance_id: instance_id,
                 worker_id: worker_id,
+                timestamp: timestamp,
                 q1_answer: q1_answer,
                 q1_reason: q1_reason,
                 duration_answer: duration_answer,
