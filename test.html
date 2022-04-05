@@ -36,19 +36,16 @@
 
   function validateForm() {
 
-      var q1_yes = document.getElementById('q1_yes');
-      var q1_no = document.getElementById('q1_no');
-      var q1_hard = document.getElementById('q1_hard');
+      var hours = document.getElementById('hours');
+      var days = document.getElementById('days');
+      var long = document.getElementById('more_than_30_days');
+      var hard = document.getElementById('hard');
       var reason = document.getElementById('reason');
-      var duration_long = document.getElementById('long');
-      var duration_short = document.getElementById('short');
       var error = document.getElementById('error');
 
-      if (q1_yes.checked == false && q1_no.checked == false && q1_hard.checked == false) {
-          error.textContent = "Please tell me if the author of tweet lives in the given city";
-      } else if (q1_no.checked == true && (duration_long.checked == false && duration_short.checked == false)) {
-          error.textContent = "Please tell me how long has the author of the tweet stayed at the given city";
-      } else if (q1_hard.checked == true && reason.value.length < 10) {
+      if (hours.checked == false && days.checked == false && long.checked == false && hard.checked == false) {
+          error.textContent = "Please tell me how long the author of the tweet will stay at the given city";
+      } else if (hard.checked == true && reason.value.length < 15) {
           error.textContent = "The reason you provide is too short";
       } else {
           error.textContent = "";
@@ -66,7 +63,7 @@
 </script>
 
 <div class="container">
-  <p style="text-align: center; margin: 30px; display: block; font-size: 25px; font-weight: bold">Determine for how long people have stayed at the given city</p>
+  <p style="text-align: center; margin: 30px; display: block; font-size: 25px; font-weight: bold">Determine for how long people will continuously stay at the given city</p>
   <div class="row">
 
     <div class="col-sm-5">
@@ -75,14 +72,14 @@
         <p style="font-size: 25px; font-weight: bold; color: rgb(194, 119, 7);">Instructions:</p>
         <p>
             In this task, you will see a tweet.
-            <b>Your job is to determine how long the author of the tweet has stayed at the given city if it is not his/her home city</b>.
+            <b>Your job is to determine how long the author of the tweet will continuously stay at the given city</b>.
             You will follow these steps:
         </p>
         <p>
             <ol>
                 <li>First, you will read a tweet.</li>
-                <li>Second, you will determine whether the author of the tweet lives in the given city.</li>
-                <li>If the author does not live in the given city, you will determine how long the author has stayed at the given city.</li>
+                <li>Second, you will determine how long the author of the tweet will continuously stay at the given city.</li>
+                <li>If you cannot answer the question above, please provide your reason.</li>
             </ol>
         </p>
 
@@ -95,23 +92,28 @@
             <!-- Definitions -->
             <div class="panel-heading">
 
-                <!-- Definition of Yes -->
+                <!-- Definition of hours -->
                 <p>
                     <span style="font-size:18px; font-weight: bolder">Does the author of the tweet live in the given city?</span>
                 </p>
                 <p>
-                    <span style="font-size: 15px; font-weight: bold; color: crimson;">Yes:</span>
-                    <span style="font-size: 15px">The author of the tweet <u>lives in</u> the given city.</span>
+                    <span style="font-size: 15px; font-weight: bold; color: crimson;">0-24 hours:</span>
+                    <span style="font-size: 15px">The author of the tweet will continuously stay at the given city for <u>0-24 hours</u> after publishing the tweet.</span>
                 </p>
-                <!-- Definition of No -->
+                <!-- Definition of days -->
                 <p>
-                    <span style="font-size: 15px; font-weight: bold; color: crimson;">No:</span>
-                    <span style="font-size: 15px">The author of the tweet <u>does not live in</u> the given city.</span>
+                    <span style="font-size: 15px; font-weight: bold; color: crimson;">1-30 days:</span>
+                    <span style="font-size: 15px">The author of the tweet will continuously stay at the given city for <u>1-30 days</u> after publishing the tweet.</span>
+                </p>
+                <!-- Definition of more than days -->
+                <p>
+                    <span style="font-size: 15px; font-weight: bold; color: crimson;">More than 30 days:</span>
+                    <span style="font-size: 15px">The author of the tweet will continuously stay at the given city for <u>more than 30 days</u> after publishing the tweet.</span>
                 </p>
                 <!-- Definition of I cannot determine -->
                 <p>
                     <span style="font-size: 15px; font-weight: bold; color: crimson;">I cannot determine:</span>
-                    <span style="font-size: 15px"><u>I cannot determine</u> if the author of the tweet lives in the given city.</span>
+                    <span style="font-size: 15px"><u>I cannot determine</u> how long the author of the tweet will continuously stay at the given city.</span>
                 </p>
 
             </div>
@@ -121,7 +123,7 @@
                 <div class="panel-body">
                     <!-- Example of Yes -->
                     <p style="font-size:12px">
-                        <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>Yes</i></p>
+                        <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>0-24 hours</i></p>
                         <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1244666583894589440.png" />
                         <p style="margin: 10px">
                             The text and image show the flower in the bathroom of the apartment/house.
@@ -130,7 +132,16 @@
                     </p>
                     <!-- Example of No -->
                     <p style="font-size:12px">
-                        <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>No</i></p>
+                        <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>1-30 days</i></p>
+                        <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1385388145974267905.png" />
+                        <p style="margin: 10px">
+                            The text shows that the author of the tweet is in <span style="color: #4A8FFF"><b>Kennebunkport</b></span> for vacation,
+                            which means that he does not live there.
+                        </p>
+                    </p>
+                    <!-- Example of No -->
+                    <p style="font-size:12px">
+                        <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>More than 30 days</i></p>
                         <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1385388145974267905.png" />
                         <p style="margin: 10px">
                             The text shows that the author of the tweet is in <span style="color: #4A8FFF"><b>Kennebunkport</b></span> for vacation,
@@ -150,57 +161,6 @@
 
         </div>
         <p style="margin-left: 10px; font-weight: bolder; font-size: 13px;">(click <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">HERE</a> to see/hide examples of the above question)</p>
-
-        <!-- duration part -->
-        <div class="panel panel-default" style="margin-bottom: 5px;">
-
-            <!-- Definitions -->
-            <div class="panel-heading">
-
-                <!-- Definition of less than one day -->
-                <p>
-                    <span style="font-size:18px; font-weight: bolder">How long has the author of the tweet stayed at the given city?</span>
-                </p>
-                <p>
-                    <span style="font-size: 15px; font-weight: bold; color: crimson;">Less than one day:</span>
-                    <span style="font-size: 15px">The author of the tweet has stayed at the given city <u>less than one day</u>.</span>
-                </p>
-                <!-- Definition of more than one day -->
-                <p>
-                    <span style="font-size: 15px; font-weight: bold; color: crimson;">More than one day:</span>
-                    <span style="font-size: 15px">The author of the tweet has stayed at the given city <u>more than one day</u>.</span>
-                </p>
-
-            </div>
-
-            <!-- Examples -->
-            <div id="collapse2" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <!-- Example of less than one day -->
-                    <p style="font-size:12px">
-                      <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>Less than one day</i></p>
-                      <br />
-                      <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1300879167169331200.png" />
-                      <p style="margin: 10px">
-                          The text and image show that the author of the tweet is working in a park,
-                          which means he/she would spend only a couple of hours there.
-                      </p>
-                    </p>
-                    <!-- Example of more than one day -->
-                    <p style="font-size:12px">
-                      <p style="margin: 10px; text-align: center; font-weight: bold">Example of <i>More than one day</i></p>
-                      <br />
-                      <img style="max-width: 300px; display: block; margin-left: auto; margin-right: auto;" src="https://zhaomin.s3.us-east-2.amazonaws.com/display/display_1385388145974267905.png" />
-                      <p style="margin: 10px">
-                          The text shows that the author of the tweet is in <span style="color: #4A8FFF"><b>Kennebunkport</b></span> for vacation
-                          which takes more than one day.
-                      </p>
-                    </p>
-                </div>
-            </div>
-
-        </div>
-        <p style="margin-left: 10px; font-weight: bolder; font-size: 13px;">(click <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">HERE</a> to see/hide examples of the above question)</p>
 
         <br />
         <br />
@@ -223,56 +183,29 @@
           <form id='form' onsubmit="return validateForm();">
             <div class="row">
 
-              <!-- Show Q1 -->
-              <div id="q1_question" class="col-sm-12 col-sm-offset-1">
-                <p>How long will the author of the tweet continuously stay at <span style="color: #4A8FFF"><b>${location}</b></span> before publishing this tweet?</p>
-
-                <div class="form-check-inline">
-                  <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1_hours" name="q1" value="hours" style="margin-right: 10px" onclick="hideDuration(); hideReason(); clearError()" />0-24 hours
-                  </label>
-                  <br />
-                  <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1_days" name="q1" value="days" style="margin-right: 10px" onclick="showDuration(); hideReason(); clearError()" />1-30 days
-                  </label>
-                  <br />
-                  <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1_more_than_days" name="q1" value="more_than_days" style="margin-right: 10px" onclick="showDuration(); hideReason(); clearError()" />more than 30 days
-                  </label>
-                  <br />
-                  <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q1_hard" name="q1" value="hard" style="margin-right: 10px" onclick="hideDuration(); showReason(); clearError()" />I cannot determine how long the author of the tweet will continuously stay at <span style="color: #4A8FFF"><b>${location}</b></span>
-                  </label>
-                </div>
-
-                <div class="form-group">
-                    <textarea class="form-control" id="reason1" name="reason1" rows="3" style="max-width: 70%; display: none;" minlength="15" placeholder="Please tell us why you cannot determine (at least 15 characters)"></textarea>
-                </div>
-              </div>
-
               <div id="q1_question" class="col-sm-12 col-sm-offset-1">
                 <p>How long will the author of the tweet continuously stay at <span style="color: #4A8FFF"><b>${location}</b></span> after publishing this tweet?</p>
 
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q2_hours" name="q2" value="hours" style="margin-right: 10px" onclick="hideDuration(); hideReason(); clearError()" />0-24 hours
+                    <input type="radio" class="form-check-input" id="hours" name="q2" value="hours" style="margin-right: 10px" onclick="hideDuration(); hideReason(); clearError()" />0-24 hours
                   </label>
                   <br />
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q2_days" name="q2" value="days" style="margin-right: 10px" onclick="showDuration(); hideReason(); clearError()" />1-30 days
+                    <input type="radio" class="form-check-input" id="days" name="q2" value="days" style="margin-right: 10px" onclick="showDuration(); hideReason(); clearError()" />1-30 days
                   </label>
                   <br />
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q2_more_than_days" name="q2" value="more_than_days" style="margin-right: 10px" onclick="showDuration(); hideReason(); clearError()" />more than 30 days
+                    <input type="radio" class="form-check-input" id="more_than_days" name="q2" value="more_than_30_days" style="margin-right: 10px" onclick="showDuration(); hideReason(); clearError()" />more than 30 days
                   </label>
                   <br />
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="q2_hard" name="q2" value="hard" style="margin-right: 10px" onclick="hideDuration(); showReason(); clearError()" />I cannot determine how long the author of the tweet will continuously stay at <span style="color: #4A8FFF"><b>${location}</b></span>
+                    <input type="radio" class="form-check-input" id="hard" name="q2" value="hard" style="margin-right: 10px" onclick="hideDuration(); showReason(); clearError()" />I cannot determine how long the author of the tweet will continuously stay at <span style="color: #4A8FFF"><b>${location}</b></span>
                   </label>
                 </div>
 
                 <div class="form-group">
-                    <textarea class="form-control" id="reason2" name="reason2" rows="3" style="max-width: 70%; display: none;" minlength="15" placeholder="Please tell us why you cannot determine (at least 15 characters)"></textarea>
+                    <textarea class="form-control" id="reason" name="reason" rows="3" style="max-width: 70%; display: none;" minlength="15" placeholder="Please tell us why you cannot determine (at least 15 characters)"></textarea>
                 </div>
               </div>
 
